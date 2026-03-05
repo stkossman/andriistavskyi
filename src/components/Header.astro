@@ -1,13 +1,22 @@
 ---
+import { Clock } from './Clock'
 ---
 
 <header class="flex justify-between items-center py-10 px-6 md:px-12 lg:px-16 w-full">
-  <div class="font-heading font-bold text-2xl tracking-tight text-text-primary">
-    <a href="/">Andrii.</a>
+  
+  <div class="flex items-center gap-8 md:gap-12">
+    <a href="/" class="flex-shrink-0">
+      <img src="/favicon.svg" alt="Andrii" class="h-8 md:h-10 w-auto" />
+    </a>
+    
+    <nav class="flex gap-4 md:gap-8 text-sm font-medium text-text-primary">
+      <a href="/work" class="hover:bg-text-muted p-1 transition-colors duration-fast ease-smooth">Work</a>
+      <a href="/about" class="hover:bg-text-muted p-1 transition-colors duration-fast ease-smooth">About</a>
+      <a href="/contact" class="hover:bg-text-muted p-1 transition-colors duration-fast ease-smooth">Contact</a>
+    </nav>
   </div>
-  <nav class="flex gap-8 text-sm font-medium text-text-primary">
-    <a href="/work" class="hover:text-text-primary hover:bg-text-muted p-1 transition-colors duration-fast ease-smooth">Work</a>
-    <a href="/about" class="hover:text-text-primary hover:bg-text-muted p-1 transition-colors duration-fast ease-smooth">About</a>
-    <a href="/contact" class="hover:text-text-primary hover:bg-text-muted p-1 transition-colors duration-fast ease-smooth">Contact</a>
-  </nav>
+
+  <div class="hidden sm:block"> <Clock client:only="react" />
+  </div>
+
 </header>
