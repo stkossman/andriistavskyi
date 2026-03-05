@@ -3,12 +3,15 @@ import '@fontsource-variable/bricolage-grotesque'
 import '@fontsource/arimo'
 import '../styles/global.css'
 
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
 interface Props {
 	title: string
 	description?: string
 }
 
-const { title, description = 'Andrii Stavskyi — Front-end Developer' } =
+const { title, description = 'Andrii Stavskyi — Software Developer' } =
 	Astro.props
 ---
 
@@ -18,9 +21,16 @@ const { title, description = 'Andrii Stavskyi — Front-end Developer' } =
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
     <title>{title}</title>
   </head>
-  <body>
-    <slot />
+  <body class="min-h-screen flex flex-col bg-bg-base text-text-primary font-body selection:bg-text-primary selection:text-text-primary">
+    <Header />
+    <main class="flex-grow flex flex-col w-full px-6 md:px-12 lg:px-16">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

@@ -1,17 +1,41 @@
 ---
-
+import Layout from '../layouts/Layout.astro'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1 class='text-4xl font-bold text-accent'>Astro</h1>
-	</body>
-</html>
+<Layout title="Andrii Stavskyi">
+  <section class="mt-12 md:mt-24 grid grid-cols-1 xl:grid-cols-12 gap-16 items-start mb-20">
+    
+    <div class="xl:col-span-8 flex flex-col gap-8 pr-0 xl:pr-12">
+      <h1 class="text-6xl md:text-8xl lg:text-[7.5rem] font-heading font-bold leading-[1.02] tracking-tighter text-text-primary">
+        Hello, I'm Andrii,<br />
+        Developer. Please welcome to my <span class="italic font-light text-accent">digital</span> space.
+      </h1>
+      
+      <p class="max-w-2xl text-xl md:text-2xl text-text-secondary leading-normal mt-6 font-body">
+        Currently building robust backend systems, crafting clean code architectures, and exploring the void.
+      </p>
+    </div>
+
+    <div class="xl:col-span-4 flex flex-col gap-12 mt-8 xl:mt-4 text-sm font-mono">
+      <div class="flex flex-col gap-4">
+        <span class="text-text-muted mb-2 uppercase tracking-widest text-xs">Core Stack</span>
+        
+        <div class="flex justify-between items-center border-b border-border/60 pb-3 hover:border-text-primary transition-colors duration-normal">
+          <span class="text-text-primary font-semibold">Backend</span>
+          <span class="text-text-secondary text-right">C#, Node.js</span>
+        </div>
+        
+        <div class="flex justify-between items-center border-b border-border/60 pb-3 hover:border-text-primary transition-colors duration-normal">
+          <span class="text-text-primary font-semibold">Frontend</span>
+          <span class="text-text-secondary text-right">Astro, React, TS</span>
+        </div>
+        
+        <div class="flex justify-between items-center border-b border-border/60 pb-3 hover:border-text-primary transition-colors duration-normal">
+          <span class="text-text-primary font-semibold">Database</span>
+          <span class="text-text-secondary text-right">PostgreSQL, MySQL</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</Layout>
