@@ -1,41 +1,62 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import AnimatedLink from '../components/AnimatedLink.astro'
 ---
 
 <Layout title="Andrii Stavskyi">
-  <section class="mt-12 md:mt-24 grid grid-cols-1 xl:grid-cols-12 gap-16 items-start mb-20">
+  <div class="flex flex-col flex-grow w-full justify-between pb-8 md:pb-12">
     
-    <div class="xl:col-span-8 flex flex-col gap-8 pr-0 xl:pr-12">
-      <h1 class="text-6xl md:text-8xl lg:text-[7.5rem] font-heading font-bold leading-[1.02] tracking-tighter text-text-primary">
-        Hello, I'm Andrii,<br />
-        Developer. Please welcome to my <span class="italic font-light text-accent">digital</span> space.
-      </h1>
+    <section class="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-16 items-start">
       
-      <p class="max-w-2xl text-xl md:text-2xl text-text-secondary leading-normal mt-6 font-body">
-        Currently building robust backend systems, crafting clean code architectures, and exploring the void.
-      </p>
-    </div>
+      <div class="xl:col-span-9 flex flex-col gap-6 pr-0 xl:pr-12">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold leading-[1.02] tracking-tighter text-text-primary">
+          Hello, I'm Andrii,<br />
+          Developer. Please welcome to my <span class="italic font-light">digital</span> space.
+        </h1>
+        
+        <p class="max-w-3xl text-lg md:text-xl xl:text-2xl text-text-primary leading-normal font-medium mt-2 md:mt-4">
+          Currently passing a .NET/React internship <AnimatedLink href="https://www.softserveinc.com/" text="@SoftServe" />, previously Team Lead & Frontend Developer intern, and studying Computer Science at Ostroh Academy.
+        </p>
+      </div>
 
-    <div class="xl:col-span-4 flex flex-col gap-12 mt-8 xl:mt-4 text-sm font-mono">
-      <div class="flex flex-col gap-4">
-        <span class="text-text-muted mb-2 uppercase tracking-widest text-xs">Core Stack</span>
-        
-        <div class="flex justify-between items-center border-b border-border/60 pb-3 hover:border-text-primary transition-colors duration-normal">
-          <span class="text-text-primary font-semibold">Backend</span>
-          <span class="text-text-secondary text-right">C#, Node.js</span>
-        </div>
-        
-        <div class="flex justify-between items-center border-b border-border/60 pb-3 hover:border-text-primary transition-colors duration-normal">
-          <span class="text-text-primary font-semibold">Frontend</span>
-          <span class="text-text-secondary text-right">Astro, React, TS</span>
-        </div>
-        
-        <div class="flex justify-between items-center border-b border-border/60 pb-3 hover:border-text-primary transition-colors duration-normal">
-          <span class="text-text-primary font-semibold">Database</span>
-          <span class="text-text-secondary text-right">PostgreSQL, MySQL</span>
+      <div class="xl:col-span-3 flex justify-start xl:justify-end pt-4 xl:pt-6">
+        <a href="https://www.softserveinc.com/" target="_blank" rel="noopener noreferrer" class="inline-block opacity-60 hover:opacity-100 transition-opacity duration-normal grayscale hover:grayscale-0">
+          <img 
+            src="https://www.softserveinc.com/cdn/img/root/logo-root.svg" 
+            alt="SoftServe" 
+            class="h-8 md:h-10 w-auto"
+          />
+        </a>
+      </div>
+
+    </section>
+
+    <section class="mt-24 xl:mt-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-10 xl:gap-8 items-end text-sm md:text-base font-body text-text-secondary">
+      
+      <div class="xl:col-span-4 leading-relaxed pr-0 md:pr-8">
+        I've spent my recent years diving deep into Frontend Development. Crafting clean, accessible interfaces with modern tooling and a focus on performance and clarity. My current stack centers around React, Astro, TailwindCSS and TypeScript, and I enjoy building minimalist experiences that keep attention on the content. 
+      </div>
+
+      <div class="xl:col-span-4 leading-relaxed pr-0 md:pr-8">
+        My approach centers around minimalism and clarity. I enjoy crafting experiences that respect the user's attention, combining clean aesthetics with robust functionality. 
+      </div>
+
+      <div class="xl:col-span-4 flex flex-col font-mono text-xs tracking-wide xl:pl-12">
+        <div class="grid grid-cols-[2.5rem_1fr] gap-y-1.5 border-l border-border pl-4">
+          <div class="text-text-primary font-semibold">BE.</div>
+          <div>C#, Node.js</div>
+
+          <div class="text-text-primary font-semibold">FE.</div>
+          <div>React, Astro, TailwindCSS</div>
+
+          <div class="text-text-primary font-semibold">DB.</div>
+          <div>PostgreSQL, MySQL</div>
+          
+          <div class="text-text-primary font-semibold mt-3">TL.</div>
+          <div class="mt-3">Git, Prisma ORM</div>
         </div>
       </div>
-    </div>
 
-  </section>
+    </section>
+  </div>
 </Layout>
