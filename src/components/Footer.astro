@@ -1,7 +1,15 @@
 ---
 import { Clock } from './Clock'
+import AnimatedLink from './AnimatedLink.astro'
 ---
 
-<footer class="flex justify-end items-center py-8 px-6 md:px-12 lg:px-16 w-full mt-auto">
+<footer class="flex justify-between items-center py-8 px-6 md:px-12 lg:px-16 w-full mt-auto border-t border-border/40 text-sm font-heading">
+  <div class="flex items-center gap-1.5 text-text-secondary">
+    <span>Typeface:</span>
+    <AnimatedLink href="https://fontsource.org/fonts/bricolage-grotesque" text="Bricolage Grotesque" />
+    <span class="px-0.5">&</span>
+    <AnimatedLink href="https://fontsource.org/fonts/arimo" text="Arimo" />
+  </div>
+
   <Clock client:only="react" />
 </footer>

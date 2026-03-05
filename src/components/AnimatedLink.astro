@@ -1,0 +1,39 @@
+---
+interface Props {
+	href: string
+	text: string
+}
+
+const { href, text } = Astro.props
+const letters = text.split('')
+---
+
+<a 
+  href={href} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  class="group relative inline-flex overflow-hidden items-center text-text-primary font-medium"
+>
+  <span class="inline-flex">
+    {letters.map((char, i) => (
+      <span
+        class="inline-block transition-transform group-hover:translate-y-[120%]"
+        style={`transition-delay: ${i * 15}ms; transition-duration: var(--duration-normal); transition-timing-function: var(--ease-smooth);`}
+      >
+        {char === ' ' ? '\u00A0' : char}
+      </span>
+    ))}
+  </span>
+  <span class="absolute inset-0 inline-flex">
+    {letters.map((char, i) => (
+      <span
+        class="inline-block -translate-y-[120%] transition-transform group-hover:translate-y-0"
+        style={`transition-delay: ${i * 15}ms; transition-duration: var(--duration-normal); transition-timing-function: var(--ease-smooth);`}
+      >
+        {char === ' ' ? '\u00A0' : char}
+      </span>
+    ))}
+  </span>
+  
+  <span class="absolute bottom-0 left-0 w-full h-[1px] bg-border transition-colors duration-normal ease-smooth group-hover:bg-text-primary"></span>
+</a>

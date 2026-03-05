@@ -26,7 +26,7 @@ export function Clock() {
 
 	return (
 		<div className='px-4 py-2 border-2 rounded-full border-text-primary'>
-			<div className='text-sm font-heading text-text-primary uppercase tracking-wider'>
+			<div className='text-sm text-text-primary uppercase tracking-wider'>
 				{time}
 			</div>
 		</div>
