@@ -1,0 +1,21 @@
+---
+import { ABOUT_TEXT } from '@/const/about'
+---
+<section class="mt-24 xl:mt-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-10 xl:gap-8 items-start text-sm md:text-base font-body text-text-secondary">
+  
+  <div class="xl:col-span-4 flex flex-col gap-3 pr-0 md:pr-8">
+    <h2 class="text-text-primary font-mono text-xs uppercase tracking-widest mb-2">{ABOUT_TEXT.SECTIONS.BACKGROUND.TITLE}</h2>
+    <p class="leading-relaxed">{ABOUT_TEXT.SECTIONS.BACKGROUND.DESCRIPTION}</p>
+  </div>
+
+  <div class="xl:col-span-4 flex flex-col gap-3 pr-0 md:pr-8">
+    <h2 class="text-text-primary font-mono text-xs uppercase tracking-widest mb-2">{ABOUT_TEXT.SECTIONS.WORKFLOW.TITLE}</h2>
+    <p class="leading-relaxed">{ABOUT_TEXT.SECTIONS.WORKFLOW.DESCRIPTION}</p>
+  </div>
+
+  <div class="xl:col-span-4 flex flex-col gap-3 xl:pl-12">
+    <h2 class="text-text-primary font-mono text-xs uppercase tracking-widest mb-2">{ABOUT_TEXT.SECTIONS.OFF_SCREEN.TITLE}</h2>
+    <p class="leading-relaxed">{ABOUT_TEXT.SECTIONS.OFF_SCREEN.DESCRIPTION}</p>
+  </div>
+
+</section>

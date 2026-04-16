@@ -1,0 +1,13 @@
+---
+import PageTitle from '@/components/common/PageTitle.astro'
+import { CONTACT_TEXT } from '@/const/contact'
+---
+
+<section class="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-16 items-start">
+  <div class="xl:col-span-11 flex flex-col pr-0">
+    <PageTitle>
+      {CONTACT_TEXT.HERO.TITLE}
+    </PageTitle>
+    <slot />
+  </div>
+</section>

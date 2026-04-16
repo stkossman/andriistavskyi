@@ -1,88 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import AnimatedLink from '../components/AnimatedLink.astro'
+import Layout from '@/layouts/Layout.astro'
+import HeroSection from '@/components/pages/home/HeroSection.astro'
+import TechArchive from '@/components/pages/home/TechArchive.astro'
 ---
 
 <Layout title="Andrii Stavskyi">
   <div class="flex flex-col flex-grow w-full justify-between pb-8 md:pb-12">
-    
-    <section class="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-16 items-start">
-      
-      <div class="xl:col-span-9 flex flex-col gap-6 pr-0 xl:pr-12">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold leading-[1.02] tracking-tighter text-text-primary">
-          Hello, I'm Andrii,<br />
-          Developer. Please welcome to my <span class="italic font-light">digital</span> space.
-        </h1>
-        
-        <p class="max-w-3xl text-lg md:text-xl xl:text-2xl text-text-primary leading-normal font-medium mt-2 md:mt-4">
-          Currently passing a .NET/React internship <AnimatedLink href="https://www.softserveinc.com/" text="@SoftServe" />, previously Team Lead & Frontend Developer intern, and studying Computer Science at <AnimatedLink href="https://www.oa.edu.ua/" text="@OstrohAcademy" />.
-        </p>
-      </div>
-
-      <div class="xl:col-span-3 flex justify-start xl:justify-end pt-4 xl:pt-6">
-        <a href="https://www.softserveinc.com/" target="_blank" rel="noopener noreferrer" class="inline-block opacity-60 hover:opacity-100 transition-opacity duration-normal grayscale hover:grayscale-0">
-          <img 
-            src="https://www.softserveinc.com/cdn/img/root/logo-root.svg" 
-            alt="SoftServe" 
-            class="h-4 md:h-6 w-auto invert"
-          />
-        </a>
-      </div>
-
-    </section>
-
-    <section class="mt-24 xl:mt-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-10 xl:gap-8 items-end text-sm md:text-base font-body text-text-secondary">
-      
-      <div class="xl:col-span-4 leading-relaxed pr-0 md:pr-8">
-        I've spent my recent years diving deep into Frontend Development. Crafting clean, accessible interfaces with modern tooling and a focus on performance and clarity. My current stack centers around React, Astro, TailwindCSS and TypeScript, and I enjoy building minimalist experiences that keep attention on the content. 
-      </div>
-
-      <div class="xl:col-span-4 leading-relaxed pr-0 md:pr-8">
-        My approach centers around minimalism and clarity. I enjoy crafting experiences that respect the user's attention, combining clean aesthetics with robust functionality. 
-      </div>
-
-      <div class="xl:col-span-4 flex flex-col font-mono text-xs tracking-wide xl:justify-self-end mt-4 xl:mt-0">
-        <div class="grid grid-cols-[2rem_2.5rem_1fr] gap-x-1 gap-y-1.5 w-max">
-          
-          <div class="text-text-primary">SV.</div>
-          <div class="text-text-primary">009</div>
-          <div class="text-text-secondary">C#</div>
-          
-          <div></div> 
-          <div class="text-text-primary">022</div>
-          <div class="text-text-secondary">Node.js</div>
-
-          <div class="text-text-primary mt-3">UI.</div>
-          <div class="text-text-primary mt-3">300</div>
-          <div class="text-text-secondary mt-3">React</div>
-          
-          <div></div>
-          <div class="text-text-primary">432</div>
-          <div class="text-text-secondary">Astro</div>
-
-          <div></div>
-          <div class="text-text-primary">004</div>
-          <div class="text-text-secondary">TailwindCSS</div>
-
-          <div class="text-text-primary mt-3">DT.</div>
-          <div class="text-text-primary mt-3">543</div>
-          <div class="text-text-secondary mt-3">PostgreSQL</div>
-          
-          <div></div>
-          <div class="text-text-primary">330</div>
-          <div class="text-text-secondary">MySQL</div>
-          
-          <div class="text-text-primary mt-3">TL.</div>
-          <div class="text-text-primary mt-3">001</div>
-          <div class="text-text-secondary mt-3">Git</div>
-          
-          <div></div>
-          <div class="text-text-primary">002</div>
-          <div class="text-text-secondary">Prisma ORM</div>
-
-        </div>
-      </div>
-
-    </section>
+    <HeroSection />
+    <TechArchive />
   </div>
 </Layout>

@@ -1,0 +1,6 @@
+@theme {
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms; /* hovers */
+  --duration-normal: 250ms; /* between states */
+  --duration-slow: 400ms; /* page transition */
+}
