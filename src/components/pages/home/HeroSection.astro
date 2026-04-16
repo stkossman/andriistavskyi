@@ -1,17 +1,19 @@
 ---
 import AnimatedLink from '@/components/common/AnimatedLink.astro'
 import PageTitle from '@/components/common/PageTitle.astro'
+import { HOME_TEXT } from '@/const/home'
 ---
 
 <section class="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-16 items-start">
   <div class="xl:col-span-9 flex flex-col gap-6 pr-0 xl:pr-12">
     <PageTitle>
-      Hello, I'm Andrii,<br />
-      Developer. Please welcome to my <span class="italic font-light">digital</span> space.
+      {HOME_TEXT.HERO.GREETING}
+      <br />
+      {HOME_TEXT.HERO.ROLE_START} <span class="italic font-light">{HOME_TEXT.HERO.DIGITAL}</span> {HOME_TEXT.HERO.ROLE_END}
     </PageTitle>
     
     <p class="max-w-3xl text-lg md:text-xl xl:text-2xl text-text-primary leading-normal font-medium mt-2 md:mt-4">
-      Currently passing a .NET/React internship <AnimatedLink href="https://www.softserveinc.com/" text="@SoftServe" />, previously Team Lead & Frontend Developer intern, and studying Computer Science at <AnimatedLink href="https://www.oa.edu.ua/" text="@OstrohAcademy" />.
+      {HOME_TEXT.HERO.DESC_START} <AnimatedLink href="https://www.softserveinc.com/" text="@SoftServe" /> {HOME_TEXT.HERO.DESC_MIDDLE} <AnimatedLink href="https://www.oa.edu.ua/" text="@OstrohAcademy" /> {HOME_TEXT.HERO.DESC_END}
     </p>
   </div>
 

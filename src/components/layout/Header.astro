@@ -1,12 +1,13 @@
 ---
 import { Clock } from '@/components/common/Clock'
+import { COMMON_TEXT } from '@/const/common'
 
 const currentPath = Astro.url.pathname
 
 const navItems = [
-	{ href: '/work', label: 'Work' },
-	{ href: '/about', label: 'About' },
-	{ href: '/contact', label: 'Contact' },
+	{ href: '/work', label: COMMON_TEXT.NAVIGATION.WORK },
+	{ href: '/about', label: COMMON_TEXT.NAVIGATION.ABOUT },
+	{ href: '/contact', label: COMMON_TEXT.NAVIGATION.CONTACT },
 ]
 ---
 
