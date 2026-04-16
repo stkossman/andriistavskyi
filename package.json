@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^5.0.3",
+    "@astrojs/sitemap": "^3.7.2",
     "@fontsource-variable/unbounded": "^5.2.8",
     "@fontsource/arimo": "^5.2.8",
     "@tailwindcss/vite": "^4.2.2",

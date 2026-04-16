@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /404
+
+Sitemap: https://www.andriistavskyi.me/sitemap-index.xml
