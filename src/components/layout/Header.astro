@@ -1,21 +1,22 @@
 ---
 import { Clock } from '@/components/common/Clock'
+import Logo from '@/components/common/Logo.astro'
 import { COMMON_TEXT } from '@/const/common'
 
 const currentPath = Astro.url.pathname
 
 const navItems = [
-	{ href: '/work', label: COMMON_TEXT.NAVIGATION.WORK },
-	{ href: '/about', label: COMMON_TEXT.NAVIGATION.ABOUT },
-	{ href: '/contact', label: COMMON_TEXT.NAVIGATION.CONTACT },
+  { href: '/work', label: COMMON_TEXT.NAVIGATION.WORK },
+  { href: '/about', label: COMMON_TEXT.NAVIGATION.ABOUT },
+  { href: '/contact', label: COMMON_TEXT.NAVIGATION.CONTACT },
 ]
 ---
 
-<header class="flex justify-between items-center py-10 px-6 md:px-12 lg:px-16 w-full">
+<header class="flex justify-between items-center py-10 px-6 md:px-12 lg:px-16 w-full0">
   
   <div class="flex items-center gap-8 md:gap-12">
-    <a href="/" class="flex-shrink-0">
-      <img src="/favicon.svg" alt="Andrii" class="h-8 md:h-10 w-auto" />
+    <a href="/" class="flex-shrink-0 text-text-primary hover:text-accent transition-colors duration-fast ease-smooth" aria-label="Home">
+      <Logo class="h-10 md:h-12" />
     </a>
     
     <nav class="flex gap-4 md:gap-8 text-sm font-medium text-text-primary">
@@ -26,8 +27,8 @@ const navItems = [
           <a 
             href={item.href} 
             class:list={[
-              "p-1 transition-colors duration-fast ease-smooth hover:bg-text-muted",
-              { "bg-text-muted": isActive } 
+              "p-1 transition-colors duration-fast ease-smooth hover:text-accent",
+              { "text-accent": isActive } 
             ]}
           >
             {item.label}
@@ -37,7 +38,8 @@ const navItems = [
     </nav>
   </div>
 
-  <div class="hidden sm:block"> <Clock client:only="react" />
+  <div class="hidden sm:flex items-center gap-6">
+    <Clock client:only="react" />
   </div>
 
 </header>
