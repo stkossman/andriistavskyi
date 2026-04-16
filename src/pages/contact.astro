@@ -1,39 +1,13 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import AnimatedLink from '@/components/AnimatedLink.astro'
+import ContactHero from '@/components/pages/contact/ContactHero.astro'
+import ContactLinks from '@/components/pages/contact/ContactLinks.astro'
 ---
 
 <Layout title="Contact — Andrii Stavskyi">
   <div class="flex flex-col flex-grow w-full justify-start pb-8 md:pb-12">
-    
-    <section class="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-16 items-start">
-      
-      <div class="xl:col-span-11 flex flex-col pr-0">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold leading-[1.02] tracking-tighter text-text-primary">
-          Feel free to reach out! I'm always happy to chat about new projects, ideas, or just say hi
-        </h1>
-        
-        <div class="flex flex-col gap-5 text-xl md:text-2xl text-text-primary leading-normal font-medium mt-16 md:mt-24">
-          
-          <div class="flex items-center gap-3">
-            <span class="text-text-secondary w-32">Email ↗</span>
-            <AnimatedLink href="mailto:an.stawski@outlook.com" text="an.stawski@outlook.com" />
-          </div>
-          
-          <div class="flex items-center gap-3">
-            <span class="text-text-secondary w-32">GitHub ↗</span>
-            <AnimatedLink href="https://github.com/stkossman" text="github.com/stkossman" />
-          </div>
-          
-          <div class="flex items-center gap-3">
-            <span class="text-text-secondary w-32">LinkedIn ↗</span>
-            <AnimatedLink href="https://www.linkedin.com/in/andriistavskyi/" text="linkedin.com/in/andriistavskyi" />
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-
+    <ContactHero>
+      <ContactLinks />
+    </ContactHero>
   </div>
 </Layout>
