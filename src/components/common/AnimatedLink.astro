@@ -1,7 +1,7 @@
 ---
 interface Props {
-	href: string
-	text: string
+  href: string
+  text: string
 }
 
 const { href, text } = Astro.props
@@ -35,5 +35,5 @@ const letters = text.split('')
     ))}
   </span>
   
-  <span class="absolute bottom-0 left-0 w-full h-[1px] bg-border transition-colors duration-normal ease-smooth group-hover:bg-text-primary"></span>
+  <span class="absolute bottom-0 left-0 w-full h-[1px] bg-border transition-colors duration-normal ease-smooth group-hover:bg-accent"></span>
 </a>
