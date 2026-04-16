@@ -1,0 +1,5 @@
+@theme {
+  --font-heading: 'Unbounded Variable', 'Unbounded', sans-serif;
+  --font-body: 'Arimo', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Fira Code', 'Cascadia Code', monospace;
+}

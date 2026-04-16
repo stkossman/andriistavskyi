@@ -5,19 +5,19 @@
     "": {
       "name": "andriistavskyi",
       "dependencies": {
-        "@astrojs/react": "latest",
-        "@fontsource-variable/bricolage-grotesque": "latest",
-        "@fontsource/arimo": "latest",
-        "@tailwindcss/vite": "latest",
-        "@types/react": "latest",
-        "@types/react-dom": "latest",
-        "astro": "latest",
-        "react": "latest",
-        "react-dom": "latest",
-        "tailwindcss": "latest",
+        "@astrojs/react": "^5.0.3",
+        "@fontsource-variable/unbounded": "^5.2.8",
+        "@fontsource/arimo": "^5.2.8",
+        "@tailwindcss/vite": "^4.2.2",
+        "@types/react": "^19.2.14",
+        "@types/react-dom": "^19.2.3",
+        "astro": "^6.1.7",
+        "react": "^19.2.5",
+        "react-dom": "^19.2.5",
+        "tailwindcss": "^4.2.2",
       },
       "devDependencies": {
-        "@biomejs/biome": "latest",
+        "@biomejs/biome": "^2.4.12",
       },
     },
   },
@@ -150,7 +150,7 @@
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.27.3", "", { "os": "win32", "cpu": "x64" }, "sha512-4uJGhsxuptu3OcpVAzli+/gWusVGwZZHTlS63hh++ehExkVT8SgiEf7/uC/PclrPPkLhZqGgCTjd0VWLo6xMqA=="],
 
-    "@fontsource-variable/bricolage-grotesque": ["@fontsource-variable/bricolage-grotesque@5.2.10", "", {}, "sha512-5EDsCqgGpKVcJWE4sg9ydli+t5WM97mISYw5lla/Ev4z71FwXh1oN0YUU8xjkRW9+wBCGD9R+ntAvI8G4bUFJg=="],
+    "@fontsource-variable/unbounded": ["@fontsource-variable/unbounded@5.2.8", "", {}, "sha512-DWC/HEdNNbjMH6ngeeCAPExKMsedoY+pV3ZnRXzFcAzXuGHB6dEwsXNVQ4fiuuYMGguq9TSAEUat4Oy5prdwWQ=="],
 
     "@fontsource/arimo": ["@fontsource/arimo@5.2.8", "", {}, "sha512-EGB/l4PhYsxJbskePrgFQKM3Ob+x3Xr+VZDuSMR2XNVQYhx8t5zIfiMxCLLbgBPkY2qeXGfbyrXeAOEGl1lOSA=="],
 

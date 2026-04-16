@@ -1,0 +1,16 @@
+@theme {
+  --color-bg-base: #fafaf7;
+  --color-bg-subtle: #f2f2ee;
+  --color-bg-muted: #e8e8e3;
+
+  --color-text-primary: #111110;
+  --color-text-secondary: #6b6b63;
+  --color-text-muted: #a8a89e;
+
+  --color-accent: #efe600;
+  --color-accent-hover: #d4cc00;
+  --color-accent-subtle: #fbf89a;
+
+  --color-border: #e2e2dc;
+  --color-border-strong: #c8c8c0;
+}
