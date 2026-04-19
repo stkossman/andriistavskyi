@@ -12,7 +12,7 @@ const letters = text.split('')
   href={href} 
   target="_blank" 
   rel="noopener noreferrer" 
-  class="group relative inline-flex overflow-hidden items-center text-text-primary font-medium"
+  class="group relative inline-flex overflow-hidden items-center text-primary font-medium"
 >
   <span class="inline-flex">
     {letters.map((char, i) => (
@@ -35,5 +35,5 @@ const letters = text.split('')
     ))}
   </span>
   
-  <span class="absolute bottom-0 left-0 w-full h-[1px] bg-border transition-colors duration-normal ease-smooth group-hover:bg-accent"></span>
+  <span class="absolute bottom-0 left-0 w-full h-[1px] bg-border transition-colors duration-normal ease-smooth group-hover:bg-secondary-hover"></span>
 </a>
