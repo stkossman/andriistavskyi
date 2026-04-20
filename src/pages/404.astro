@@ -1,0 +1,27 @@
+---
+import '@fontsource-variable/unbounded'
+import '@fontsource/arimo'
+import '@/styles/global.css'
+
+import Seo from '@/components/common/Seo.astro'
+import ErrorHero from '@/components/pages/error-page/ErrorHero.astro'
+import ErrorMessage from '@/components/pages/error-page/ErrorMessage.astro'
+
+const title = "404: Acceptable Loss — Andrii Stavskyi";
+const description = "Page not found. Ratio: 0/1.";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Seo title={title} description={description} />
+  </head>
+  <body class="min-h-screen flex flex-col bg-basic text-primary font-body selection:bg-primary selection:text-basic overflow-hidden">
+    
+    <main class="flex-grow flex flex-col items-center justify-center w-full px-6 md:px-12 relative">
+      <ErrorHero />
+      <ErrorMessage />
+    </main>
+
+  </body>
+</html>
