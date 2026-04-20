@@ -7,7 +7,7 @@ interface Props {
 
 const defaultDescription = "Andrii Stavskyi - Frontend Developer focusing on clear architecture, intentional design, and minimalist software.";
 const defaultImage = "/og-image.jpg";
-const siteName = "Andrii Stavskyi";
+const siteName = "Andrii Stavskyi - Frontend Engineer";
 
 const { 
   title, 
@@ -17,6 +17,13 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url);
 const socialImageURL = new URL(image, Astro.site || Astro.url);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": siteName,
+  "url": Astro.site || "https://www.andriistavskyi.me/" 
+};
 ---
 
 <meta charset="utf-8" />
@@ -43,3 +50,5 @@ const socialImageURL = new URL(image, Astro.site || Astro.url);
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={socialImageURL} />
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
