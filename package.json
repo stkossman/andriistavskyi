@@ -1,31 +1,37 @@
 {
-  "name": "andriistavskyi",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "lint": "biome lint ./src",
-    "format": "biome format ./src --write",
-    "check": "biome check ./src --write"
-  },
-  "dependencies": {
-    "@astrojs/react": "^5.0.3",
-    "@astrojs/sitemap": "^3.7.2",
-    "@fontsource-variable/unbounded": "^5.2.8",
-    "@fontsource/arimo": "^5.2.8",
-    "@tailwindcss/vite": "^4.2.2",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vercel/analytics": "^2.0.1",
-    "@vercel/speed-insights": "^2.0.0",
-    "astro": "^6.1.7",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
-    "tailwindcss": "^4.2.2"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^2.4.12"
-  }
+	"name": "andriistavskyi",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"lint": "biome lint ./src",
+		"format": "biome format ./src --write",
+		"check": "biome check ./src --write"
+	},
+	"dependencies": {
+		"@astrojs/react": "^5.0.3",
+		"@astrojs/sitemap": "^3.7.2",
+		"@fontsource-variable/unbounded": "^5.2.8",
+		"@fontsource/arimo": "^5.2.8",
+		"@tailwindcss/vite": "^4.2.2",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
+		"@vercel/analytics": "^2.0.1",
+		"@vercel/speed-insights": "^2.0.0",
+		"astro": "^6.1.7",
+		"react": "^19.2.5",
+		"react-dom": "^19.2.5",
+		"tailwindcss": "^4.2.2"
+	},
+	"devDependencies": {
+		"@astrojs/check": "^0.9.8",
+		"@biomejs/biome": "^2.4.12",
+		"@commitlint/cli": "^20.5.0",
+		"@commitlint/config-conventional": "^20.5.0",
+		"lefthook": "^2.1.6",
+		"lint-staged": "^16.4.0",
+		"typescript": "5"
+	}
 }

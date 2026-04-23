@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export function Clock() {
 	const [time, setTime] = useState<{ hours: string; minutes: string } | null>(

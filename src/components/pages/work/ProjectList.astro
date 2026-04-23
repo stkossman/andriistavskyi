@@ -1,17 +1,16 @@
 ---
-import AnimatedLink from '@/components/common/AnimatedLink.astro'
 import { Image } from 'astro:assets'
-import { WORK_TEXT } from '@/const/work'
-import { COMMON_TEXT } from '@/const/common'
-
-import soliloquyImg from '@/assets/images/projects/soliloquy.png'
-import cinemafrontImg from '@/assets/images/projects/cinemafront.png'
 import cinemadocsImg from '@/assets/images/projects/cinemadocs.png'
+import cinemafrontImg from '@/assets/images/projects/cinemafront.png'
+import soliloquyImg from '@/assets/images/projects/soliloquy.png'
+import AnimatedLink from '@/components/common/AnimatedLink.astro'
+import { COMMON_TEXT } from '@/const/common'
+import { WORK_TEXT } from '@/const/work'
 
 const projectImages = [soliloquyImg, cinemafrontImg, cinemadocsImg]
 ---
 <div class="flex flex-col gap-32 md:gap-[30vh] lg:gap-[50vh] mt-12 md:mt-24">
-  {WORK_TEXT.PROJECTS.map((project, index) => (
+  {WORK_TEXT.PROJECTS.map((project: any, index: number) => (
     <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
       
       <div class="lg:col-span-4 xl:col-span-3 flex flex-col gap-6 order-2 lg:order-1 sticky top-12">
@@ -20,7 +19,7 @@ const projectImages = [soliloquyImg, cinemafrontImg, cinemadocsImg]
         </h2>
         
         <div class="flex flex-col gap-4 text-base md:text-lg text-secondary leading-relaxed">
-          {project.description.map(paragraph => (
+          {project.description.map((paragraph: string) => (
             <p>{paragraph}</p>
           ))}
         </div>
@@ -37,7 +36,7 @@ const projectImages = [soliloquyImg, cinemafrontImg, cinemadocsImg]
       <div class="project-image-container relative lg:col-span-8 xl:col-span-9 order-1 lg:order-2 w-full aspect-[4/3] md:aspect-[16/9] bg-border rounded-sm overflow-hidden group cursor-none">
         <a href={project.link} target="_blank" rel="noopener noreferrer" class="block w-full h-full">
           <Image 
-            src={projectImages[index]} 
+            src={projectImages[index] as any} 
             alt={`Preview of ${project.title}`}
             class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-slow scale-100 group-hover:scale-[1.02]"
           />
