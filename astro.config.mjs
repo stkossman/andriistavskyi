@@ -1,15 +1,15 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
 
-import react from '@astrojs/react';
+import react from '@astrojs/react'
+import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
-import sitemap from '@astrojs/sitemap';
+import { defineConfig } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.andriistavskyi.me/',
-  integrations: [react(), sitemap()],
-  vite : {
-    plugins: [tailwindcss()],
-  }
-});
+	site: 'https://www.andriistavskyi.me/',
+	integrations: [react(), sitemap()],
+	vite: {
+		plugins: [tailwindcss()],
+	},
+})

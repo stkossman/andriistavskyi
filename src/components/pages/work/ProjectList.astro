@@ -1,13 +1,9 @@
 ---
-import { Image } from 'astro:assets'
 import cinemadocsImg from '@/assets/images/projects/cinemadocs.png'
 import cinemafrontImg from '@/assets/images/projects/cinemafront.png'
 import soliloquyImg from '@/assets/images/projects/soliloquy.png'
-import AnimatedLink from '@/components/common/AnimatedLink.astro'
-import { COMMON_TEXT } from '@/const/common'
-import { WORK_TEXT } from '@/const/work'
 
-const projectImages = [soliloquyImg, cinemafrontImg, cinemadocsImg]
+const _projectImages = [soliloquyImg, cinemafrontImg, cinemadocsImg]
 ---
 <div class="flex flex-col gap-32 md:gap-[30vh] lg:gap-[50vh] mt-12 md:mt-24">
   {WORK_TEXT.PROJECTS.map((project, index) => (

@@ -1,11 +1,9 @@
 ---
-import { Clock } from '@/components/common/Clock'
-import Logo from '@/components/common/Logo.astro'
 import { COMMON_TEXT } from '@/const/common'
 
-const currentPath = Astro.url.pathname
+const _currentPath = Astro.url.pathname
 
-const navItems = [
+const _navItems = [
 	{ href: '/work', label: COMMON_TEXT.NAVIGATION.WORK },
 	{ href: '/about', label: COMMON_TEXT.NAVIGATION.ABOUT },
 	{ href: '/contact', label: COMMON_TEXT.NAVIGATION.CONTACT },
