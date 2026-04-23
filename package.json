@@ -32,6 +32,6 @@
 		"@commitlint/config-conventional": "^20.5.0",
 		"lefthook": "^2.1.6",
 		"lint-staged": "^16.4.0",
-		"typescript": "5"
+		"typescript": "6"
 	}
 }
