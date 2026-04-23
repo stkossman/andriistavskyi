@@ -16,10 +16,10 @@ const {
 	image = defaultImage,
 } = Astro.props
 
-const _canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url)
-const _socialImageURL = new URL(image, Astro.site || Astro.url)
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url)
+const socialImageURL = new URL(image, Astro.site || Astro.url)
 
-const _jsonLd = {
+const jsonLd = {
 	'@context': 'https://schema.org',
 	'@type': 'WebSite',
 	name: siteName,
