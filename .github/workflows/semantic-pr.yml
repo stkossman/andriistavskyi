@@ -8,6 +8,10 @@ on:
       - synchronize
       - reopened
 
+permissions:
+  pull-requests: read
+  statuses: write
+
 jobs:
   validate:
     name: Validate PR Title
