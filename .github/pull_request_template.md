@@ -1,9 +1,25 @@
-## Description
-**Resolves:** ### Changes Proposed
-* * * ## Expected Result
-## Visuals (if applicable)
-## Verification Checklist
-- [ ] My code follows the strict architectural guidelines of this project.
-- [ ] I have verified that the UI remains strictly minimalist (no unnecessary noise).
-- [ ] I have tested these changes locally (`bun run dev`).
-- [ ] The `bunx biome check` and `bunx astro check` commands pass locally.
+## What & Why
+<!-- A sentence or two: what changed and why it was needed -->
+
+**Resolves:** #
+
+---
+
+## Changes
+<!-- List the key changes. Be specific but brief -->
+
+-
+
+---
+
+## Visuals
+<!-- Screenshots, screen recordings, or "N/A" -->
+
+---
+
+## Checklist
+
+- [ ] Follows project architecture
+- [ ] UI stays minimal — no unnecessary noise
+- [ ] Tested locally (`bun run dev`)
+- [ ] `bunx biome check` and `bunx astro check` pass
