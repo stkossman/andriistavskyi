@@ -1,4 +1,5 @@
 ---
+import { ArrowUpRight } from 'lucide-astro'
 import AnimatedLink from '@/components/common/AnimatedLink.astro'
 import { CONTACT_TEXT } from '@/const/contact'
 ---
@@ -6,16 +7,16 @@ import { CONTACT_TEXT } from '@/const/contact'
 <div class="flex flex-col gap-5 text-xl md:text-2xl text-text-primary leading-normal font-medium mt-16 md:mt-24">
   <div class="flex items-center gap-3">
     <span class="text-text-secondary w-32">{CONTACT_TEXT.LABELS.EMAIL}</span>
-    <AnimatedLink href="mailto:an.stawski@outlook.com" text="an.stawski@outlook.com" />
+    <AnimatedLink href="mailto:an.stawski@outlook.com" text="an.stawski@outlook.com" icon={ArrowUpRight} />
   </div>
-  
+
   <div class="flex items-center gap-3">
     <span class="text-text-secondary w-32">{CONTACT_TEXT.LABELS.GITHUB}</span>
-    <AnimatedLink href="https://github.com/stkossman" text="github.com/stkossman" />
+    <AnimatedLink href="https://github.com/stkossman" text="github.com/stkossman" icon={ArrowUpRight} />
   </div>
-  
+
   <div class="flex items-center gap-3">
     <span class="text-text-secondary w-32">{CONTACT_TEXT.LABELS.LINKEDIN}</span>
-    <AnimatedLink href="https://www.linkedin.com/in/andriistavskyi/" text="linkedin.com/in/andriistavskyi" />
+    <AnimatedLink href="https://www.linkedin.com/in/andriistavskyi/" text="linkedin.com/in/andriistavskyi" icon={ArrowUpRight} />
   </div>
 </div>

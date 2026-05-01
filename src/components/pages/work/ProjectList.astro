@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import { ArrowUpRight } from 'lucide-astro'
 import cinemadocsImg from '@/assets/images/projects/cinemadocs.png'
 import cinemafrontImg from '@/assets/images/projects/cinemafront.png'
 import soliloquyImg from '@/assets/images/projects/soliloquy.png'
@@ -12,12 +13,12 @@ const projectImages = [soliloquyImg, cinemafrontImg, cinemadocsImg]
 <div class="flex flex-col gap-32 md:gap-[30vh] lg:gap-[50vh] mt-12 md:mt-24">
   {WORK_TEXT.PROJECTS.map((project: any, index: number) => (
     <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-      
+
       <div class="lg:col-span-4 xl:col-span-3 flex flex-col gap-6 order-2 lg:order-1 sticky top-12">
         <h2 class="text-3xl md:text-4xl font-heading font-bold text-primary tracking-tight">
           {project.title}
         </h2>
-        
+
         <div class="flex flex-col gap-4 text-base md:text-lg text-secondary leading-relaxed">
           {project.description.map((paragraph: string) => (
             <p>{paragraph}</p>
@@ -28,20 +29,20 @@ const projectImages = [soliloquyImg, cinemafrontImg, cinemadocsImg]
           <span class="font-mono text-xs uppercase tracking-widest text-text-muted mb-1">{WORK_TEXT.LABELS.STACK_AND_LINKS}</span>
           <span class="text-primary font-medium text-sm">{project.tech}</span>
           <div class="mt-2">
-            <AnimatedLink href={project.link} text={COMMON_TEXT.COMPONENTS.VIEW_REPO} />
+            <AnimatedLink href={project.link} text={COMMON_TEXT.COMPONENTS.VIEW_REPO} icon={ArrowUpRight} />
           </div>
         </div>
       </div>
 
       <div class="project-image-container relative lg:col-span-8 xl:col-span-9 order-1 lg:order-2 w-full aspect-[4/3] md:aspect-[16/9] bg-border rounded-sm overflow-hidden group cursor-none">
         <a href={project.link} target="_blank" rel="noopener noreferrer" class="block w-full h-full">
-          <Image 
-            src={projectImages[index] as any} 
+          <Image
+            src={projectImages[index] as any}
             alt={`Preview of ${project.title}`}
             class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-slow scale-100 group-hover:scale-[1.02]"
           />
         </a>
-        
+
         <div class="custom-cursor pointer-events-none absolute top-0 left-0 z-50 flex items-center justify-center w-15 h-15 rounded-full bg-accent text-basic font-mono text-xs font-bold uppercase tracking-widest opacity-0 scale-50 transition-all duration-fast ease-smooth group-hover:opacity-100 group-hover:scale-100">
           {COMMON_TEXT.COMPONENTS.CURSOR_REPO}
         </div>
@@ -56,13 +57,13 @@ const projectImages = [soliloquyImg, cinemafrontImg, cinemadocsImg]
 
   containers.forEach(container => {
     const cursor = container.querySelector('.custom-cursor') as HTMLElement;
-    
+
     container.addEventListener('mousemove', (e) => {
       const mouseEvent = e as MouseEvent;
       const rect = container.getBoundingClientRect();
       const x = mouseEvent.clientX - rect.left;
       const y = mouseEvent.clientY - rect.top;
-      
+
       cursor.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
     });
   });

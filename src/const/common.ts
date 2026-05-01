@@ -9,7 +9,7 @@ export const COMMON_TEXT = {
 	},
 	COMPONENTS: {
 		CLOCK_COUNTRY: 'Ukraine',
-		VIEW_REPO: 'View Repository ↗',
+		VIEW_REPO: 'View Repository',
 		CURSOR_REPO: 'Repo',
 	},
 } as const
