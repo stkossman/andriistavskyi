@@ -1,20 +1,22 @@
 ---
+import { ArrowUpRight } from 'lucide-astro'
 import { ERROR_TEXT } from '@/const/error'
 ---
 
 <div class="flex flex-col items-center mt-12 md:mt-16 z-10">
-  
+
   <div class="font-mono text-sm md:text-base uppercase tracking-widest text-secondary text-center leading-relaxed mb-12">
     <p>{ERROR_TEXT.MESSAGE_LINES[0]}</p>
     <p class="text-primary font-bold my-1">{ERROR_TEXT.MESSAGE_LINES[1]}</p>
     <p>{ERROR_TEXT.MESSAGE_LINES[2]}</p>
   </div>
-  
-  <a 
-    href="/" 
+
+  <a
+    href="/"
     class="inline-flex items-center justify-center px-8 py-4 font-mono text-xs font-bold uppercase tracking-widest bg-primary text-basic hover:bg-accent hover:text-basic transition-colors duration-normal"
   >
     {ERROR_TEXT.BUTTON}
+    <ArrowUpRight class="ml-2 w-4 h-4 text-current" aria-hidden="true" />
   </a>
 
 </div>

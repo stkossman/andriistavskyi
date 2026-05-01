@@ -5,5 +5,5 @@ export const ERROR_TEXT = {
 		'Ratio: 0/1.',
 		'This is an acceptable loss.',
 	],
-	BUTTON: 'Resume operations ↗',
+	BUTTON: 'Resume operations',
 } as const

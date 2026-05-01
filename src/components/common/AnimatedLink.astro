@@ -1,17 +1,23 @@
 ---
+type IconComponent = (props: {
+	class?: string
+	'aria-hidden'?: string | boolean
+}) => unknown
+
 interface Props {
 	href: string
 	text: string
+	icon?: IconComponent
 }
 
-const { href, text } = Astro.props
+const { href, text, icon: Icon } = Astro.props
 const letters = text.split('')
 ---
 
-<a 
-  href={href} 
-  target="_blank" 
-  rel="noopener noreferrer" 
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
   class="group relative inline-flex overflow-hidden items-center text-primary font-medium"
 >
   <span class="inline-flex">
@@ -23,6 +29,7 @@ const letters = text.split('')
         {char === ' ' ? '\u00A0' : char}
       </span>
     ))}
+    {Icon && <Icon class="ml-1 w-4 h-4 text-current" aria-hidden="true" />}
   </span>
   <span class="absolute inset-0 inline-flex">
     {letters.map((char: string, i: number) => (
@@ -33,7 +40,8 @@ const letters = text.split('')
         {char === ' ' ? '\u00A0' : char}
       </span>
     ))}
+    {Icon && <Icon class="ml-1 w-4 h-4 text-current" aria-hidden="true" />}
   </span>
-  
+
   <span class="absolute bottom-0 left-0 w-full h-[1px] bg-border transition-colors duration-normal ease-smooth group-hover:bg-secondary-hover"></span>
 </a>
