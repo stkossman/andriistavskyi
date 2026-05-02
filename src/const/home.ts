@@ -15,4 +15,14 @@ export const HOME_TEXT = {
 		PARAGRAPH_2:
 			"My approach centers around minimalism and clarity. I enjoy crafting experiences that respect the user's attention, combining clean aesthetics with robust functionality.",
 	},
+	STACK: [
+		'C#',
+		'Node.js',
+		'React',
+		'Astro',
+		'Tailwind',
+		'PostgreSQL',
+		'MySQL',
+		'Prisma',
+	],
 } as const

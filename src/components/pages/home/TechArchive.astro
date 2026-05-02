@@ -12,46 +12,15 @@ import { HOME_TEXT } from '@/const/home'
     {HOME_TEXT.ARCHIVE.PARAGRAPH_2}
   </div>
 
-  <div class="xl:col-span-4 flex flex-col font-mono text-xs tracking-wide xl:justify-self-end mt-4 xl:mt-0">
-    <div class="grid grid-cols-[2rem_2.5rem_1fr] gap-x-1 gap-y-1.5 w-max">
+  <div class="xl:col-span-4 flex flex-wrap content-start gap-x-2 gap-y-1 font-mono text-xs tracking-widest uppercase text-secondary xl:justify-self-end mt-4 xl:mt-0 w-full md:max-w-[280px]">
+      <span class="text-primary font-semibold">Stack //</span>
       
-      <div class="text-primary font-semibold">SV.</div>
-      <div class="text-primary">009</div>
-      <div class="text-secondary">C#</div>
-      
-      <div></div> 
-      <div class="text-primary">022</div>
-      <div class="text-secondary">Node.js</div>
-
-      <div class="text-primary font-semibold mt-3">UI.</div>
-      <div class="text-primary mt-3">300</div>
-      <div class="text-secondary mt-3">React</div>
-      
-      <div></div>
-      <div class="text-primary">432</div>
-      <div class="text-secondary">Astro</div>
-
-      <div></div>
-      <div class="text-primary">004</div>
-      <div class="text-secondary">TailwindCSS</div>
-
-      <div class="text-primary font-semibold mt-3">DT.</div>
-      <div class="text-primary mt-3">543</div>
-      <div class="text-secondary mt-3">PostgreSQL</div>
-      
-      <div></div>
-      <div class="text-primary">330</div>
-      <div class="text-secondary">MySQL</div>
-      
-      <div class="text-primary font-semibold mt-3">TL.</div>
-      <div class="text-primary mt-3">001</div>
-      <div class="text-secondary mt-3">Git</div>
-      
-      <div></div>
-      <div class="text-primary">002</div>
-      <div class="text-secondary">Prisma ORM</div>
-
+      {HOME_TEXT.STACK.map((tech, index, array) => (
+        <>
+          <span class="hover:text-primary transition-colors cursor-default">{tech}</span>
+          {index < array.length - 1 && <span class="opacity-50">/</span>}
+        </>
+      ))}
     </div>
-  </div>
 
 </section>
