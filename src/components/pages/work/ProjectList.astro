@@ -4,11 +4,17 @@ import { ArrowUpRight } from 'lucide-astro'
 import cinemadocsImg from '@/assets/images/projects/cinemadocs.png'
 import cinemafrontImg from '@/assets/images/projects/cinemafront.png'
 import soliloquyImg from '@/assets/images/projects/soliloquy.png'
+import victorycenterImg from '@/assets/images/projects/victorycenter.png'
 import AnimatedLink from '@/components/common/AnimatedLink.astro'
 import { COMMON_TEXT } from '@/const/common'
 import { WORK_TEXT } from '@/const/work'
 
-const projectImages = [soliloquyImg, cinemafrontImg, cinemadocsImg]
+const projectImages = [
+	soliloquyImg,
+	victorycenterImg,
+	cinemafrontImg,
+	cinemadocsImg,
+]
 ---
 <div class="flex flex-col gap-32 md:gap-[30vh] lg:gap-[50vh] mt-12 md:mt-24">
   {WORK_TEXT.PROJECTS.map((project: any, index: number) => (
@@ -26,8 +32,12 @@ const projectImages = [soliloquyImg, cinemafrontImg, cinemadocsImg]
         </div>
 
         <div class="flex flex-col gap-1 mt-4">
+          <span class="font-mono text-xs uppercase tracking-widest text-text-muted mb-1">{WORK_TEXT.LABELS.SCOPE_AND_ROLE}</span>
+          <span class="text-primary font-medium text-sm mb-4">{project.context} — {project.role}</span>
+        
           <span class="font-mono text-xs uppercase tracking-widest text-text-muted mb-1">{WORK_TEXT.LABELS.STACK_AND_LINKS}</span>
           <span class="text-primary font-medium text-sm">{project.tech}</span>
+          
           <div class="mt-2">
             <AnimatedLink href={project.link} text={COMMON_TEXT.COMPONENTS.VIEW_REPO} icon={ArrowUpRight} />
           </div>
