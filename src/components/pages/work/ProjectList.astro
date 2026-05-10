@@ -57,9 +57,14 @@ const projectImages = [
           {COMMON_TEXT.COMPONENTS.CURSOR_REPO}
         </div>
       </div>
-
     </section>
   ))}
+  <section class="flex flex-col items-center justify-center text-center mt-12 md:mt-32 pb-24 border-t border-border pt-24">
+    <h3 class="text-secondary font-mono text-xs uppercase tracking-widest mb-6">
+      {WORK_TEXT.FOOTER.TITLE}
+    </h3>
+    <AnimatedLink href="/other-works" text={WORK_TEXT.FOOTER.LINK_TEXT} />
+  </section>
 </div>
 
 <script>
