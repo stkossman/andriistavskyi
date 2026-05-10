@@ -1,0 +1,42 @@
+---
+import type { Project } from '@/const/other-works'
+
+interface Props {
+	project: Project
+}
+
+const { project } = Astro.props
+
+const spanClasses = {
+	small: 'col-span-1 md:col-span-1',
+	wide: 'col-span-1 md:col-span-2',
+	large: 'col-span-1 md:col-span-3',
+}
+
+const panelClass = spanClasses[project.panelSize || 'small']
+---
+
+<a 
+  href={project.link} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  class={`group flex flex-col border-[6px] border-primary p-6 md:p-8 hover:bg-primary hover:text-basic transition-none ${panelClass}`}
+>
+  <div class="flex justify-between items-start mb-12 md:mb-24 gap-4">
+    <span class="font-mono text-sm md:text-base font-bold opacity-50 group-hover:opacity-100 transition-none shrink-0">
+      #{project.id}
+    </span>
+    <span class="font-mono text-xs uppercase tracking-widest border-2 border-primary px-3 py-1 group-hover:border-basic group-hover:text-basic transition-none text-right">
+      {project.tech}
+    </span>
+  </div>
+
+  <div class="mt-auto">
+    <h3 class="font-heading text-4xl md:text-6xl font-black mb-4 uppercase tracking-tighter leading-[0.9] group-hover:text-basic transition-none">
+      {project.title}
+    </h3>
+    <p class="font-mono text-sm md:text-base leading-relaxed opacity-80 group-hover:opacity-100 transition-none">
+      {project.description}
+    </p>
+  </div>
+</a>
