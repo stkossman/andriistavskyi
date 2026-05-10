@@ -57,4 +57,8 @@ export const WORK_TEXT = {
 			link: 'https://github.com/ModusTeam/cinema-platform-docs',
 		},
 	],
+	FOOTER: {
+		TITLE: 'Looking for experimental repositories?',
+		LINK_TEXT: '[ Access Arsenal ]',
+	},
 } as const
