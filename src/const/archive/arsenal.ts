@@ -21,7 +21,7 @@ export const ARSENAL_WORKS: ArsenalWork[] = [
 		id: '002',
 		title: 'Toji Fushiguro Theme',
 		description: 'VS Code theme inspired by Toji Fushiguro.',
-		tech: 'CSS, VS Code Extension API',
+		tech: 'CSS',
 		link: 'https://github.com/stkossman/toji-fushiguro-theme',
 		panelSize: 'small',
 	},
@@ -29,7 +29,7 @@ export const ARSENAL_WORKS: ArsenalWork[] = [
 		id: '003',
 		title: 'Abysswalker Theme',
 		description: 'A minimal, dark fantasy inspired VS Code theme.',
-		tech: 'CSS, VS Code Extension API',
+		tech: 'CSS',
 		link: 'https://github.com/stkossman/abysswalker-theme',
 		panelSize: 'wide',
 	},
@@ -61,12 +61,12 @@ export const ARSENAL_WORKS_TEXT = {
 		TITLE: 'ARSENAL',
 		DESCRIPTION:
 			'A collection of my personal projects, tools, and experiments.',
-		NUMBER: '02',
+		NUMBER: '01',
 	},
 	DECORATION: {
 		ID_PREFIX: '#',
 	},
 	BUTTON: {
-		TEXT: '[ Return to Main ]',
+		TEXT: '[ Return to Hub ]',
 	},
 }
