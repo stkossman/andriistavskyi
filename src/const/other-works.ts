@@ -54,9 +54,16 @@ export const PROJECTS: Project[] = [
 ]
 
 export const OTHER_WORKS = {
+	METADATA: {
+		TITLE: 'Archive — Andri Stavskyi',
+	},
 	HERO: {
 		TITLE: 'ARCHIVE',
 		DESCRIPTION: 'Secondary repositories. Experimental tools.',
+		NUMBER: '02',
+	},
+	DECORATION: {
+		ID_PREFIX: '#',
 	},
 	BUTTON: {
 		TEXT: '[ Return to Main ]',

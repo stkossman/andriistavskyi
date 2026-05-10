@@ -4,7 +4,7 @@ import { OTHER_WORKS, PROJECTS } from '@/const/other-works'
 import MangaLayout from '@/layouts/MangaLayout.astro'
 ---
 
-<MangaLayout title="Arsenal — Andrii Stavskyi">
+<MangaLayout title={OTHER_WORKS.METADATA.TITLE}>
   <header class="mb-12 md:mb-16 border-b-[12px] border-primary pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
     <div>
       <h1 class="font-heading text-6xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none mb-2 md:mb-4">
@@ -16,7 +16,7 @@ import MangaLayout from '@/layouts/MangaLayout.astro'
     </div>
     
     <div class="hidden lg:block font-heading text-[8rem] font-black leading-none opacity-10">
-      02
+      {OTHER_WORKS.HERO.NUMBER}
     </div>
   </header>
 

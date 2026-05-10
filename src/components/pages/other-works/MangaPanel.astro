@@ -1,5 +1,5 @@
 ---
-import type { Project } from '@/const/other-works'
+import { OTHER_WORKS, type Project } from '@/const/other-works'
 
 interface Props {
 	project: Project
@@ -24,7 +24,7 @@ const panelClass = spanClasses[project.panelSize || 'small']
 >
   <div class="flex justify-between items-start mb-12 md:mb-24 gap-4">
     <span class="font-mono text-sm md:text-base font-bold opacity-50 group-hover:opacity-100 transition-none shrink-0">
-      #{project.id}
+      {OTHER_WORKS.DECORATION.ID_PREFIX}{project.id}
     </span>
     <span class="font-mono text-xs uppercase tracking-widest border-2 border-primary px-3 py-1 group-hover:border-basic group-hover:text-basic transition-none text-right">
       {project.tech}
