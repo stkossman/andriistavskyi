@@ -1,4 +1,4 @@
-export interface Project {
+export interface ArsenalWork {
 	id: string
 	title: string
 	description: string
@@ -7,7 +7,7 @@ export interface Project {
 	panelSize?: 'small' | 'wide' | 'large'
 }
 
-export const PROJECTS: Project[] = [
+export const ARSENAL_WORKS: ArsenalWork[] = [
 	{
 		id: '001',
 		title: 'StackFetch',
@@ -21,7 +21,7 @@ export const PROJECTS: Project[] = [
 		id: '002',
 		title: 'Toji Fushiguro Theme',
 		description: 'VS Code theme inspired by Toji Fushiguro.',
-		tech: 'CSS',
+		tech: 'CSS, VS Code Extension API',
 		link: 'https://github.com/stkossman/toji-fushiguro-theme',
 		panelSize: 'small',
 	},
@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
 		id: '003',
 		title: 'Abysswalker Theme',
 		description: 'A minimal, dark fantasy inspired VS Code theme.',
-		tech: 'CSS',
+		tech: 'CSS, VS Code Extension API',
 		link: 'https://github.com/stkossman/abysswalker-theme',
 		panelSize: 'wide',
 	},
@@ -53,13 +53,14 @@ export const PROJECTS: Project[] = [
 	},
 ]
 
-export const OTHER_WORKS = {
+export const ARSENAL_WORKS_TEXT = {
 	METADATA: {
-		TITLE: 'Archive — Andri Stavskyi',
+		TITLE: 'Arsenal — Andri Stavskyi',
 	},
 	HERO: {
-		TITLE: 'ARCHIVE',
-		DESCRIPTION: 'Secondary repositories. Experimental tools.',
+		TITLE: 'ARSENAL',
+		DESCRIPTION:
+			'A collection of my personal projects, tools, and experiments.',
 		NUMBER: '02',
 	},
 	DECORATION: {
