@@ -28,18 +28,16 @@ import MangaLayout from '@/layouts/MangaLayout.astro'
         
         <ul class="flex flex-col border-t-2 border-primary">
           {category.items.map((item) => (
-            <li>
-              <div class="group flex items-end p-4 md:p-6 border-b-2 border-primary hover:bg-primary hover:text-basic transition-none cursor-crosshair">
-                <span class="font-mono text-base md:text-xl font-bold uppercase whitespace-nowrap transition-none">
-                  {item.name}
-                </span>
-                
-                <div class="dotted-leader"></div>
-                
-                <span class="font-mono text-sm md:text-lg opacity-80 text-right transition-none">
-                  {item.description}
-                </span>
-              </div>
+            <li class="group flex items-end p-4 md:p-6 border-b-2 border-primary hover:bg-primary hover:text-basic transition-none cursor-crosshair">
+              <span class="font-mono text-base md:text-xl font-bold uppercase whitespace-nowrap transition-none">
+                {item.name}
+              </span>
+              
+              <div class="dotted-leader"></div>
+              
+              <span class="font-mono text-sm md:text-lg opacity-80 text-right transition-none">
+                {item.description}
+              </span>
             </li>
           ))}
         </ul>

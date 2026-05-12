@@ -55,7 +55,7 @@ export const ARSENAL_WORKS: ArsenalWork[] = [
 
 export const ARSENAL_WORKS_TEXT = {
 	METADATA: {
-		TITLE: 'Arsenal — Andri Stavskyi',
+		TITLE: 'Arsenal — Andrii Stavskyi',
 	},
 	HERO: {
 		TITLE: 'ARSENAL',
@@ -68,5 +68,6 @@ export const ARSENAL_WORKS_TEXT = {
 	},
 	BUTTON: {
 		TEXT: '[ Return to Hub ]',
+		HREF: '/archive',
 	},
 }

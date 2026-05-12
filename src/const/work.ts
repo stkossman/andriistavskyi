@@ -60,5 +60,6 @@ export const WORK_TEXT = {
 	FOOTER: {
 		TITLE: 'Looking for experimental repositories?',
 		LINK_TEXT: '[ Access Arsenal ]',
+		HREF: '/archive',
 	},
 } as const
