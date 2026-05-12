@@ -37,3 +37,18 @@
   color: #ffffff;
   text-decoration-color: transparent;
 }
+
+.theme-manga .dotted-leader {
+  flex-grow: 1;
+  border-bottom: 3px dotted var(--color-primary);
+  margin: 0 1rem;
+  opacity: 0.4;
+  position: relative;
+  top: -0.4em; 
+  transition: none;
+}
+
+.theme-manga .group:hover .dotted-leader {
+  border-bottom-color: var(--color-basic);
+  opacity: 0.8;
+}

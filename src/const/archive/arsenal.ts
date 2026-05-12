@@ -1,4 +1,4 @@
-export interface Project {
+export interface ArsenalWork {
 	id: string
 	title: string
 	description: string
@@ -7,7 +7,7 @@ export interface Project {
 	panelSize?: 'small' | 'wide' | 'large'
 }
 
-export const PROJECTS: Project[] = [
+export const ARSENAL_WORKS: ArsenalWork[] = [
 	{
 		id: '001',
 		title: 'StackFetch',
@@ -53,19 +53,21 @@ export const PROJECTS: Project[] = [
 	},
 ]
 
-export const OTHER_WORKS = {
+export const ARSENAL_WORKS_TEXT = {
 	METADATA: {
-		TITLE: 'Archive — Andri Stavskyi',
+		TITLE: 'Arsenal — Andrii Stavskyi',
 	},
 	HERO: {
-		TITLE: 'ARCHIVE',
-		DESCRIPTION: 'Secondary repositories. Experimental tools.',
-		NUMBER: '02',
+		TITLE: 'ARSENAL',
+		DESCRIPTION:
+			'A collection of my personal projects, tools, and experiments.',
+		NUMBER: '01',
 	},
 	DECORATION: {
 		ID_PREFIX: '#',
 	},
 	BUTTON: {
-		TEXT: '[ Return to Main ]',
+		TEXT: '[ Return to Hub ]',
+		HREF: '/archive',
 	},
 }
