@@ -22,7 +22,7 @@ export const ARSENAL_WORKS: ArsenalWork[] = [
 		title: 'Winup',
 		description: 'Minimal CLI tool for managing winget upgrades.',
 		tech: 'Node, TypeScript',
-		link: 'https://github.com/stkossman/winup',
+		link: 'https://winup-cli.vercel.app/',
 		panelSize: 'small',
 	},
 	{
@@ -30,7 +30,7 @@ export const ARSENAL_WORKS: ArsenalWork[] = [
 		title: 'Toji Theme',
 		description: 'VS Code theme inspired by Toji Fushiguro.',
 		tech: 'CSS',
-		link: 'https://github.com/stkossman/toji-fushiguro-theme',
+		link: 'https://vscodethemes.com/e/Kossman.toji-fushiguro-theme/toji-fushiguro-theme',
 		panelSize: 'small',
 	},
 	{
@@ -38,7 +38,7 @@ export const ARSENAL_WORKS: ArsenalWork[] = [
 		title: 'Abysswalker Theme',
 		description: 'A minimal, dark fantasy inspired VS Code theme.',
 		tech: 'CSS',
-		link: 'https://github.com/stkossman/abysswalker-theme',
+		link: 'https://vscodethemes.com/e/Kossman.abysswalker-theme/abysswalker',
 		panelSize: 'wide',
 	},
 	{
