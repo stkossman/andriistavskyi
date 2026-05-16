@@ -15,18 +15,26 @@ export const ARSENAL_WORKS: ArsenalWork[] = [
 			'CLI that displays essential information about your current working directory.',
 		tech: 'TypeScript, Shell',
 		link: 'https://github.com/stkossman/StackFetch',
-		panelSize: 'large',
+		panelSize: 'wide',
 	},
 	{
 		id: '002',
-		title: 'Toji Fushiguro Theme',
+		title: 'Winup',
+		description: 'Minimal CLI tool for managing winget upgrades.',
+		tech: 'Node, TypeScript',
+		link: 'https://github.com/stkossman/winup',
+		panelSize: 'small',
+	},
+	{
+		id: '003',
+		title: 'Toji Theme',
 		description: 'VS Code theme inspired by Toji Fushiguro.',
 		tech: 'CSS',
 		link: 'https://github.com/stkossman/toji-fushiguro-theme',
 		panelSize: 'small',
 	},
 	{
-		id: '003',
+		id: '004',
 		title: 'Abysswalker Theme',
 		description: 'A minimal, dark fantasy inspired VS Code theme.',
 		tech: 'CSS',
@@ -34,7 +42,7 @@ export const ARSENAL_WORKS: ArsenalWork[] = [
 		panelSize: 'wide',
 	},
 	{
-		id: '004',
+		id: '005',
 		title: 'Frameworks Mini Project',
 		description:
 			'A comprehensive collection of mini-projects built with minimalist frameworks.',
@@ -43,7 +51,7 @@ export const ARSENAL_WORKS: ArsenalWork[] = [
 		panelSize: 'large',
 	},
 	{
-		id: '005',
+		id: '006',
 		title: 'Ukraine Phone Formatter',
 		description:
 			'Ukraine Phone Formatter is a simple Ruby gem that formats Ukrainian phone numbers into a readable and standardized format.',
