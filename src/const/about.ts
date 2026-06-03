@@ -7,7 +7,7 @@ export const ABOUT_TEXT = {
 		BACKGROUND: {
 			TITLE: 'Background',
 			DESCRIPTION:
-				"I'm currently studying Computer Science at Ostroh Academy and refining my skills through a .NET/React internship at SoftServe. I hold a B2 First (FCE) Cambridge certification, which allows me to comfortably consume documentation and collaborate without language barriers.",
+				"I'm studying Computer Science at Ostroh Academy, have completed a .NET/React internship at SoftServe, and am actively looking for work. I hold a B2 First (FCE) Cambridge certification, which allows me to comfortably consume documentation and collaborate without language barriers.",
 		},
 		WORKFLOW: {
 			TITLE: 'Workflow',
