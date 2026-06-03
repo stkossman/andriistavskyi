@@ -1,0 +1,187 @@
+---
+import Layout from '@/layouts/Layout.astro'
+
+const links = [
+	{ label: 'Website', href: '/' },
+	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/andriistavskyi/' },
+	{ label: 'GitHub', href: 'https://github.com/stkossman' },
+]
+
+const experience = [
+	{
+		company: 'SoftServe',
+		location: 'Remote',
+		role: 'Full-Stack Developer Intern (Completed)',
+		period: 'Mar 2026 - Jun 2026',
+		description:
+			"Took ownership of the 'Home' and 'Company Profile' administrative modules for the Victory Center project, delivering features across the entire stack. Designed backend endpoints using C# and .NET 9, leveraging CQRS/MediatR for clean separation of commands and queries. Implemented frontend solutions in React and TypeScript, handling complex state synchronization and form validation. Successfully resolved architectural and merge conflicts, refining project configurations to optimize the development workflow. Currently actively looking for work.",
+	},
+	{
+		company: 'National University "Ostroh Academy"',
+		location: '',
+		role: 'Frontend Developer (University Practice)',
+		period: 'Jan 2026 - Feb 2026',
+		description:
+			'Led frontend development for a Cinema Management SPA using React and TypeScript, integrating with an ASP.NET Core API. Engineered a real-time seat selection component and an interactive cinema hall builder. Implemented secure authentication and protected routes within the client application. Acted as Team Lead, managing Git Flow, conducting code reviews, and distributing tasks.',
+	},
+]
+
+const projects = [
+	{
+		name: 'Soliloquy',
+		stack: 'Astro, React, Dexie.js, Bun',
+		description:
+			'Developed a privacy-centric, serverless note-taking application designed with a familiar messenger-style user interface. Engineered a 100% local-first data layer utilizing IndexedDB for instant load times and data ownership. Built an optimized frontend architecture using Astro/React on the Bun runtime.',
+	},
+	{
+		name: 'Winup',
+		stack: 'TypeScript, Bun, CLI',
+		description:
+			'Created a fast, interactive command-line wrapper for managing Windows package upgrades (winget) without visual noise. Implemented a safe-by-default upgrade flow.',
+	},
+]
+
+const skills = [
+	{
+		label: 'Frontend',
+		value:
+			'TypeScript, JavaScript, React, Astro, TailwindCSS, HTML/CSS, TanStack Query, Dexie.js',
+	},
+	{
+		label: 'Backend',
+		value: 'C#, .NET (ASP.NET Core), Node.js, Express.js',
+	},
+	{
+		label: 'Databases',
+		value: 'PostgreSQL, MSSQL, MySQL, Firebase',
+	},
+	{
+		label: 'Build Tools & Infrastructure',
+		value: 'Git, Docker, Bun, Vite, Biome',
+	},
+]
+
+const certifications = [
+	'CS50 (2024, Cambridge, Massachusetts)',
+	'Cambridge First Certificate in English (2022)',
+	'Ukrainian (Native), English (Professional Working Proficiency)',
+]
+---
+
+<Layout title="Resume — Andrii Stavskyi">
+  <article class="w-full max-w-3xl mx-auto py-20 md:py-28">
+    <header class="mb-16 md:mb-24">
+      <div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+        <div>
+          <p class="text-sm md:text-base text-text-secondary mb-4">Full-Stack Developer</p>
+          <h1 class="text-4xl md:text-6xl font-heading font-medium leading-none">
+            Andrii Stavskyi
+          </h1>
+        </div>
+
+        <a
+          href="/resume.pdf"
+          download
+          class="inline-flex w-fit items-center text-sm md:text-base font-medium text-primary border-b border-border hover:border-secondary-hover"
+        >
+          Download PDF
+        </a>
+      </div>
+
+      <div class="mt-10 flex flex-col gap-2 text-base md:text-lg text-text-secondary leading-relaxed">
+        <p>an.stawski@outlook.com | +380730929621 | Zviahel, Ukraine</p>
+        <nav aria-label="Resume links" class="flex flex-wrap gap-x-5 gap-y-2">
+          {links.map((link) => (
+            <a href={link.href} class="text-primary border-b border-border hover:border-secondary-hover">
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <div class="flex flex-col gap-16 md:gap-20">
+      <section aria-labelledby="summary">
+        <h2 id="summary" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-6">
+          Summary
+        </h2>
+        <p class="text-xl md:text-2xl leading-relaxed text-primary">
+          Frontend-oriented Full-Stack Developer dedicated to building robust, minimalist web applications and high-performance tooling. Proficient in architecting complex systems using React, TypeScript, and .NET, with hands-on experience implementing real-time synchronization (SignalR), local-first storage (IndexedDB), and Feature-Sliced Design. Experienced in delivering end-to-end features - from clean, reusable UI components to secure backend administrative modules. Passionate about developer experience (DX) and modern, fast runtimes.
+        </p>
+      </section>
+
+      <section aria-labelledby="experience">
+        <h2 id="experience" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-8">
+          Experience
+        </h2>
+        <ul class="flex flex-col gap-10">
+          {experience.map((item) => (
+            <li>
+              <div class="flex flex-col gap-1 mb-4">
+                <h3 class="text-xl md:text-2xl font-heading font-medium">{item.company}</h3>
+                <p class="text-text-secondary leading-relaxed">
+                  {[item.location, item.role, item.period].filter(Boolean).join(' | ')}
+                </p>
+              </div>
+              <p class="text-lg leading-relaxed text-primary">{item.description}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="education">
+        <h2 id="education" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-6">
+          Education
+        </h2>
+        <div class="flex flex-col gap-1">
+          <h3 class="text-xl md:text-2xl font-heading font-medium">National University "Ostroh Academy"</h3>
+          <p class="text-lg text-text-secondary leading-relaxed">
+            Bachelor's in Computer Science | Sep 2023 - Present
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="projects">
+        <h2 id="projects" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-8">
+          Selected Projects
+        </h2>
+        <ul class="flex flex-col gap-8">
+          {projects.map((project) => (
+            <li>
+              <h3 class="text-xl md:text-2xl font-heading font-medium mb-3">
+                {project.name}
+                <span class="text-text-secondary"> ({project.stack})</span>
+              </h3>
+              <p class="text-lg leading-relaxed text-primary">{project.description}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="skills">
+        <h2 id="skills" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-8">
+          Skills
+        </h2>
+        <ul class="flex flex-col gap-5">
+          {skills.map((skill) => (
+            <li class="text-lg leading-relaxed">
+              <strong class="font-medium text-primary">{skill.label}:</strong>
+              <span class="text-text-secondary"> {skill.value}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="certifications">
+        <h2 id="certifications" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-8">
+          Certifications & Languages
+        </h2>
+        <ul class="flex list-disc flex-col gap-3 pl-5 text-lg leading-relaxed text-primary">
+          {certifications.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  </article>
+</Layout>
