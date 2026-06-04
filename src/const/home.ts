@@ -4,9 +4,9 @@ export const HOME_TEXT = {
 		ROLE_START: 'Developer. Please welcome to my',
 		DIGITAL: 'digital',
 		ROLE_END: 'space.',
-		DESC_START: 'Currently passing a .NET/React internship ',
+		DESC_START: 'Completed a .NET/React internship ',
 		DESC_MIDDLE:
-			', previously Team Lead & Frontend Developer intern, and studying Computer Science at ',
+			', now actively looking for work and studying Computer Science at ',
 		DESC_END: '.',
 	},
 	ARCHIVE: {

@@ -1,0 +1,134 @@
+---
+import { RESUME_TEXT } from '@/const/resume'
+import Layout from '@/layouts/Layout.astro'
+
+const {
+	META,
+	HEADER,
+	LINKS,
+	SECTIONS,
+	EXPERIENCE,
+	EDUCATION,
+	PROJECTS,
+	SKILLS,
+	CERTIFICATIONS,
+} = RESUME_TEXT
+---
+
+<Layout title={META.TITLE}>
+  <article class="w-full max-w-3xl mx-auto py-20 md:py-28">
+    <header class="mb-16 md:mb-24">
+      <div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+        <div>
+          <p class="text-sm md:text-base text-text-secondary mb-4">{HEADER.ROLE}</p>
+          <h1 class="text-4xl md:text-6xl font-heading font-medium leading-none">
+            {HEADER.NAME}
+          </h1>
+        </div>
+
+        <a
+          href="/resume.pdf"
+          download
+          class="inline-flex w-fit items-center text-sm md:text-base font-medium text-primary border-b border-border hover:border-secondary-hover"
+        >
+          {HEADER.DOWNLOAD}
+        </a>
+      </div>
+
+      <div class="mt-10 flex flex-col gap-2 text-base md:text-lg text-text-secondary leading-relaxed">
+        <p>{HEADER.CONTACT_INFO}</p>
+        <nav aria-label={META.TITLE} class="flex flex-wrap gap-x-5 gap-y-2">
+          {LINKS.map((link) => (
+            <a href={link.href} class="text-primary border-b border-border hover:border-secondary-hover">
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <div class="flex flex-col gap-16 md:gap-20">
+      <section aria-labelledby="summary">
+        <h2 id="summary" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-6">
+          {SECTIONS.SUMMARY.TITLE}
+        </h2>
+        <p class="text-xl md:text-2xl leading-relaxed text-primary">
+          {SECTIONS.SUMMARY.CONTENT}
+        </p>
+      </section>
+
+      <section aria-labelledby="experience">
+        <h2 id="experience" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-8">
+          {SECTIONS.EXPERIENCE.TITLE}
+        </h2>
+        <ul class="flex flex-col gap-10">
+          {EXPERIENCE.map((item) => (
+            <li>
+              <div class="flex flex-col gap-1 mb-4">
+                <h3 class="text-xl md:text-2xl font-heading font-medium">{item.company}</h3>
+                <p class="text-text-secondary leading-relaxed">
+                  {[item.location, item.role, item.period].filter(Boolean).join(' | ')}
+                </p>
+              </div>
+              <p class="text-lg leading-relaxed text-primary">{item.description}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="education">
+        <h2 id="education" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-6">
+          {SECTIONS.EDUCATION.TITLE}
+        </h2>
+        <div class="flex flex-col gap-1">
+          <h3 class="text-xl md:text-2xl font-heading font-medium">{EDUCATION.INSTITUTION}</h3>
+          <p class="text-lg text-text-secondary leading-relaxed">
+            {EDUCATION.DEGREE}
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="projects">
+        <h2 id="projects" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-8">
+          {SECTIONS.PROJECTS.TITLE}
+        </h2>
+        <ul class="flex flex-col gap-8">
+          {PROJECTS.map((project) => (
+            <li>
+              <h3 class="text-xl md:text-2xl font-heading font-medium mb-3">
+                {project.name}
+                <span class="text-text-secondary"> ({project.stack})</span>
+              </h3>
+              <p class="text-lg leading-relaxed text-primary">{project.description}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="skills">
+        <h2 id="skills" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-8">
+          {SECTIONS.SKILLS.TITLE}
+        </h2>
+        <ul class="flex flex-col gap-5">
+          {SKILLS.map((skill) => (
+            <li class="text-lg leading-relaxed">
+              <strong class="font-medium text-primary">{skill.label}:</strong>
+              <span class="text-text-secondary"> {skill.value}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="certifications">
+        <h2 id="certifications" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-8">
+          {SECTIONS.CERTIFICATIONS.TITLE}
+        </h2>
+        <ul class="flex list-disc flex-col gap-3 pl-5 text-lg leading-relaxed text-primary">
+          {CERTIFICATIONS.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  </article>
+</Layout>

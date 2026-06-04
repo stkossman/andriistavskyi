@@ -7,5 +7,6 @@ export const CONTACT_TEXT = {
 		EMAIL: 'Email',
 		GITHUB: 'GitHub',
 		LINKEDIN: 'LinkedIn',
+		RESUME: 'Resume',
 	},
 } as const
