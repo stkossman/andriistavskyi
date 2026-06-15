@@ -2,25 +2,26 @@
 import { HOME_TEXT } from '@/const/home'
 ---
 
-<section class="mt-24 xl:mt-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-10 xl:gap-8 items-end text-sm md:text-base font-body  text-secondary">
-  
-  <div class="xl:col-span-4 leading-relaxed pr-0 md:pr-8">
-    {HOME_TEXT.ARCHIVE.PARAGRAPH_1}
+<section class="mt-16 md:mt-20 xl:mt-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-6 xl:gap-8 items-end font-mono text-xs tracking-widest uppercase text-secondary">
+  <div class="xl:col-span-5 flex flex-wrap gap-x-2 gap-y-1">
+    <span class="text-primary font-semibold">{HOME_TEXT.META.AVAILABILITY_LABEL} /</span>
+
+    {HOME_TEXT.META.AVAILABILITY.map((item, index, array) => (
+      <>
+        <span class="hover:text-primary transition-colors cursor-default">{item}</span>
+        {index < array.length - 1 && <span class="opacity-50">·</span>}
+      </>
+    ))}
   </div>
 
-  <div class="xl:col-span-4 leading-relaxed pr-0 md:pr-8">
-    {HOME_TEXT.ARCHIVE.PARAGRAPH_2}
+  <div class="xl:col-span-4 xl:col-start-9 flex flex-wrap gap-x-2 gap-y-1 xl:justify-self-end w-full md:max-w-[360px]">
+    <span class="text-primary font-semibold">{HOME_TEXT.META.STACK_LABEL} /</span>
+
+    {HOME_TEXT.STACK.map((tech, index, array) => (
+      <>
+        <span class="hover:text-primary transition-colors cursor-default">{tech}</span>
+        {index < array.length - 1 && <span class="opacity-50">·</span>}
+      </>
+    ))}
   </div>
-
-  <div class="xl:col-span-4 flex flex-wrap content-start gap-x-2 gap-y-1 font-mono text-xs tracking-widest uppercase text-secondary xl:justify-self-end mt-4 xl:mt-0 w-full md:max-w-[280px]">
-      <span class="text-primary font-semibold">Stack //</span>
-      
-      {HOME_TEXT.STACK.map((tech, index, array) => (
-        <>
-          <span class="hover:text-primary transition-colors cursor-default">{tech}</span>
-          {index < array.length - 1 && <span class="opacity-50">/</span>}
-        </>
-      ))}
-    </div>
-
 </section>
