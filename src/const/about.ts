@@ -7,17 +7,17 @@ export const ABOUT_TEXT = {
 		BACKGROUND: {
 			TITLE: 'Background',
 			DESCRIPTION:
-				"I'm studying Computer Science at Ostroh Academy, have completed a .NET/React internship at SoftServe, and am actively looking for work. I hold a B2 First (FCE) Cambridge certification, which allows me to comfortably consume documentation and collaborate without language barriers.",
+				"I'm studying Computer Science at Ostroh Academy and recently completed a .NET/React internship at SoftServe. I'm currently open to junior frontend/full-stack opportunities and comfortable working with English documentation and international teams.",
 		},
 		WORKFLOW: {
 			TITLE: 'Workflow',
 			DESCRIPTION:
-				'My development environment reflects my design philosophy: highly functional and stripped of bloat. I run a keyboard-centric workflow relying on Vim, customized Linux distributions like Fedora, and the Hyprland tiling window manager to keep my workspace structured.',
+				'I prefer focused, keyboard-driven workflows and lightweight tools that help me stay productive. My setup is intentionally minimal, structured, and optimized for fast iteration.',
 		},
 		OFF_SCREEN: {
 			TITLE: 'Off-Screen',
 			DESCRIPTION:
-				"When I'm not writing code, I'm drawn to the atmosphere and challenge of Dark Fantasy—immersing myself in worlds like Dark Souls, Elden Ring, and Berserk. I also have a deep interest in Indian culture and spend time watching Bollywood films.",
+				"Outside code, I'm drawn to dark fantasy, Souls-like worlds, Indian culture, and films - references that often shape my visual taste and atmosphere.",
 		},
 	},
 } as const
