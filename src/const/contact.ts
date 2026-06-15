@@ -1,7 +1,9 @@
 export const CONTACT_TEXT = {
 	HERO: {
 		TITLE:
-			"Feel free to reach out! I'm always happy to chat about new projects, ideas, or just say hi",
+			"Let's build something clean. I'm open to new opportunities and collaborations.",
+		SUBTITLE:
+			'Currently open to junior frontend/full-stack roles, freelance projects, and meaningful product work.',
 	},
 	LABELS: {
 		EMAIL: 'Email',
