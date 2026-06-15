@@ -1,13 +1,15 @@
 export const HOME_TEXT = {
 	HERO: {
 		GREETING: "Hello, I'm Andrii,",
-		ROLE_START: 'Developer. Please welcome to my',
-		DIGITAL: 'digital',
-		ROLE_END: 'space.',
-		DESC_START: 'Completed a .NET/React internship ',
+		ROLE_START: 'Frontend-focused',
+		ROLE_MIDDLE: 'Developer',
+		ROLE_END: 'building clean digital products.',
+		DESC_START:
+			'React, TypeScript, Astro and .NET developer. Completed a .NET/React internship at ',
 		DESC_MIDDLE:
-			', now actively looking for work and studying Computer Science at ',
-		DESC_END: '.',
+			' and currently open to junior frontend/full-stack opportunities.',
+		PRIMARY_CTA: 'View Work',
+		SECONDARY_CTA: 'View Resume',
 	},
 	ARCHIVE: {
 		PARAGRAPH_1:
@@ -15,14 +17,10 @@ export const HOME_TEXT = {
 		PARAGRAPH_2:
 			"My approach centers around minimalism and clarity. I enjoy crafting experiences that respect the user's attention, combining clean aesthetics with robust functionality.",
 	},
-	STACK: [
-		'C#',
-		'Node.js',
-		'React',
-		'Astro',
-		'Tailwind',
-		'PostgreSQL',
-		'MySQL',
-		'Prisma',
-	],
+	STACK: ['React', 'TypeScript', 'Astro', '.NET'],
+	META: {
+		AVAILABILITY_LABEL: 'Open to work',
+		AVAILABILITY: ['Frontend', 'Full-stack', 'Remote'],
+		STACK_LABEL: 'Stack',
+	},
 } as const

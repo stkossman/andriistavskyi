@@ -1,11 +1,13 @@
 export const WORK_TEXT = {
 	HERO: {
 		TITLE:
-			"A few projects I'm building. Turning complex problems into clean, functional, and minimal software.",
+			'Selected work in React, .NET, and local-first web apps. Clean interfaces, focused architecture, and practical systems.',
 	},
 	LABELS: {
 		SCOPE_AND_ROLE: 'Scope & Role',
-		STACK_AND_LINKS: 'Stack & Links',
+		STACK: 'Stack',
+		FOCUS: 'Technical Focus',
+		LINKS: 'Links',
 	},
 	PROJECTS: [
 		{
@@ -13,10 +15,10 @@ export const WORK_TEXT = {
 			title: 'Soliloquy',
 			context: 'Personal Project',
 			role: 'Full-stack Developer',
-			description: [
-				'A local-first reimagining of "Saved Messages", designed as a private messenger where the only contact is you.',
-				'Engineered for absolute privacy and performance. It leverages IndexedDB (via Dexie.js) for zero-cloud data persistence, wrapped in a highly reactive Astro and React architecture.',
-			],
+			description:
+				'A private, local-first notes app inspired by messenger interfaces, where the user is the only contact.',
+			focus:
+				'Built zero-cloud persistence with IndexedDB and Dexie.js, pairing Astro with React for a fast, minimal writing experience.',
 			tech: 'Astro, React, TypeScript, TailwindCSS, Dexie.js',
 			link: 'https://github.com/stkossman/soliloquy',
 		},
@@ -25,10 +27,10 @@ export const WORK_TEXT = {
 			title: 'Victory Center Platform',
 			context: 'Internship / SoftServe',
 			role: 'Full-stack Developer',
-			description: [
-				'A comprehensive full-stack management system developed as part of the SoftServe IT Academy. The platform handles dynamic content management, team profiles, and donation processing.',
-				'Engineered transactional Admin operations using .NET 9 with CQRS and MediatR patterns. On the client side, I developed key administrative modules in React and resolved intricate form validation edge-cases to ensure a robust user experience.',
-			],
+			description:
+				'A full-stack management platform for content, team profiles, and donation-related workflows, developed during the SoftServe IT Academy.',
+			focus:
+				'Implemented admin-facing modules in React and supported transactional .NET 9 operations using CQRS and MediatR patterns.',
 			tech: 'C# (.NET 9), React, TypeScript, MediatR, MS SQL',
 			link: 'https://github.com/ita-social-projects/VictoryCenter-Back',
 		},
@@ -37,10 +39,10 @@ export const WORK_TEXT = {
 			title: 'Cinema Platform - Frontend',
 			context: 'Commercial / Practice',
 			role: 'Frontend Developer',
-			description: [
-				'A comprehensive web client for a Cinema Management System, strictly structured around the Feature-Sliced Design (FSD) architectural pattern.',
-				'Implements real-time WebSocket synchronization via SignalR for live seat-locking, complex server state management with TanStack Query, and an immersive modern UI.',
-			],
+			description:
+				'A cinema management web client structured around Feature-Sliced Design for a modular, maintainable frontend.',
+			focus:
+				'Integrated SignalR seat-lock synchronization and TanStack Query server state flows for responsive booking interactions.',
 			tech: 'React, TypeScript, TailwindCSS, SignalR, TanStack Query',
 			link: 'https://github.com/ModusTeam/cinema-platform-front',
 		},
@@ -49,17 +51,17 @@ export const WORK_TEXT = {
 			title: 'Cinema Platform - Documentation',
 			context: 'Commercial / Practice',
 			role: 'Technical Writer',
-			description: [
-				'The centralized developer hub and single source of truth for the Cinema Platform ecosystem.',
-				'Built with Astro Starlight, featuring an automated integration that parses remote OpenAPI (swagger.json) specifications to generate interactive REST API references alongside architectural guides.',
-			],
+			description:
+				'A centralized developer documentation hub for the Cinema Platform ecosystem, built as a practical source of truth.',
+			focus:
+				'Used Astro Starlight and OpenAPI parsing to generate interactive REST references alongside architecture guides.',
 			tech: 'Astro Starlight, OpenAPI, TailwindCSS',
 			link: 'https://github.com/ModusTeam/cinema-platform-docs',
 		},
 	],
 	FOOTER: {
-		TITLE: 'Looking for experimental repositories?',
-		LINK_TEXT: '[ Access Arsenal ]',
+		TITLE: 'Smaller experiments and repositories live in the archive.',
+		LINK_TEXT: 'Access Arsenal',
 		HREF: '/archive',
 	},
 } as const

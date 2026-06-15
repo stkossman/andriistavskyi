@@ -9,17 +9,18 @@ const navItems = [
 	{ href: '/work', label: COMMON_TEXT.NAVIGATION.WORK },
 	{ href: '/about', label: COMMON_TEXT.NAVIGATION.ABOUT },
 	{ href: '/contact', label: COMMON_TEXT.NAVIGATION.CONTACT },
+	{ href: '/resume', label: COMMON_TEXT.NAVIGATION.RESUME },
 ]
 ---
 
-<header class="flex justify-between items-center py-10 px-6 md:px-12 lg:px-16 w-full0">
+<header class="flex justify-between items-center py-8 md:py-10 px-6 md:px-12 lg:px-16 w-full">
   
-  <div class="flex items-center gap-8 md:gap-12">
+  <div class="flex items-center gap-7 md:gap-12 min-w-0">
     <a href="/" class="flex-shrink-0 text-primary hover:text-accent transition-colors duration-fast ease-smooth" aria-label="Home">
       <Logo class="h-10 md:h-12" />
     </a>
     
-    <nav class="flex gap-4 md:gap-8 text-sm font-medium text-primary">
+    <nav class="flex flex-wrap gap-x-4 gap-y-1 md:gap-x-8 text-sm font-medium text-primary">
       {navItems.map((item: { href: string; label: string }) => {
         const isActive = currentPath.startsWith(item.href);
         
@@ -27,9 +28,10 @@ const navItems = [
           <a 
             href={item.href} 
             class:list={[
-              "p-1 transition-colors duration-fast ease-smooth hover:text-accent",
-              { "text-accent": isActive } 
+              "relative p-1 transition-colors duration-fast ease-smooth hover:text-accent after:absolute after:left-1 after:right-1 after:-bottom-0.5 after:h-px after:bg-current after:transition-opacity after:duration-fast",
+              isActive ? "text-accent after:opacity-100" : "after:opacity-0" 
             ]}
+            aria-current={isActive ? 'page' : undefined}
           >
             {item.label}
           </a>
