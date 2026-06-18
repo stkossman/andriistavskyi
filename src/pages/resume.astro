@@ -1,6 +1,6 @@
 ---
 import CtaLink from '@/components/common/CtaLink.astro'
-import { RESUME_TEXT } from '@/const/resume'
+import { BULLET, RESUME_TEXT } from '@/const/resume'
 import Layout from '@/layouts/Layout.astro'
 
 const {
@@ -17,12 +17,12 @@ const {
 ---
 
 <Layout title={META.TITLE}>
-  <article class="w-full max-w-3xl mx-auto py-16 md:py-24">
-    <header class="mb-14 md:mb-20">
+  <article class="w-full max-w-5xl mx-auto py-16 md:py-24">
+    <header class="mb-12 border-y border-border py-8 md:mb-16 md:py-10">
       <div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
         <div>
-          <p class="text-sm md:text-base text-text-secondary mb-4">{HEADER.ROLE}</p>
-          <h1 class="text-4xl md:text-6xl font-heading font-medium leading-none">
+          <p class="text-sm md:text-base text-text-secondary mb-4 font-mono uppercase tracking-widest">{HEADER.ROLE}</p>
+          <h1 class="max-w-3xl text-5xl md:text-7xl font-heading font-medium leading-none">
             {HEADER.NAME}
           </h1>
         </div>
@@ -31,13 +31,13 @@ const {
           href="/resume.pdf"
           variant="primary"
           download={true}
-          className="w-fit"
+          className="w-fit min-h-12 px-5"
         >
           {HEADER.DOWNLOAD}
         </CtaLink>
       </div>
 
-      <div class="mt-8 flex flex-col gap-2 text-base md:text-lg text-text-secondary leading-relaxed">
+      <div class="mt-8 flex max-w-3xl flex-col gap-3 text-base md:text-lg text-text-secondary leading-relaxed">
         <p>{HEADER.CONTACT_INFO}</p>
         <nav aria-label={META.TITLE} class="flex flex-wrap gap-x-5 gap-y-2">
           {LINKS.map((link) => (
@@ -49,32 +49,35 @@ const {
       </div>
     </header>
 
-    <div class="flex flex-col gap-12 md:gap-16">
-      <section aria-labelledby="summary">
-        <h2 id="summary" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-5">
+    <div class="flex flex-col gap-10 md:gap-12">
+      <section aria-labelledby="summary" class="border-b border-border pb-10 md:grid md:grid-cols-[12rem_1fr] md:gap-10 md:pb-12">
+        <h2 id="summary" class="mb-5 text-sm font-heading uppercase tracking-normal text-text-secondary md:mb-0 md:pt-1">
           {SECTIONS.SUMMARY.TITLE}
         </h2>
-        <p class="text-lg md:text-xl leading-relaxed text-primary">
+        <p class="max-w-3xl text-lg md:text-xl leading-relaxed text-primary">
           {SECTIONS.SUMMARY.CONTENT}
         </p>
       </section>
 
-      <section aria-labelledby="experience">
-        <h2 id="experience" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-6">
+      <section aria-labelledby="experience" class="border-b border-border pb-10 md:grid md:grid-cols-[12rem_1fr] md:gap-10 md:pb-12">
+        <h2 id="experience" class="mb-6 text-sm font-heading uppercase tracking-normal text-text-secondary md:mb-0 md:pt-1">
           {SECTIONS.EXPERIENCE.TITLE}
         </h2>
-        <ul class="flex flex-col gap-9">
+        <ul class="flex max-w-3xl flex-col gap-9">
           {EXPERIENCE.map((item) => (
             <li>
-              <div class="flex flex-col gap-1 mb-3">
+              <div class="flex flex-col gap-1 mb-4">
                 <h3 class="text-xl md:text-2xl font-heading font-medium">{item.company}</h3>
                 <p class="text-text-secondary leading-relaxed">
                   {[item.location, item.role, item.period].filter(Boolean).join(' | ')}
                 </p>
               </div>
-              <ul class="flex list-disc flex-col gap-2 pl-5 text-base md:text-lg leading-relaxed text-primary">
+              <ul class="flex list-none flex-col gap-2 text-base md:text-lg leading-relaxed text-primary">
                 {item.bullets.map((bullet) => (
-                  <li>{bullet}</li>
+                  <li class="grid grid-cols-[1.1rem_1fr] gap-3">
+                    <span aria-hidden="true" class="pt-1 text-sm leading-relaxed text-accent">{BULLET}</span>
+                    <span>{bullet}</span>
+                  </li>
                 ))}
               </ul>
             </li>
@@ -82,11 +85,11 @@ const {
         </ul>
       </section>
 
-      <section aria-labelledby="education">
-        <h2 id="education" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-5">
+      <section aria-labelledby="education" class="border-b border-border pb-10 md:grid md:grid-cols-[12rem_1fr] md:gap-10 md:pb-12">
+        <h2 id="education" class="mb-5 text-sm font-heading uppercase tracking-normal text-text-secondary md:mb-0 md:pt-1">
           {SECTIONS.EDUCATION.TITLE}
         </h2>
-        <div class="flex flex-col gap-1">
+        <div class="flex max-w-3xl flex-col gap-1">
           <h3 class="text-xl md:text-2xl font-heading font-medium">{EDUCATION.INSTITUTION}</h3>
           <p class="text-lg text-text-secondary leading-relaxed">
             {EDUCATION.DEGREE}
@@ -94,13 +97,13 @@ const {
         </div>
       </section>
 
-      <section aria-labelledby="projects">
-        <h2 id="projects" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-6">
+      <section aria-labelledby="projects" class="border-b border-border pb-10 md:grid md:grid-cols-[12rem_1fr] md:gap-10 md:pb-12">
+        <h2 id="projects" class="mb-6 text-sm font-heading uppercase tracking-normal text-text-secondary md:mb-0 md:pt-1">
           {SECTIONS.PROJECTS.TITLE}
         </h2>
-        <ul class="flex flex-col gap-7">
+        <ul class="grid max-w-3xl gap-7 md:grid-cols-2 md:gap-8">
           {PROJECTS.map((project) => (
-            <li>
+            <li class="border-t border-border pt-4">
               <h3 class="text-xl md:text-2xl font-heading font-medium mb-2">
                 {project.name}
                 <span class="text-text-secondary"> ({project.stack})</span>
@@ -111,11 +114,11 @@ const {
         </ul>
       </section>
 
-      <section aria-labelledby="skills">
-        <h2 id="skills" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-6">
+      <section aria-labelledby="skills" class="border-b border-border pb-10 md:grid md:grid-cols-[12rem_1fr] md:gap-10 md:pb-12">
+        <h2 id="skills" class="mb-6 text-sm font-heading uppercase tracking-normal text-text-secondary md:mb-0 md:pt-1">
           {SECTIONS.SKILLS.TITLE}
         </h2>
-        <ul class="flex flex-col gap-4">
+        <ul class="grid max-w-3xl gap-x-8 gap-y-4 md:grid-cols-2">
           {SKILLS.map((skill) => (
             <li class="text-base md:text-lg leading-relaxed">
               <strong class="font-medium text-primary">{skill.label}:</strong>
@@ -125,13 +128,16 @@ const {
         </ul>
       </section>
 
-      <section aria-labelledby="certifications">
-        <h2 id="certifications" class="text-sm font-heading uppercase tracking-normal text-text-secondary mb-6">
+      <section aria-labelledby="certifications" class="md:grid md:grid-cols-[12rem_1fr] md:gap-10">
+        <h2 id="certifications" class="mb-6 text-sm font-heading uppercase tracking-normal text-text-secondary md:mb-0 md:pt-1">
           {SECTIONS.CERTIFICATIONS.TITLE}
         </h2>
-        <ul class="flex list-disc flex-col gap-2 pl-5 text-base md:text-lg leading-relaxed text-primary">
+        <ul class="flex max-w-3xl list-none flex-col gap-2 text-base md:text-lg leading-relaxed text-primary">
           {CERTIFICATIONS.map((item) => (
-            <li>{item}</li>
+            <li class="grid grid-cols-[1.1rem_1fr] gap-3">
+              <span aria-hidden="true" class="pt-1 text-sm leading-relaxed text-accent">{BULLET}</span>
+              <span>{item}</span>
+            </li>
           ))}
         </ul>
       </section>

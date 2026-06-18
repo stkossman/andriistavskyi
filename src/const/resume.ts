@@ -1,3 +1,5 @@
+export const BULLET = '✱'
+
 export const RESUME_TEXT = {
 	META: {
 		TITLE: 'Resume — Andrii Stavskyi',
