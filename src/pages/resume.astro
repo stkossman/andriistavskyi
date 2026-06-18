@@ -1,6 +1,6 @@
 ---
 import CtaLink from '@/components/common/CtaLink.astro'
-import { RESUME_TEXT } from '@/const/resume'
+import { BULLET, RESUME_TEXT } from '@/const/resume'
 import Layout from '@/layouts/Layout.astro'
 
 const {
@@ -75,7 +75,7 @@ const {
               <ul class="flex list-none flex-col gap-2 text-base md:text-lg leading-relaxed text-primary">
                 {item.bullets.map((bullet) => (
                   <li class="grid grid-cols-[1.1rem_1fr] gap-3">
-                    <span aria-hidden="true" class="pt-1 text-sm leading-relaxed text-accent">✱</span>
+                    <span aria-hidden="true" class="pt-1 text-sm leading-relaxed text-accent">{BULLET}</span>
                     <span>{bullet}</span>
                   </li>
                 ))}
@@ -135,7 +135,7 @@ const {
         <ul class="flex max-w-3xl list-none flex-col gap-2 text-base md:text-lg leading-relaxed text-primary">
           {CERTIFICATIONS.map((item) => (
             <li class="grid grid-cols-[1.1rem_1fr] gap-3">
-              <span aria-hidden="true" class="pt-1 text-sm leading-relaxed text-accent">✱</span>
+              <span aria-hidden="true" class="pt-1 text-sm leading-relaxed text-accent">{BULLET}</span>
               <span>{item}</span>
             </li>
           ))}
