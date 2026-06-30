@@ -12,4 +12,18 @@ export const CONTACT_TEXT = {
 		LINKEDIN: 'LinkedIn',
 		RESUME: 'Resume',
 	},
+	LINKS: {
+		EMAIL: {
+			label: 'an.stawski@outlook.com',
+			href: 'mailto:an.stawski@outlook.com',
+		},
+		GITHUB: {
+			label: 'github.com/stkossman',
+			href: 'https://github.com/stkossman',
+		},
+		LINKEDIN: {
+			label: 'linkedin.com/in/andriistavskyi',
+			href: 'https://www.linkedin.com/in/andriistavskyi/',
+		},
+	},
 } as const

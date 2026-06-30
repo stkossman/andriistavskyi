@@ -1,21 +1,51 @@
 ---
 import AnimatedLink from '@/components/common/AnimatedLink.astro'
+import Logo from '@/components/common/Logo.astro'
 import { COMMON_TEXT } from '@/const/common'
+import { CONTACT_TEXT } from '@/const/contact'
+import { MAIN_NAVIGATION } from '@/const/navigation'
+import { SITE_FOOTER, SITE_META } from '@/const/site'
 ---
 
-<footer class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-t border-border/80 py-7 px-[var(--site-page-padding)] w-full mt-auto text-sm font-mono">
-  <div class="flex flex-wrap items-center gap-1.5 text-secondary">
-    <span>{COMMON_TEXT.FOOTER.TYPEFACE}</span>
-    <AnimatedLink href="https://fontsource.org/fonts/unbounded" text="Unbounded" />
-    <span class="px-0.5">&</span>
-    <AnimatedLink href="https://fontsource.org/fonts/arimo" text="Arimo" />
-    <span class="px-0.5">&</span>
-    <AnimatedLink href="https://fontsource.org/fonts/shippori-mincho" text="Shippori Mincho" />
-    <span class="px-0.5">&</span>
-    <AnimatedLink href="https://fontsource.org/fonts/space-mono" text="Space Mono" />
+<footer class="mt-auto w-full px-[var(--site-page-padding)] py-16 md:py-20">
+  <div class="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(18rem,0.7fr)] md:items-start">
+    <div class="flex max-w-md flex-col gap-5">
+      <a href="/" class="w-fit text-primary transition-colors duration-fast ease-smooth hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent" aria-label={SITE_META.NAME}>
+        <Logo class="h-7 w-7" />
+      </a>
+
+      <div class="flex flex-col gap-2">
+        <p class="font-heading text-lg font-medium text-primary">{SITE_META.NAME}</p>
+        <p class="max-w-xs text-sm leading-relaxed text-secondary">{SITE_META.ROLE}</p>
+        <p class="font-mono text-xs uppercase tracking-[var(--tracking-archive)] text-secondary">{SITE_META.STATUS}</p>
+      </div>
+
+      <AnimatedLink href={CONTACT_TEXT.LINKS.EMAIL.href} text={CONTACT_TEXT.LINKS.EMAIL.label} />
+    </div>
+
+    <div class="grid gap-8 sm:grid-cols-2">
+      <nav class="flex flex-col gap-3" aria-label={SITE_FOOTER.NAVIGATION_LABEL}>
+        <p class="font-mono text-xs uppercase tracking-[var(--tracking-archive)] text-secondary">{SITE_FOOTER.NAVIGATION_LABEL}</p>
+        <div class="flex flex-col gap-2">
+          {MAIN_NAVIGATION.map((item) => (
+            <a href={item.href} class="w-fit text-sm text-primary transition-colors duration-fast ease-smooth hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
+      <div class="flex flex-col gap-3">
+        <p class="font-mono text-xs uppercase tracking-[var(--tracking-archive)] text-secondary">{SITE_FOOTER.CONNECT_LABEL}</p>
+        <AnimatedLink href={CONTACT_TEXT.LINKS.GITHUB.href} text={CONTACT_TEXT.LINKS.GITHUB.label} />
+        <AnimatedLink href={CONTACT_TEXT.LINKS.LINKEDIN.href} text={CONTACT_TEXT.LINKS.LINKEDIN.label} />
+      </div>
+    </div>
   </div>
 
-  <p class="text-xs uppercase tracking-[var(--tracking-archive)] text-secondary">
-    {COMMON_TEXT.FOOTER.BUILT_WITH}
-  </p>
+  <div class="mt-16 flex flex-col gap-2 font-mono text-xs uppercase tracking-[var(--tracking-archive)] text-secondary/80 md:flex-row md:items-center md:justify-between">
+    <p>{COMMON_TEXT.FOOTER.BUILT_WITH}</p>
+    <p>{COMMON_TEXT.FOOTER.TYPEFACE_CREDIT}</p>
+  </div>
 </footer>
+

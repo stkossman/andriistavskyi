@@ -11,37 +11,17 @@ interface Props {
 }
 
 const { href, text, icon: Icon } = Astro.props
-const letters = text.split('')
 ---
 
 <a
   href={href}
   target="_blank"
   rel="noopener noreferrer"
-  class="group relative inline-flex overflow-hidden items-center text-primary font-medium"
+  class="group inline-flex w-fit max-w-full items-center gap-1 text-primary transition-colors duration-normal ease-smooth hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
 >
-  <span class="inline-flex">
-    {letters.map((char: string, i: number) => (
-      <span
-        class="inline-block transition-transform group-hover:translate-y-[120%]"
-        style={`transition-delay: ${i * 15}ms; transition-duration: var(--duration-normal); transition-timing-function: var(--ease-smooth);`}
-      >
-        {char === ' ' ? '\u00A0' : char}
-      </span>
-    ))}
-    {Icon && <Icon class="ml-1 w-4 h-4 text-current" aria-hidden="true" />}
+  <span class="inline bg-linear-to-r from-current to-current bg-[length:100%_1px] bg-left-bottom bg-no-repeat transition-[background-size,color] duration-normal ease-smooth group-hover:bg-[length:0_1px]">
+    {text}
   </span>
-  <span class="absolute inset-0 inline-flex">
-    {letters.map((char: string, i: number) => (
-      <span
-        class="inline-block -translate-y-[120%] transition-transform group-hover:translate-y-0"
-        style={`transition-delay: ${i * 15}ms; transition-duration: var(--duration-normal); transition-timing-function: var(--ease-smooth);`}
-      >
-        {char === ' ' ? '\u00A0' : char}
-      </span>
-    ))}
-    {Icon && <Icon class="ml-1 w-4 h-4 text-current" aria-hidden="true" />}
-  </span>
-
-  <span class="absolute bottom-0 left-0 w-full h-[1px] bg-border transition-colors duration-normal ease-smooth group-hover:bg-secondary-hover"></span>
+  {Icon && <Icon class="h-4 w-4 shrink-0 text-current transition-transform duration-normal ease-smooth group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />}
 </a>
+

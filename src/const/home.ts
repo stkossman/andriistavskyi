@@ -2,16 +2,24 @@ import { STACK_ITEMS } from './stack'
 
 export const HOME_TEXT = {
 	HERO: {
-		GREETING: "Hello, I'm Andrii,",
-		ROLE_START: 'Frontend-focused',
-		ROLE_MIDDLE: 'Developer',
-		ROLE_END: 'building clean digital products.',
-		DESC_START:
-			'React, TypeScript, Astro and .NET developer. Completed a .NET/React internship at ',
-		DESC_MIDDLE:
-			' and currently open to junior frontend/full-stack opportunities.',
+		TITLE: 'Andrii Stavskyi',
+		ROLE: 'Frontend-focused Full-Stack Developer',
+		DESCRIPTION:
+			'Building clean interfaces, reliable flows, and maintainable web products.',
 		PRIMARY_CTA: 'View Work',
 		SECONDARY_CTA: 'View Resume',
+		VERTICAL_ACCENT: {
+			JP_LABEL: '開発者',
+			LABEL: 'Record 001',
+		},
+		SCROLL_CUE: 'Scroll',
+		RECORD_CARD: {
+			TITLE: 'Selected record',
+			LABEL: 'Developer profile',
+			META: STACK_ITEMS.join(' · '),
+			STAMP: '開発',
+			STAMP_ARIA_LABEL: 'Developer seal',
+		},
 	},
 	PROFILE: {
 		PARAGRAPH_1:

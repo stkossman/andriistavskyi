@@ -2,77 +2,70 @@
 import { Image } from 'astro:assets'
 import sunsetBirds from '@/assets/images/decor/archive-sunset-birds.png'
 import ensoCircle from '@/assets/images/decor/ink-enso-circle.png'
-import AnimatedLink from '@/components/common/AnimatedLink.astro'
-import CtaLink from '@/components/common/CtaLink.astro'
-import PageTitle from '@/components/common/PageTitle.astro'
 import { HOME_TEXT } from '@/const/home'
 ---
 
-<section class="relative isolate min-h-[68vh] overflow-hidden border-b border-border pb-12 pt-12 md:pb-16 md:pt-16 xl:min-h-[72vh]">
-  <div class="pointer-events-none absolute inset-y-8 right-0 -z-10 hidden w-[44%] max-w-[34rem] overflow-hidden border border-border bg-subtle md:block">
-    <Image
-      src={sunsetBirds}
-      alt=""
-      aria-hidden="true"
-      class="h-full w-full object-cover opacity-35 mix-blend-multiply grayscale"
-    />
-    <div class="absolute inset-0 bg-basic/45"></div>
-  </div>
-
+<section class="relative isolate flex min-h-[calc(100svh-4.75rem)] overflow-hidden pb-18 pt-24 md:pb-24 md:pt-28 xl:pb-28 xl:pt-32">
   <Image
     src={ensoCircle}
     alt=""
     aria-hidden="true"
-    class="pointer-events-none absolute -right-16 top-12 -z-10 hidden w-56 opacity-20 mix-blend-multiply md:block lg:w-72"
+    class="pointer-events-none absolute -right-20 top-1/2 -z-10 hidden w-[34rem] -translate-y-1/2 opacity-[0.055] mix-blend-multiply md:block xl:w-[42rem]"
   />
 
-  <div class="grid grid-cols-1 xl:grid-cols-12 gap-10 xl:gap-16 items-start">
-    <div class="xl:col-span-9 flex flex-col gap-6 pr-0 xl:pr-12">
-      <div class="flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-[var(--tracking-archive)] text-secondary">
-        <span>Record 001</span>
-        <span class="h-px w-8 bg-border" aria-hidden="true"></span>
-        <span class="font-jp text-accent" lang="ja">開発者</span>
-        <span>Developer</span>
+  <div class="grid w-full grid-cols-1 items-end gap-14 xl:grid-cols-12 xl:gap-20">
+    <div class="flex max-w-4xl flex-col gap-5 xl:col-span-6">
+      <div class="flex flex-col gap-4">
+        <h1 class="max-w-3xl text-hero font-heading font-medium tracking-normal text-primary">
+          {HOME_TEXT.HERO.TITLE}
+        </h1>
+        <p class="max-w-3xl text-lg font-body font-medium leading-snug text-primary/82 md:text-xl xl:text-2xl">
+          {HOME_TEXT.HERO.ROLE}
+        </p>
       </div>
 
-      <PageTitle>
-        {HOME_TEXT.HERO.GREETING}
-        <br />
-        <span class="font-light text-secondary">{HOME_TEXT.HERO.ROLE_START}</span>{' '}
-        {HOME_TEXT.HERO.ROLE_MIDDLE}
-        <br class="hidden sm:block" />
-        {HOME_TEXT.HERO.ROLE_END}
-      </PageTitle>
-      
-      <p class="max-w-3xl text-body-lg md:text-xl xl:text-2xl text-primary leading-relaxed font-medium mt-1 md:mt-3">
-        {HOME_TEXT.HERO.DESC_START}<AnimatedLink href="https://www.softserveinc.com/" text="@SoftServe" />{HOME_TEXT.HERO.DESC_MIDDLE}
+      <p class="max-w-[var(--site-text-max)] text-base leading-relaxed text-primary/72 md:text-lg">
+        {HOME_TEXT.HERO.DESCRIPTION}
       </p>
+    </div>
 
-      <div class="flex flex-wrap items-center gap-4 md:gap-5 pt-4 md:pt-6">
-        <CtaLink href="/work" variant="primary">
-          {HOME_TEXT.HERO.PRIMARY_CTA}
-        </CtaLink>
-
-        <CtaLink href="/resume" variant="secondary">
-          {HOME_TEXT.HERO.SECONDARY_CTA}
-        </CtaLink>
+    <div class="hidden justify-self-center xl:col-span-1 xl:flex">
+      <div class="flex min-h-64 items-center gap-3 font-mono text-[0.68rem] tracking-[var(--tracking-archive)] text-secondary [writing-mode:vertical-rl]">
+        <span class="font-jp text-accent" lang="ja">{HOME_TEXT.HERO.VERTICAL_ACCENT.JP_LABEL}</span>
+        <span aria-hidden="true">—</span>
+        <span>{HOME_TEXT.HERO.VERTICAL_ACCENT.LABEL}</span>
       </div>
     </div>
 
-    <aside class="xl:col-span-3 flex flex-col items-start gap-5 border-l border-border pl-5 pt-0 xl:items-end xl:pl-8 xl:pt-6">
-      <p class="max-w-56 font-mono text-xs uppercase tracking-[var(--tracking-archive)] text-secondary xl:text-right">
-        Frontend-focused full-stack work with React, TypeScript, Astro, and .NET.
-      </p>
-      <a href="https://www.softserveinc.com/" target="_blank" rel="noopener noreferrer" class="inline-block opacity-55 grayscale transition-opacity duration-normal ease-smooth hover:opacity-90 hover:grayscale-0">
-        <img 
-          src="https://assets.softserveinc.com/images/assets/hero-icon.svg/Zz1jNzMxODY4ODE2M2YxMWYxOWYyYjJlZWQ2YmU0MmQzMg==" 
-          alt="SoftServe" 
-          class="h-10 w-auto invert md:h-12"
-        />
-      </a>
-      <div class="grid h-16 w-16 place-items-center border border-accent text-center font-jp text-xl leading-none text-accent" lang="ja" aria-label="Developer seal">
-        開発
+    <aside class="relative hidden min-h-[30rem] overflow-hidden border border-border bg-subtle/55 shadow-[0_28px_80px_rgb(17_17_15_/_0.04)] xl:col-span-5 xl:block">
+      <Image
+        src={sunsetBirds}
+        alt=""
+        aria-hidden="true"
+        class="absolute inset-0 h-full w-full scale-105 object-cover opacity-[0.18] mix-blend-multiply grayscale"
+      />
+      <div class="absolute inset-0 bg-basic/58"></div>
+      <div class="relative flex h-full min-h-[30rem] flex-col justify-between p-9">
+        <div class="flex max-w-72 flex-col gap-3">
+          <p class="font-mono text-xs tracking-[var(--tracking-archive)] text-secondary">
+            {HOME_TEXT.HERO.RECORD_CARD.TITLE}
+          </p>
+          <p class="text-lg font-heading font-medium text-primary">
+            {HOME_TEXT.HERO.RECORD_CARD.LABEL}
+          </p>
+          <p class="font-mono text-xs leading-relaxed tracking-[var(--tracking-archive)] text-secondary">
+            {HOME_TEXT.HERO.RECORD_CARD.META}
+          </p>
+        </div>
+        <div class="ml-auto grid h-14 w-14 place-items-center border border-accent/80 bg-basic/35 text-center font-jp text-lg leading-none text-accent" lang="ja" aria-label={HOME_TEXT.HERO.RECORD_CARD.STAMP_ARIA_LABEL}>
+          {HOME_TEXT.HERO.RECORD_CARD.STAMP}
+        </div>
       </div>
     </aside>
+  </div>
+
+  <div class="absolute bottom-6 left-0 hidden items-center gap-3 font-mono text-[0.68rem] tracking-[var(--tracking-archive)] text-secondary md:flex">
+    <span>{HOME_TEXT.HERO.SCROLL_CUE}</span>
+    <span class="h-px w-10 bg-border" aria-hidden="true"></span>
   </div>
 </section>
