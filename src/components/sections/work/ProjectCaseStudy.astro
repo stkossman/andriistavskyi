@@ -1,0 +1,55 @@
+---
+import { ArrowUpRight } from 'lucide-astro'
+import AnimatedLink from '@/components/common/AnimatedLink.astro'
+import type { Project } from '@/const/projects'
+import { WORK_TEXT } from '@/const/work'
+
+interface Props {
+	project: Project
+}
+
+const { project } = Astro.props
+---
+
+<article class="w-full max-w-5xl mx-auto py-16 md:py-24">
+  <header class="border-y border-border py-8 md:py-10">
+    <p class="mb-4 font-mono text-sm uppercase tracking-widest text-text-secondary">
+      {project.context}
+    </p>
+    <h1 class="max-w-4xl text-5xl md:text-7xl font-heading font-medium leading-none">
+      {project.title}
+    </h1>
+    <p class="mt-8 max-w-3xl text-lg md:text-xl leading-relaxed text-primary">
+      {project.description}
+    </p>
+  </header>
+
+  <div class="grid gap-8 border-b border-border py-10 md:grid-cols-[12rem_1fr] md:gap-10 md:py-12">
+    <h2 class="text-sm font-heading uppercase tracking-normal text-text-secondary">
+      {WORK_TEXT.LABELS.SCOPE_AND_ROLE}
+    </h2>
+    <p class="max-w-3xl text-lg leading-relaxed text-primary">
+      {project.role}
+    </p>
+  </div>
+
+  <div class="grid gap-8 border-b border-border py-10 md:grid-cols-[12rem_1fr] md:gap-10 md:py-12">
+    <h2 class="text-sm font-heading uppercase tracking-normal text-text-secondary">
+      {WORK_TEXT.LABELS.STACK}
+    </h2>
+    <p class="max-w-3xl text-lg leading-relaxed text-primary">
+      {project.tech}
+    </p>
+  </div>
+
+  <div class="grid gap-8 py-10 md:grid-cols-[12rem_1fr] md:gap-10 md:py-12">
+    <h2 class="text-sm font-heading uppercase tracking-normal text-text-secondary">
+      {WORK_TEXT.LABELS.FOCUS}
+    </h2>
+    <div class="max-w-3xl text-lg leading-relaxed text-primary">
+      <p class="mb-6">{project.focus}</p>
+      <AnimatedLink href={project.link} text="View repository" icon={ArrowUpRight} />
+    </div>
+  </div>
+</article>
+

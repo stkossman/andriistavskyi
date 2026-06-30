@@ -1,3 +1,5 @@
+import { STACK_ITEMS } from './stack'
+
 export const HOME_TEXT = {
 	HERO: {
 		GREETING: "Hello, I'm Andrii,",
@@ -11,13 +13,13 @@ export const HOME_TEXT = {
 		PRIMARY_CTA: 'View Work',
 		SECONDARY_CTA: 'View Resume',
 	},
-	ARCHIVE: {
+	PROFILE: {
 		PARAGRAPH_1:
 			"I've spent my recent years diving deep into Frontend Development. Crafting clean, accessible interfaces with modern tooling and a focus on performance and clarity. My current stack centers around React, Astro, TailwindCSS and TypeScript, and I enjoy building minimalist experiences that keep attention on the content.",
 		PARAGRAPH_2:
 			"My approach centers around minimalism and clarity. I enjoy crafting experiences that respect the user's attention, combining clean aesthetics with robust functionality.",
 	},
-	STACK: ['React', 'TypeScript', 'Astro', '.NET'],
+	STACK: STACK_ITEMS,
 	META: {
 		AVAILABILITY_LABEL: 'Open to work',
 		AVAILABILITY: ['Frontend', 'Full-stack', 'Remote'],

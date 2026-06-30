@@ -1,0 +1,19 @@
+---
+import ProjectCaseStudy from '@/components/sections/work/ProjectCaseStudy.astro'
+import { PROJECTS } from '@/const/projects'
+import Layout from '@/layouts/Layout.astro'
+
+export function getStaticPaths() {
+	return PROJECTS.map(project => ({
+		params: { slug: project.id },
+		props: { project },
+	}))
+}
+
+const { project } = Astro.props
+---
+
+<Layout title={`${project.title} - Andrii Stavskyi`}>
+  <ProjectCaseStudy project={project} />
+</Layout>
+

@@ -1,10 +1,4 @@
 export const COMMON_TEXT = {
-	NAVIGATION: {
-		WORK: 'Work',
-		ABOUT: 'About',
-		CONTACT: 'Contact',
-		RESUME: 'Resume',
-	},
 	FOOTER: {
 		TYPEFACE: 'Typeface:',
 		BUILT_WITH: `© ${new Date().getFullYear()} Andrii Stavskyi`,

@@ -1,6 +1,6 @@
 ---
 import '@/styles/global.css'
-import '@/styles/theme/manga.css'
+import '@/styles/theme/legacy/manga.css'
 
 import '@fontsource/shippori-mincho'
 import '@fontsource/space-mono'
@@ -15,6 +15,8 @@ interface Props {
 
 const { title, description, image } = Astro.props
 ---
+
+<!-- Deprecated: retained only so old /archive routes can build during redesign prep. -->
 
 <!doctype html>
 <html lang="en">
