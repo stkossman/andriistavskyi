@@ -1,5 +1,20 @@
 @theme {
   --font-heading: 'Unbounded Variable', 'Unbounded', sans-serif;
   --font-body: 'Arimo', 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: 'Fira Code', 'Cascadia Code', monospace;
+  --font-jp: 'Shippori Mincho', serif;
+  --font-mono: 'Space Mono', 'Cascadia Code', monospace;
+
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.35;
+  --text-body: 1rem;
+  --text-body--line-height: 1.7;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.65;
+  --text-section: clamp(2rem, 5vw, 4.75rem);
+  --text-section--line-height: 1;
+  --text-hero: clamp(3rem, 8vw, 7.5rem);
+  --text-hero--line-height: 0.96;
+
+  --tracking-archive: 0.12em;
+  --tracking-display: 0;
 }

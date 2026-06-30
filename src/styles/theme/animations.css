@@ -1,6 +1,18 @@
 @theme {
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-ink: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-fast: 150ms; /* hovers */
   --duration-normal: 250ms; /* between states */
   --duration-slow: 400ms; /* page transition */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
 }

@@ -1,17 +1,32 @@
 @theme {
-  --color-basic: #f8f4ee;
-  --color-subtle: #f0ebe1;
-  --color-bg-muted: #e8e2d6;
+  --color-paper: #f3efe6;
+  --color-paper-deep: #e7ddcc;
+  --color-paper-surface: #f8f4ee;
 
-  --color-primary: #151514;
-  --color-secondary: #5e5a54;
-  --color-secondary-hover: #2c3e5a;
-  --color-muted: #9a9088;
+  --color-ink: #11110f;
+  --color-ink-soft: #292824;
+  --color-text-muted: #6f685d;
 
-  --color-accent: #b08d57;
-  --color-accent-hover: #8f7042;
-  --color-accent-subtle: #eedfc8;
+  --color-archive-line: #d2c7b6;
+  --color-archive-line-strong: #b8aa96;
 
-  --color-border: #d8d2c8;
-  --color-border-strong: #bfb8aa;
+  --color-seal: #8f1d1d;
+  --color-seal-dark: #5f1111;
+  --color-night: #0f1316;
+
+  --color-basic: var(--color-paper);
+  --color-subtle: var(--color-paper-surface);
+  --color-bg-muted: var(--color-paper-deep);
+
+  --color-primary: var(--color-ink);
+  --color-secondary: var(--color-text-muted);
+  --color-secondary-hover: var(--color-seal);
+  --color-muted: var(--color-text-muted);
+
+  --color-accent: var(--color-seal);
+  --color-accent-hover: var(--color-seal-dark);
+  --color-accent-subtle: #ead8cf;
+
+  --color-border: var(--color-archive-line);
+  --color-border-strong: var(--color-archive-line-strong);
 }

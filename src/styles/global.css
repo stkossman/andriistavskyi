@@ -5,8 +5,20 @@
 @import "./theme/animations.css";
 
 @layer base {
+  :root {
+    --site-page-padding: clamp(1.5rem, 4vw, 4rem);
+    --site-section-spacing: clamp(4rem, 10vw, 9rem);
+    --site-content-max: 76rem;
+    --site-text-max: 46rem;
+    --radius-paper-sm: 2px;
+    --radius-paper-md: 6px;
+    --border-paper-thin: 1px solid var(--color-archive-line);
+    --border-paper-strong: 1px solid var(--color-archive-line-strong);
+    --border-ink: 1px solid var(--color-ink);
+  }
+
   html {
-    background-color: var(--color-base);
+    background-color: var(--color-basic);
     color: var(--color-primary);
     font-family: var(--font-body);
 
@@ -17,10 +29,19 @@
     text-rendering: optimizeLegibility;
   }
 
+  body {
+    background:
+      radial-gradient(circle at 20% 0%, rgb(143 29 29 / 0.06), transparent 28rem),
+      linear-gradient(115deg, rgb(255 255 255 / 0.32), transparent 36%),
+      var(--color-paper);
+    color: var(--color-ink);
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     color: var(--color-primary);
     line-height: 1.15;
+    letter-spacing: var(--tracking-display);
   }
 
   a {
@@ -32,18 +53,19 @@
   code {
     font-family: var(--font-mono);
     font-size: 0.875em;
-    background-color: var(--color-muted);
+    background-color: var(--color-paper-deep);
     padding: 0.125em 0.375em;
-    border-radius: 4px;
+    border: var(--border-paper-thin);
+    border-radius: var(--radius-paper-sm);
   }
 
   ::selection {
-    background-color: var(--color-primary);
-    color: var(--color-primary);
+    background-color: var(--color-seal);
+    color: var(--color-paper);
   }
 
   ::-moz-selection {
-    background-color: var(--color-primary);
-    color: var(--color-primary);
+    background-color: var(--color-seal);
+    color: var(--color-paper);
   }
 }
