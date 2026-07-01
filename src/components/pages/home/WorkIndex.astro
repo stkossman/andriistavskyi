@@ -16,7 +16,7 @@ import { PROJECTS } from '@/const/projects'
   </p>
 
   <section
-    class="hidden h-full overflow-y-auto pr-0 lg:pr-3"
+    class="hidden h-full overflow-y-auto pr-0 transition-[opacity,filter,transform] duration-200 lg:pr-3"
     aria-labelledby="background-panel-title"
     data-background-panel
     tabindex="-1"
@@ -35,7 +35,7 @@ import { PROJECTS } from '@/const/projects'
   </section>
 
   <div
-    class="hidden h-full overflow-y-auto pr-0 lg:pr-3"
+    class="hidden h-full overflow-y-auto pr-0 transition-[opacity,filter,transform] duration-200 lg:pr-3"
     data-work-panel
     tabindex="-1"
   >
@@ -86,6 +86,7 @@ import { PROJECTS } from '@/const/projects'
   const backgroundPanel = document.querySelector<HTMLElement>('[data-background-panel]')
   const placeholder = document.querySelector<HTMLElement>('[data-panel-placeholder]')
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  let activePanel: string | null = null
 
   const animatePanel = (element: HTMLElement | null) => {
     if (!element || prefersReducedMotion) {
@@ -96,6 +97,32 @@ import { PROJECTS } from '@/const/projects'
     window.requestAnimationFrame(() => {
       element.classList.add('motion-panel-enter')
     })
+  }
+
+  const hideWithTransition = (element: HTMLElement | null) => {
+    if (!element || element.classList.contains('hidden')) {
+      return
+    }
+
+    if (prefersReducedMotion) {
+      element.classList.add('hidden')
+      return
+    }
+
+    element.classList.add('opacity-0', 'blur-sm', 'translate-y-1')
+    window.setTimeout(() => {
+      const isActiveWorkPanel =
+        element === workPanel && activePanel !== null && activePanel !== 'background'
+      const isActiveBackgroundPanel = element === backgroundPanel && activePanel === 'background'
+
+      if (isActiveWorkPanel || isActiveBackgroundPanel) {
+        element.classList.remove('opacity-0', 'blur-sm', 'translate-y-1')
+        return
+      }
+
+      element.classList.add('hidden')
+      element.classList.remove('opacity-0', 'blur-sm', 'translate-y-1')
+    }, 180)
   }
 
   const setActiveProject = (slug: string | null) => {
@@ -120,17 +147,39 @@ import { PROJECTS } from '@/const/projects'
     backgroundTrigger?.setAttribute('aria-pressed', isActive ? 'true' : 'false')
   }
 
-  const showWorkPanel = () => {
+  const clearPanel = () => {
+    activePanel = null
+    setActiveProject(null)
+    setBackgroundActive(false)
+    hideWithTransition(workPanel)
+    hideWithTransition(backgroundPanel)
+    window.setTimeout(
+      () => {
+        if (activePanel !== null) {
+          return
+        }
+
+        placeholder?.classList.remove('hidden')
+        animatePanel(placeholder)
+      },
+      prefersReducedMotion ? 0 : 180,
+    )
+  }
+
+  const showWorkPanel = (slug: string) => {
+    activePanel = slug
     placeholder?.classList.add('hidden')
-    backgroundPanel?.classList.add('hidden')
+    hideWithTransition(backgroundPanel)
     workPanel?.classList.remove('hidden')
     setBackgroundActive(false)
+    setActiveProject(slug)
     animatePanel(workPanelContent)
   }
 
   const showBackgroundPanel = () => {
+    activePanel = 'background'
     placeholder?.classList.add('hidden')
-    workPanel?.classList.add('hidden')
+    hideWithTransition(workPanel)
     backgroundPanel?.classList.remove('hidden')
     setActiveProject(null)
     setBackgroundActive(true)
@@ -138,7 +187,14 @@ import { PROJECTS } from '@/const/projects'
     backgroundPanel?.focus({ preventScroll: true })
   }
 
-  backgroundTrigger?.addEventListener('click', showBackgroundPanel)
+  backgroundTrigger?.addEventListener('click', () => {
+    if (activePanel === 'background') {
+      clearPanel()
+      return
+    }
+
+    showBackgroundPanel()
+  })
 
   for (const link of workLinks) {
     link.addEventListener('click', () => {
@@ -151,8 +207,12 @@ import { PROJECTS } from '@/const/projects'
         return
       }
 
-      showWorkPanel()
-      setActiveProject(slug)
+      if (activePanel === slug) {
+        clearPanel()
+        return
+      }
+
+      showWorkPanel(slug)
       preview.scrollIntoView({
         block: 'start',
         behavior: prefersReducedMotion ? 'auto' : 'smooth',
@@ -175,6 +235,7 @@ import { PROJECTS } from '@/const/projects'
 
         const slug = visibleEntry?.target.getAttribute('data-work-preview')
         if (slug) {
+          activePanel = slug
           setActiveProject(slug)
         }
       },
