@@ -6,17 +6,18 @@ export const LICENSES_TEXT = {
 		backLabel: 'Back',
 		eyebrow: 'Licenses',
 	},
-	packages: {
-		title: 'Package Licenses',
+	stack: {
+		title: 'Stack',
 		description:
-			'Package license references are taken from installed package metadata.',
+			'The small set of tools and packages used to build and ship this site.',
 		backLabel: 'Back',
-		eyebrow: 'Licenses',
+		eyebrow: 'Stack',
 	},
 	labels: {
 		package: 'Package',
 		license: 'License',
 		source: 'Source',
+		role: 'Role',
 	},
 } as const
 
@@ -37,68 +38,54 @@ export const FONT_LICENSES = [
 	},
 ] as const
 
-export const PACKAGE_LICENSES = [
+export const STACK_ITEMS = [
 	{
 		name: 'Astro',
 		packageName: 'astro',
 		license: 'MIT',
-		source: 'package metadata',
+		role: 'Static site framework',
 		href: 'https://astro.build',
-	},
-	{
-		name: 'Astro Sitemap',
-		packageName: '@astrojs/sitemap',
-		license: 'MIT',
-		source: 'package metadata',
-		href: 'https://docs.astro.build/en/guides/integrations-guide/sitemap/',
-	},
-	{
-		name: 'Tailwind CSS',
-		packageName: 'tailwindcss',
-		license: 'MIT',
-		source: 'package metadata',
-		href: 'https://tailwindcss.com',
-	},
-	{
-		name: 'Tailwind CSS Vite Plugin',
-		packageName: '@tailwindcss/vite',
-		license: 'MIT',
-		source: 'package metadata',
-		href: 'https://tailwindcss.com',
-	},
-	{
-		name: 'Vercel Analytics',
-		packageName: '@vercel/analytics',
-		license: 'MIT',
-		source: 'package metadata',
-		href: 'https://vercel.com/analytics',
-	},
-	{
-		name: 'Vercel Speed Insights',
-		packageName: '@vercel/speed-insights',
-		license: 'Apache-2.0',
-		source: 'package metadata',
-		href: 'https://vercel.com/speed-insights',
-	},
-	{
-		name: 'Astro Check',
-		packageName: '@astrojs/check',
-		license: 'MIT',
-		source: 'package metadata',
-		href: 'https://github.com/withastro/astro/tree/main/packages/language-tools/astro-check',
-	},
-	{
-		name: 'Biome',
-		packageName: '@biomejs/biome',
-		license: 'MIT OR Apache-2.0',
-		source: 'package metadata',
-		href: 'https://biomejs.dev',
 	},
 	{
 		name: 'TypeScript',
 		packageName: 'typescript',
 		license: 'Apache-2.0',
-		source: 'package metadata',
+		role: 'Typed JavaScript tooling',
 		href: 'https://www.typescriptlang.org/',
+	},
+	{
+		name: 'Tailwind CSS',
+		packageName: 'tailwindcss',
+		license: 'MIT',
+		role: 'Utility-first styling',
+		href: 'https://tailwindcss.com',
+	},
+	{
+		name: 'Bun',
+		packageName: 'bun',
+		license: 'MIT',
+		role: 'Package manager and local scripts',
+		href: 'https://bun.sh',
+	},
+	{
+		name: 'Vercel',
+		packageName: '@vercel/analytics, @vercel/speed-insights',
+		license: 'MIT, Apache-2.0',
+		role: 'Analytics and performance instrumentation',
+		href: 'https://vercel.com',
+	},
+	{
+		name: 'Arimo',
+		packageName: '@fontsource/arimo',
+		license: 'Apache-2.0',
+		role: 'Primary typeface',
+		href: 'https://fontsource.org/fonts/arimo',
+	},
+	{
+		name: 'Space Mono',
+		packageName: '@fontsource/space-mono',
+		license: 'OFL-1.1',
+		role: 'Index labels and metadata',
+		href: 'https://fontsource.org/fonts/space-mono',
 	},
 ] as const

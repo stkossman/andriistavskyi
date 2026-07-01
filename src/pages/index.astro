@@ -4,60 +4,74 @@ import { HOME } from '@/const/home'
 import { PROJECTS } from '@/const/projects'
 import { SITE } from '@/const/site'
 import Layout from '@/layouts/Layout.astro'
+
+const interactiveItemClass =
+	'inline-flex w-fit items-baseline rounded-[2px] px-1.5 py-0.5 text-left text-[var(--color-muted)] no-underline transition-colors duration-200 group-hover/list:text-neutral-400 hover:bg-neutral-100 hover:text-neutral-950 focus-visible:bg-neutral-100 focus-visible:text-neutral-950'
 ---
 
 <Layout title={SITE.title} description={SITE.description}>
-  <div class="mx-auto grid min-h-dvh w-full max-w-[112rem] gap-10 px-6 py-8 text-sm leading-6 lg:h-dvh lg:grid-cols-[minmax(18rem,31rem)_minmax(0,1fr)] lg:overflow-hidden lg:px-10 lg:py-9">
-    <div class="flex flex-col gap-10 lg:h-full lg:overflow-hidden">
-      <section class="max-w-[32rem]" aria-labelledby="intro-title">
-        <h1 id="intro-title" class="m-0 font-[var(--font-mono)] text-xs font-normal lowercase leading-5">
+  <div class="mx-auto grid min-h-dvh w-full max-w-[112rem] gap-10 px-6 py-8 text-[15px] leading-7 lg:h-dvh lg:grid-cols-[minmax(20rem,34rem)_minmax(0,1fr)] lg:overflow-hidden lg:px-10 lg:py-9">
+    <div class="flex flex-col gap-9 lg:h-full lg:overflow-hidden">
+      <section class="motion-index-enter max-w-[34rem]" style="--motion-delay: 40ms" aria-labelledby="intro-title">
+        <h1 id="intro-title" class="m-0 font-[var(--font-mono)] text-[13px] font-normal lowercase leading-5">
           {HOME.hero.identity}
         </h1>
-        <p class="mt-5 max-w-[31rem] text-[0.8125rem] leading-6 text-[var(--color-text)]">
+        <p class="mt-5 max-w-[33rem] text-[15px] leading-7 text-[var(--color-text)]">
           {HOME.hero.descriptionStart}
-          <a class="underline" href={SITE.softServeHref}>SoftServe</a>
+          <a class="underline decoration-[var(--color-subtle)]" href={SITE.softServeHref}>{HOME.hero.companyLabel}</a>
           {HOME.hero.descriptionEnd}
         </p>
+        <div class="group/list mt-3">
+          <button
+            class={interactiveItemClass}
+            type="button"
+            aria-pressed="false"
+            data-background-trigger
+          >
+            {HOME.hero.backgroundAction}
+          </button>
+        </div>
       </section>
 
-      <section class="grid gap-3" aria-labelledby="work-title">
-        <h2 id="work-title" class="m-0 font-[var(--font-mono)] text-xs font-normal leading-5 text-[var(--color-muted)]">
+      <section class="motion-index-enter grid gap-3" style="--motion-delay: 130ms" aria-labelledby="work-title">
+        <h2 id="work-title" class="m-0 font-[var(--font-mono)] text-[13px] font-normal leading-5 text-[var(--color-muted)]">
           <span class="mr-1 font-[var(--font-jp)]">{HOME.work.accent}</span>
           {HOME.work.label}
         </h2>
 
-        <nav class="grid gap-1 pl-6 font-[var(--font-mono)] text-xs leading-5" aria-label="Project list">
+        <nav class="group/list grid gap-1 pl-6 font-[var(--font-mono)] text-[15px] leading-6" aria-label="Project list">
           {PROJECTS.map((project) => (
-            <a
-              class="grid grid-cols-[0.75rem_minmax(0,1fr)] items-baseline gap-1 px-1 py-0.5 text-[var(--color-muted)] no-underline transition-colors"
-              href={`#work-${project.slug}`}
+            <button
+              class:list={[interactiveItemClass, 'grid grid-cols-[0.75rem_minmax(0,1fr)]']}
+              type="button"
+              aria-pressed="false"
               data-work-link={project.slug}
             >
               <span class="opacity-0" aria-hidden="true" data-work-marker>/</span>
               <span>{project.title}</span>
-            </a>
+            </button>
           ))}
         </nav>
       </section>
 
-      <section class="grid gap-3" aria-labelledby="licenses-title">
-        <h2 id="licenses-title" class="m-0 font-[var(--font-mono)] text-xs font-normal leading-5 text-[var(--color-muted)]">
+      <section class="motion-index-enter grid gap-3" style="--motion-delay: 220ms" aria-labelledby="licenses-title">
+        <h2 id="licenses-title" class="m-0 font-[var(--font-mono)] text-[13px] font-normal leading-5 text-[var(--color-muted)]">
           {HOME.licenses.label}
         </h2>
-        <nav class="grid gap-1 pl-6 font-[var(--font-mono)] text-xs leading-5" aria-label="License links">
+        <nav class="group/list grid gap-1 pl-6 font-[var(--font-mono)] text-[15px] leading-6" aria-label="License links">
           {HOME.licenses.links.map((link) => (
-            <a class="underline decoration-[var(--color-subtle)]" href={link.href}>{link.label}</a>
+            <a class={interactiveItemClass} href={link.href}>{link.label}</a>
           ))}
         </nav>
       </section>
 
-      <section class="grid gap-3" aria-labelledby="contact-title">
-        <h2 id="contact-title" class="m-0 font-[var(--font-mono)] text-xs font-normal leading-5 text-[var(--color-muted)]">
+      <section class="motion-index-enter grid gap-3" style="--motion-delay: 310ms" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="m-0 font-[var(--font-mono)] text-[13px] font-normal leading-5 text-[var(--color-muted)]">
           {HOME.contact.label}
         </h2>
-        <nav class="grid gap-1 pl-6 font-[var(--font-mono)] text-xs leading-5" aria-label="Contact links">
+        <nav class="group/list grid gap-1 pl-6 font-[var(--font-mono)] text-[15px] leading-6" aria-label="Contact links">
           {HOME.contact.links.map((link) => (
-            <a class="underline decoration-[var(--color-subtle)]" href={link.href}>{link.label}</a>
+            <a class={interactiveItemClass} href={link.href}>{link.label}</a>
           ))}
         </nav>
       </section>
