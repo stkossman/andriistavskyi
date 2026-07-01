@@ -4,13 +4,11 @@ import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout title={`Page not found - ${SITE.name}`} description="Page not found.">
-  <section class="license-page" aria-labelledby="not-found-title">
-    <header class="project-hero">
-      <p class="section__eyebrow">404</p>
-      <h1 id="not-found-title">Page not found</h1>
-      <p>The page you are looking for is not available.</p>
-    </header>
-
-    <a class="back-link" href="/">Back home</a>
+  <section class="mx-auto grid min-h-dvh w-full max-w-4xl content-start px-6 py-8 text-sm leading-6 lg:px-10 lg:py-9" aria-labelledby="not-found-title">
+    <p class="m-0 font-[var(--font-mono)] text-xs text-[var(--color-muted)]">404</p>
+    <h1 id="not-found-title" class="mt-14 text-2xl font-normal tracking-normal">Page not found</h1>
+    <a class="mt-6 w-fit font-[var(--font-mono)] text-xs underline decoration-[var(--color-subtle)]" href="/">
+      Back
+    </a>
   </section>
 </Layout>

@@ -1,53 +1,70 @@
 ---
 import WorkIndex from '@/components/pages/home/WorkIndex.astro'
 import { HOME } from '@/const/home'
+import { PROJECTS } from '@/const/projects'
 import { SITE } from '@/const/site'
 import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout title={SITE.title} description={SITE.description}>
-  <div class="home-page">
-    <section class="hero" aria-labelledby="intro-title">
-      <p class="hero__identity" id="intro-title">{HOME.hero.identity}</p>
-      <p class="hero__description">{HOME.hero.description}</p>
-      <nav class="text-list" aria-label="Intro links">
-        {HOME.hero.links.map((link) => (
-          <a href={link.href}>{link.label}</a>
-        ))}
-      </nav>
-    </section>
+  <div class="mx-auto grid min-h-dvh w-full max-w-[112rem] gap-10 px-6 py-8 text-sm leading-6 lg:h-dvh lg:grid-cols-[minmax(18rem,31rem)_minmax(0,1fr)] lg:overflow-hidden lg:px-10 lg:py-9">
+    <div class="flex flex-col gap-10 lg:h-full lg:overflow-hidden">
+      <section class="max-w-[32rem]" aria-labelledby="intro-title">
+        <h1 id="intro-title" class="m-0 font-[var(--font-mono)] text-xs font-normal lowercase leading-5">
+          {HOME.hero.identity}
+        </h1>
+        <p class="mt-5 max-w-[31rem] text-[0.8125rem] leading-6 text-[var(--color-text)]">
+          {HOME.hero.descriptionStart}
+          <a class="underline" href={SITE.softServeHref}>SoftServe</a>
+          {HOME.hero.descriptionEnd}
+        </p>
+      </section>
 
-    <WorkIndex />
+      <section class="grid gap-3" aria-labelledby="work-title">
+        <h2 id="work-title" class="m-0 font-[var(--font-mono)] text-xs font-normal leading-5 text-[var(--color-muted)]">
+          <span class="mr-1 font-[var(--font-jp)]">{HOME.work.accent}</span>
+          {HOME.work.label}
+        </h2>
 
-    <section class="section compact-section" id="licenses" aria-labelledby="licenses-title">
-      <div class="section__intro">
-        <p class="section__eyebrow">{HOME.licenses.number} {HOME.licenses.label}</p>
-        <h2 id="licenses-title">{HOME.licenses.label}</h2>
-        <p>{HOME.licenses.description}</p>
-      </div>
+        <nav class="grid gap-1 pl-6 font-[var(--font-mono)] text-xs leading-5" aria-label="Project list">
+          {PROJECTS.map((project) => (
+            <a
+              class="grid grid-cols-[0.75rem_minmax(0,1fr)] items-baseline gap-1 px-1 py-0.5 text-[var(--color-muted)] no-underline transition-colors"
+              href={`#work-${project.slug}`}
+              data-work-link={project.slug}
+            >
+              <span class="opacity-0" aria-hidden="true" data-work-marker>/</span>
+              <span>{project.title}</span>
+            </a>
+          ))}
+        </nav>
+      </section>
 
-      <div class="text-list text-list--stacked">
-        {HOME.licenses.links.map((link) => (
-          <a href={link.href}>{link.label}</a>
-        ))}
-        {HOME.licenses.futureItems.map((item) => (
-          <span>{item} <small>future</small></span>
-        ))}
-      </div>
-    </section>
+      <section class="grid gap-3" aria-labelledby="licenses-title">
+        <h2 id="licenses-title" class="m-0 font-[var(--font-mono)] text-xs font-normal leading-5 text-[var(--color-muted)]">
+          {HOME.licenses.label}
+        </h2>
+        <nav class="grid gap-1 pl-6 font-[var(--font-mono)] text-xs leading-5" aria-label="License links">
+          {HOME.licenses.links.map((link) => (
+            <a class="underline decoration-[var(--color-subtle)]" href={link.href}>{link.label}</a>
+          ))}
+        </nav>
+      </section>
 
-    <section class="section compact-section" id="contact" aria-labelledby="contact-title">
-      <div class="section__intro">
-        <p class="section__eyebrow">{HOME.contact.number} {HOME.contact.label}</p>
-        <h2 id="contact-title">{HOME.contact.label}</h2>
-        <p>{HOME.contact.description}</p>
-      </div>
+      <section class="grid gap-3" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="m-0 font-[var(--font-mono)] text-xs font-normal leading-5 text-[var(--color-muted)]">
+          {HOME.contact.label}
+        </h2>
+        <nav class="grid gap-1 pl-6 font-[var(--font-mono)] text-xs leading-5" aria-label="Contact links">
+          {HOME.contact.links.map((link) => (
+            <a class="underline decoration-[var(--color-subtle)]" href={link.href}>{link.label}</a>
+          ))}
+        </nav>
+      </section>
+    </div>
 
-      <nav class="text-list text-list--stacked" aria-label="Contact links">
-        {HOME.contact.links.map((link) => (
-          <a href={link.href}>{link.label}</a>
-        ))}
-      </nav>
-    </section>
+    <div class="min-h-0 lg:h-full">
+      <WorkIndex />
+    </div>
   </div>
 </Layout>

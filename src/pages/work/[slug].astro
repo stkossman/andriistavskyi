@@ -19,52 +19,56 @@ const { project } = Astro.props
 ---
 
 <Layout title={`${project.title} - ${SITE.name}`} description={project.description}>
-  <article class="project-page">
-    <a class="back-link" href="/#work">Back to work</a>
+  <article class="mx-auto grid min-h-dvh w-full max-w-[112rem] gap-10 px-6 py-8 text-sm leading-6 lg:h-dvh lg:grid-cols-[minmax(18rem,31rem)_minmax(0,1fr)] lg:overflow-hidden lg:px-10 lg:py-9">
+    <div class="flex flex-col gap-10 lg:h-full lg:overflow-hidden">
+      <a class="w-fit font-[var(--font-mono)] text-xl leading-none no-underline text-[var(--color-muted)]" href="/" aria-label="Back home">
+        ×
+      </a>
 
-    <header class="project-hero">
-      <p class="section__eyebrow">{project.context}</p>
-      <h1>{project.title}</h1>
-      <p>{project.description}</p>
-    </header>
+      <header class="grid gap-5">
+        <p class="m-0 font-[var(--font-mono)] text-xs leading-5 text-[var(--color-muted)]">
+          {project.context}
+        </p>
+        <h1 class="m-0 max-w-[28rem] text-2xl font-normal leading-tight tracking-normal">
+          {project.title}
+        </h1>
+        <p class="m-0 max-w-[31rem] text-[0.8125rem] leading-6 text-[var(--color-muted)]">
+          {project.description}
+        </p>
+      </header>
 
-    <Image
-      src={project.image}
-      alt={project.imageAlt}
-      class="project-image"
-      widths={[640, 960, 1280]}
-      sizes="(min-width: 900px) 78vw, 100vw"
-    />
+      <dl class="grid gap-4 text-[0.8125rem] leading-6 text-[var(--color-muted)]">
+        <div>
+          <dt class="font-[var(--font-mono)] text-xs text-[var(--color-text)]">Role</dt>
+          <dd class="m-0">{project.role}</dd>
+        </div>
+        <div>
+          <dt class="font-[var(--font-mono)] text-xs text-[var(--color-text)]">Stack</dt>
+          <dd class="m-0">{project.stack.join(', ')}</dd>
+        </div>
+        <div>
+          <dt class="font-[var(--font-mono)] text-xs text-[var(--color-text)]">Focus</dt>
+          <dd class="m-0">{project.focus}</dd>
+        </div>
+        <div>
+          <dt class="font-[var(--font-mono)] text-xs text-[var(--color-text)]">Links</dt>
+          <dd class="m-0 flex flex-wrap gap-x-3">
+            {project.links.map((link) => (
+              <a class="underline decoration-[var(--color-subtle)]" href={link.href}>{link.label}</a>
+            ))}
+          </dd>
+        </div>
+      </dl>
+    </div>
 
-    <dl class="project-details">
-      <div>
-        <dt>Role</dt>
-        <dd>{project.role}</dd>
-      </div>
-      <div>
-        <dt>Context</dt>
-        <dd>{project.context}</dd>
-      </div>
-      <div>
-        <dt>Year</dt>
-        <dd>{project.year}</dd>
-      </div>
-      <div>
-        <dt>Stack</dt>
-        <dd>{project.stack.join(', ')}</dd>
-      </div>
-      <div>
-        <dt>Focus</dt>
-        <dd>{project.focus}</dd>
-      </div>
-      <div>
-        <dt>Links</dt>
-        <dd>
-          {project.links.map((link) => (
-            <a href={link.href}>{link.label}</a>
-          ))}
-        </dd>
-      </div>
-    </dl>
+    <div class="min-h-0 lg:h-full lg:overflow-y-auto">
+      <Image
+        src={project.image}
+        alt={project.imageAlt}
+        class="w-full border border-[var(--color-border)] bg-[#f3f3f1] object-cover"
+        widths={[640, 960, 1280]}
+        sizes="(min-width: 1024px) 58vw, 100vw"
+      />
+    </div>
   </article>
 </Layout>
