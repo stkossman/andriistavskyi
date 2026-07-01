@@ -21,15 +21,18 @@ import { PROJECTS } from '@/const/projects'
     data-background-panel
     tabindex="-1"
   >
-    <div class="motion-panel-enter max-w-2xl pt-1">
-      <p class="m-0 font-[var(--font-mono)] text-[13px] leading-5 text-[var(--color-muted)]">
-        {HOME.background.label}
-      </p>
-      <h2 id="background-panel-title" class="mt-5 text-2xl font-normal leading-tight tracking-normal">
-        {HOME.background.title}
-      </h2>
-      <p class="mt-5 text-base leading-8 text-[var(--color-text)]">
-        {HOME.background.description}
+    <div class="motion-panel-enter grid min-h-full content-center gap-12 py-8 lg:grid-cols-[minmax(18rem,0.95fr)_minmax(18rem,0.8fr)] lg:items-center lg:gap-16 lg:py-0">
+      <div class="lg:-translate-y-10">
+        <p class="sr-only" id="background-panel-title">{HOME.background.label}</p>
+        <div class="grid gap-1 text-5xl font-normal leading-none tracking-normal text-[var(--color-text)] sm:text-6xl xl:text-7xl">
+          {HOME.background.statement.map((item) => (
+            <span>{item}</span>
+          ))}
+        </div>
+      </div>
+
+      <p class="m-0 max-w-[34rem] self-end text-[15px] leading-7 text-[var(--color-text)] lg:translate-y-20">
+        {HOME.background.body}
       </p>
     </div>
   </section>

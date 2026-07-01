@@ -13,9 +13,8 @@ export const HOME = {
 	},
 	background: {
 		label: 'Background',
-		title: 'Developer background',
-		description:
-			'Andrii is a Computer Science student and developer who started with frontend interfaces and personal web projects, then moved toward full-stack product work with React, TypeScript, Astro, and .NET. His recent work includes SoftServe project context, admin-facing workflows, API integration, and maintainable UI systems built through practical collaboration and review.',
+		statement: ['Clear', 'Practical', 'Reliable', 'Well made'],
+		body: 'Andrii is a Computer Science student and frontend-focused full-stack developer building practical interfaces, maintainable systems, and reliable product flows. His work has grown from personal web projects into React, TypeScript, Astro, and .NET project work, with recent SoftServe context across admin workflows, API integration, reviews, and production-oriented collaboration.',
 	},
 	work: {
 		label: 'Work',
