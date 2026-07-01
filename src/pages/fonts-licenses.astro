@@ -1,0 +1,41 @@
+---
+import { FONT_LICENSES } from '@/const/licenses'
+import { SITE } from '@/const/site'
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout title={`Fonts Licenses - ${SITE.name}`} description="Font package license information for andrii stavskyi.">
+  <section class="license-page" aria-labelledby="font-licenses-title">
+    <a class="back-link" href="/#licenses">Back to licenses</a>
+
+    <header class="project-hero">
+      <p class="section__eyebrow">Licenses</p>
+      <h1 id="font-licenses-title">Fonts Licenses</h1>
+      <p>License information is taken from installed Fontsource package metadata.</p>
+    </header>
+
+    <div class="license-list">
+      {FONT_LICENSES.map((font) => (
+        <article class="license-item">
+          <h2>{font.name}</h2>
+          <dl>
+            <div>
+              <dt>Package</dt>
+              <dd>{font.packageName}</dd>
+            </div>
+            <div>
+              <dt>License</dt>
+              <dd>{font.license}</dd>
+            </div>
+            <div>
+              <dt>Source</dt>
+              <dd>
+                <a href={font.href}>{font.source}</a>
+              </dd>
+            </div>
+          </dl>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>

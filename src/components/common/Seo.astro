@@ -1,19 +1,16 @@
 ---
+import { SITE } from '@/const/site'
+
 interface Props {
 	title: string
 	description?: string
 	image?: string
 }
 
-const defaultDescription =
-	'Andrii Stavskyi - Frontend Developer focusing on clear architecture, intentional design, and minimalist software.'
-const defaultImage = '/og-image.jpg'
-const siteName = 'Andrii Stavskyi - Frontend Engineer'
-
 const {
 	title,
-	description = defaultDescription,
-	image = defaultImage,
+	description = SITE.description,
+	image = SITE.ogImage,
 } = Astro.props
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url)
@@ -22,8 +19,8 @@ const socialImageURL = new URL(image, Astro.site || Astro.url)
 const jsonLd = {
 	'@context': 'https://schema.org',
 	'@type': 'WebSite',
-	name: siteName,
-	url: Astro.site || 'https://www.andriistavskyi.me/',
+	name: SITE.name,
+	url: Astro.site || SITE.url,
 }
 ---
 
@@ -37,11 +34,11 @@ const jsonLd = {
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
-<meta name="author" content="Andrii Stavskyi" />
+<meta name="author" content={SITE.name} />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content={canonicalURL} />
-<meta property="og:site_name" content={siteName} />
+<meta property="og:site_name" content={SITE.name} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={socialImageURL} />

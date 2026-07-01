@@ -1,17 +1,14 @@
 ---
-import AnimatedLink from '@/components/common/AnimatedLink.astro'
-import { COMMON_TEXT } from '@/const/common'
+import { CONTACT_LINKS } from '@/const/contact'
+import { SITE } from '@/const/site'
 ---
 
-<footer class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 py-8 px-6 md:px-12 lg:px-16 w-full mt-auto text-sm font-heading">
-  <div class="flex flex-wrap items-center gap-1.5 text-secondary">
-    <span>{COMMON_TEXT.FOOTER.TYPEFACE}</span>
-    <AnimatedLink href="https://fontsource.org/fonts/unbounded" text="Unbounded" />
-    <span class="px-0.5">&</span>
-    <AnimatedLink href="https://fontsource.org/fonts/arimo" text="Arimo" />
-  </div>
+<footer class="site-footer">
+  <p>© 2026 {SITE.name}</p>
 
-  <p class="text-xs uppercase tracking-widest text-secondary">
-    {COMMON_TEXT.FOOTER.BUILT_WITH}
-  </p>
+  <nav aria-label="Footer navigation">
+    {CONTACT_LINKS.slice(0, 3).map((item) => (
+      <a href={item.href}>{item.label}</a>
+    ))}
+  </nav>
 </footer>

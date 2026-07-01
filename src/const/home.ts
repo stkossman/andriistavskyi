@@ -1,26 +1,31 @@
-export const HOME_TEXT = {
-	HERO: {
-		GREETING: "Hello, I'm Andrii,",
-		ROLE_START: 'Frontend-focused',
-		ROLE_MIDDLE: 'Developer',
-		ROLE_END: 'building clean digital products.',
-		DESC_START:
-			'React, TypeScript, Astro and .NET developer. Completed a .NET/React internship at ',
-		DESC_MIDDLE:
-			' and currently open to junior frontend/full-stack opportunities.',
-		PRIMARY_CTA: 'View Work',
-		SECONDARY_CTA: 'View Resume',
+import { CONTACT_LINKS } from '@/const/contact'
+import { SITE } from '@/const/site'
+
+export const HOME = {
+	hero: {
+		identity: SITE.identity,
+		description:
+			'Andrii Stavskyi is a frontend-focused full-stack developer working with React, TypeScript, Astro, and .NET. Currently at SoftServe.',
+		links: [
+			{ label: 'SoftServe', href: SITE.softServeHref },
+			{ label: 'GitHub', href: CONTACT_LINKS[0].href },
+			{ label: 'LinkedIn', href: CONTACT_LINKS[1].href },
+			{ label: 'Mail', href: CONTACT_LINKS[2].href },
+			{ label: 'Resume', href: SITE.resumeHref },
+		],
 	},
-	ARCHIVE: {
-		PARAGRAPH_1:
-			"I've spent my recent years diving deep into Frontend Development. Crafting clean, accessible interfaces with modern tooling and a focus on performance and clarity. My current stack centers around React, Astro, TailwindCSS and TypeScript, and I enjoy building minimalist experiences that keep attention on the content.",
-		PARAGRAPH_2:
-			"My approach centers around minimalism and clarity. I enjoy crafting experiences that respect the user's attention, combining clean aesthetics with robust functionality.",
+	licenses: {
+		number: 'III.',
+		label: 'Licenses',
+		description:
+			'Small reference page for the font packages used by this site.',
+		links: [{ label: 'Fonts Licenses', href: '/fonts-licenses' }],
+		futureItems: ['Package Licenses'],
 	},
-	STACK: ['React', 'TypeScript', 'Astro', '.NET'],
-	META: {
-		AVAILABILITY_LABEL: 'Open to work',
-		AVAILABILITY: ['Frontend', 'Full-stack', 'Remote'],
-		STACK_LABEL: 'Stack',
+	contact: {
+		number: 'IV.',
+		label: 'Contact',
+		description: 'Direct links for work, collaboration, and profile context.',
+		links: CONTACT_LINKS,
 	},
 } as const

@@ -1,12 +1,53 @@
 ---
-import HeroSection from '@/components/pages/home/HeroSection.astro'
-import TechArchive from '@/components/pages/home/TechArchive.astro'
+import WorkIndex from '@/components/pages/home/WorkIndex.astro'
+import { HOME } from '@/const/home'
+import { SITE } from '@/const/site'
 import Layout from '@/layouts/Layout.astro'
 ---
 
-<Layout title="Andrii Stavskyi">
-  <div class="flex flex-col flex-grow w-full justify-between pb-8 md:pb-12">
-    <HeroSection />
-    <TechArchive />
+<Layout title={SITE.title} description={SITE.description}>
+  <div class="home-page">
+    <section class="hero" aria-labelledby="intro-title">
+      <p class="hero__identity" id="intro-title">{HOME.hero.identity}</p>
+      <p class="hero__description">{HOME.hero.description}</p>
+      <nav class="text-list" aria-label="Intro links">
+        {HOME.hero.links.map((link) => (
+          <a href={link.href}>{link.label}</a>
+        ))}
+      </nav>
+    </section>
+
+    <WorkIndex />
+
+    <section class="section compact-section" id="licenses" aria-labelledby="licenses-title">
+      <div class="section__intro">
+        <p class="section__eyebrow">{HOME.licenses.number} {HOME.licenses.label}</p>
+        <h2 id="licenses-title">{HOME.licenses.label}</h2>
+        <p>{HOME.licenses.description}</p>
+      </div>
+
+      <div class="text-list text-list--stacked">
+        {HOME.licenses.links.map((link) => (
+          <a href={link.href}>{link.label}</a>
+        ))}
+        {HOME.licenses.futureItems.map((item) => (
+          <span>{item} <small>future</small></span>
+        ))}
+      </div>
+    </section>
+
+    <section class="section compact-section" id="contact" aria-labelledby="contact-title">
+      <div class="section__intro">
+        <p class="section__eyebrow">{HOME.contact.number} {HOME.contact.label}</p>
+        <h2 id="contact-title">{HOME.contact.label}</h2>
+        <p>{HOME.contact.description}</p>
+      </div>
+
+      <nav class="text-list text-list--stacked" aria-label="Contact links">
+        {HOME.contact.links.map((link) => (
+          <a href={link.href}>{link.label}</a>
+        ))}
+      </nav>
+    </section>
   </div>
 </Layout>
