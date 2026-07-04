@@ -19,7 +19,6 @@ export const HOME = {
 	work: {
 		label: 'Work',
 		accent: '作品',
-		placeholder: 'Select a project to preview the work index.',
 	},
 	licenses: {
 		label: 'Licenses',

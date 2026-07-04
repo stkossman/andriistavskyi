@@ -8,12 +8,19 @@ import { PROJECTS } from '@/const/projects'
   class="relative min-h-[20rem] border-t border-[var(--color-border)] pt-8 lg:h-full lg:border-t-0 lg:pt-0"
   aria-label="Selected index content"
 >
-  <p
-    class="motion-panel-enter max-w-56 text-[15px] leading-7 text-[var(--color-subtle)] lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2"
+  <div
+    class="motion-panel-enter pointer-events-none flex min-h-32 items-center justify-center lg:absolute lg:inset-0 lg:min-h-0 lg:items-center"
     data-panel-placeholder
+    aria-hidden="true"
   >
-    {HOME.work.placeholder}
-  </p>
+    <img
+      src="/logo.svg"
+      alt=""
+      class="w-20 opacity-[0.05] sm:w-24 lg:w-36 xl:w-40"
+      loading="eager"
+      decoding="async"
+    />
+  </div>
 
   <section
     class="hidden h-full overflow-y-auto pr-0 transition-[opacity,filter,transform] duration-200 lg:pr-3"
