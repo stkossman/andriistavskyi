@@ -21,7 +21,7 @@ const interactiveItemClass =
           <a class="underline decoration-[var(--color-subtle)]" href={SITE.softServeHref}>{HOME.hero.companyLabel}</a>
           {HOME.hero.descriptionEnd}
         </p>
-        <div class="group/list mt-3">
+        <div class="group/list mt-3 flex flex-wrap gap-1">
           <button
             class={interactiveItemClass}
             type="button"
@@ -29,6 +29,14 @@ const interactiveItemClass =
             data-background-trigger
           >
             {HOME.hero.backgroundAction}
+          </button>
+          <button
+            class={interactiveItemClass}
+            type="button"
+            aria-pressed="false"
+            data-identity-trigger
+          >
+            {HOME.hero.identityAction}
           </button>
         </div>
       </section>
