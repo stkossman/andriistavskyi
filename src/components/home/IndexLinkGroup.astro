@@ -1,0 +1,29 @@
+---
+import { interactiveItemClass } from './classes'
+
+type LinkItem = {
+	label: string
+	href: string
+}
+
+type Props = {
+	id: string
+	label: string
+	links: readonly LinkItem[]
+	ariaLabel: string
+	delay: string
+}
+
+const { id, label, links, ariaLabel, delay } = Astro.props
+---
+
+<section class="motion-index-enter grid gap-3" style={`--motion-delay: ${delay}`} aria-labelledby={id}>
+  <h2 id={id} class="m-0 font-[var(--font-mono)] text-[13px] font-normal leading-5 text-[var(--color-muted)]">
+    {label}
+  </h2>
+  <nav class="group/list grid gap-1 pl-6 font-[var(--font-mono)] text-[15px] leading-6" aria-label={ariaLabel}>
+    {links.map((link) => (
+      <a class={interactiveItemClass} href={link.href}>{link.label}</a>
+    ))}
+  </nav>
+</section>

@@ -1,0 +1,25 @@
+---
+import { HOME } from '@/const/home'
+---
+
+<section
+  class="hidden h-full overflow-y-auto pr-0 transition-[opacity,filter,transform] duration-200 lg:pr-3"
+  aria-labelledby="background-panel-title"
+  data-background-panel
+  tabindex="-1"
+>
+  <div class="motion-panel-enter grid min-h-full content-center gap-12 py-8 lg:grid-cols-[minmax(18rem,0.95fr)_minmax(18rem,0.8fr)] lg:items-center lg:gap-16 lg:py-0">
+    <div class="lg:-translate-y-10">
+      <p class="sr-only" id="background-panel-title">{HOME.background.label}</p>
+      <div class="grid gap-1 text-5xl font-normal leading-none tracking-normal text-[var(--color-text)] sm:text-6xl xl:text-7xl">
+        {HOME.background.statement.map((item) => (
+          <span>{item}</span>
+        ))}
+      </div>
+    </div>
+
+    <p class="m-0 max-w-[34rem] self-end text-[15px] leading-7 text-[var(--color-text)] lg:translate-y-20">
+      {HOME.background.body}
+    </p>
+  </div>
+</section>

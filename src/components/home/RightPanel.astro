@@ -1,0 +1,20 @@
+---
+import BackgroundPanel from './BackgroundPanel.astro'
+import IdentityPanel from './IdentityPanel.astro'
+import ProjectPreviewPanel from './ProjectPreviewPanel.astro'
+import RightPanelPlaceholder from './RightPanelPlaceholder.astro'
+---
+
+<aside
+  class="relative min-h-[20rem] border-t border-[var(--color-border)] pt-8 lg:h-full lg:border-t-0 lg:pt-0"
+  aria-label="Selected index content"
+>
+  <RightPanelPlaceholder />
+  <BackgroundPanel />
+  <IdentityPanel />
+  <ProjectPreviewPanel />
+</aside>
+
+<script>
+  import '@/scripts/work-index'
+</script>
