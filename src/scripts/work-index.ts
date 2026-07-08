@@ -7,18 +7,12 @@ const workLinks = Array.from(
 const backgroundTrigger = document.querySelector<HTMLButtonElement>(
 	'[data-background-trigger]',
 )
-const identityTrigger = document.querySelector<HTMLButtonElement>(
-	'[data-identity-trigger]',
-)
 const workPanel = document.querySelector<HTMLElement>('[data-work-panel]')
 const workPanelContent = document.querySelector<HTMLElement>(
 	'[data-work-panel-content]',
 )
 const backgroundPanel = document.querySelector<HTMLElement>(
 	'[data-background-panel]',
-)
-const identityPanel = document.querySelector<HTMLElement>(
-	'[data-identity-panel]',
 )
 const placeholder = document.querySelector<HTMLElement>(
 	'[data-panel-placeholder]',
@@ -55,14 +49,11 @@ const hideWithTransition = (element: HTMLElement | null) => {
 		const isActiveWorkPanel =
 			element === workPanel &&
 			activePanel !== null &&
-			activePanel !== 'background' &&
-			activePanel !== 'identity'
+			activePanel !== 'background'
 		const isActiveBackgroundPanel =
 			element === backgroundPanel && activePanel === 'background'
-		const isActiveIdentityPanel =
-			element === identityPanel && activePanel === 'identity'
 
-		if (isActiveWorkPanel || isActiveBackgroundPanel || isActiveIdentityPanel) {
+		if (isActiveWorkPanel || isActiveBackgroundPanel) {
 			element.classList.remove('opacity-0', 'blur-sm', 'translate-y-1')
 			return
 		}
@@ -94,20 +85,12 @@ const setBackgroundActive = (isActive: boolean) => {
 	backgroundTrigger?.setAttribute('aria-pressed', isActive ? 'true' : 'false')
 }
 
-const setIdentityActive = (isActive: boolean) => {
-	identityTrigger?.classList.toggle('!text-neutral-950', isActive)
-	identityTrigger?.classList.toggle('bg-neutral-100', isActive)
-	identityTrigger?.setAttribute('aria-pressed', isActive ? 'true' : 'false')
-}
-
 const clearPanel = () => {
 	activePanel = null
 	setActiveProject(null)
 	setBackgroundActive(false)
-	setIdentityActive(false)
 	hideWithTransition(workPanel)
 	hideWithTransition(backgroundPanel)
-	hideWithTransition(identityPanel)
 	window.setTimeout(
 		() => {
 			if (activePanel !== null) {
@@ -125,10 +108,8 @@ const showWorkPanel = (slug: string) => {
 	activePanel = slug
 	placeholder?.classList.add('hidden')
 	hideWithTransition(backgroundPanel)
-	hideWithTransition(identityPanel)
 	workPanel?.classList.remove('hidden')
 	setBackgroundActive(false)
-	setIdentityActive(false)
 	setActiveProject(slug)
 	animatePanel(workPanelContent)
 }
@@ -137,26 +118,11 @@ const showBackgroundPanel = () => {
 	activePanel = 'background'
 	placeholder?.classList.add('hidden')
 	hideWithTransition(workPanel)
-	hideWithTransition(identityPanel)
 	backgroundPanel?.classList.remove('hidden')
 	setActiveProject(null)
-	setIdentityActive(false)
 	setBackgroundActive(true)
 	animatePanel(backgroundPanel?.firstElementChild as HTMLElement | null)
 	backgroundPanel?.focus({ preventScroll: true })
-}
-
-const showIdentityPanel = () => {
-	activePanel = 'identity'
-	placeholder?.classList.add('hidden')
-	hideWithTransition(workPanel)
-	hideWithTransition(backgroundPanel)
-	identityPanel?.classList.remove('hidden')
-	setActiveProject(null)
-	setBackgroundActive(false)
-	setIdentityActive(true)
-	animatePanel(identityPanel?.firstElementChild as HTMLElement | null)
-	identityPanel?.focus({ preventScroll: true })
 }
 
 backgroundTrigger?.addEventListener('click', () => {
@@ -166,15 +132,6 @@ backgroundTrigger?.addEventListener('click', () => {
 	}
 
 	showBackgroundPanel()
-})
-
-identityTrigger?.addEventListener('click', () => {
-	if (activePanel === 'identity') {
-		clearPanel()
-		return
-	}
-
-	showIdentityPanel()
 })
 
 for (const link of workLinks) {

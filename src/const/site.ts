@@ -1,6 +1,6 @@
 export const SITE = {
 	name: 'Andrii Stavskyi',
-	identity: 'andrii stavskyi',
+	lowercaseName: 'andrii stavskyi',
 	title: 'Andrii Stavskyi',
 	description:
 		'Andrii Stavskyi is a frontend-focused full-stack developer working with React, TypeScript, Astro, and .NET.',
