@@ -5,49 +5,27 @@ import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout title={`${LICENSES_TEXT.stack.title} - ${SITE.name}`} description="Technology stack for andrii stavskyi.">
-  <section class="mx-auto min-h-dvh w-full max-w-4xl px-6 py-8 text-[15px] leading-7 lg:px-10 lg:py-9" aria-labelledby="stack-title">
+  <section class="mx-auto min-h-dvh w-full max-w-4xl px-6 py-8 text-[14px] leading-6 lg:px-10 lg:py-9" aria-labelledby="stack-title">
     <a class="inline-flex rounded-[2px] px-1.5 py-0.5 font-[var(--font-mono)] text-[13px] underline decoration-[var(--color-subtle)] transition-colors duration-200 hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] focus-visible:bg-[var(--color-hover)] focus-visible:text-[var(--color-text)]" href="/">
       {LICENSES_TEXT.stack.backLabel}
     </a>
 
-    <header class="motion-index-enter mt-14 grid gap-4">
-      <p class="m-0 font-[var(--font-mono)] text-[13px] text-[var(--color-muted)]">
-        {LICENSES_TEXT.stack.eyebrow}
-      </p>
-      <h1 id="stack-title" class="m-0 text-2xl font-normal tracking-normal">
+    <header class="motion-index-enter mt-10 grid gap-2">
+      <h1 id="stack-title" class="m-0 text-xl font-normal tracking-normal">
         {LICENSES_TEXT.stack.title}
       </h1>
-      <p class="m-0 max-w-xl text-[15px] leading-7 text-[var(--color-muted)]">
+      <p class="m-0 max-w-xl text-[14px] leading-6 text-[var(--color-muted)]">
         {LICENSES_TEXT.stack.description}
       </p>
     </header>
 
-    <div class="motion-index-enter mt-12 grid gap-6" style="--motion-delay: 120ms">
+    <dl class="motion-index-enter mt-8 grid max-w-2xl gap-y-2 text-[14px] leading-6 sm:grid-cols-[10rem_minmax(0,1fr)]" style="--motion-delay: 120ms">
       {STACK_ITEMS.map((item) => (
-        <article class="border-t border-[var(--color-border)] pt-5">
-          <h2 class="m-0 text-base font-normal">{item.name}</h2>
-          <dl class="mt-4 grid gap-2 text-[15px] leading-7 text-[var(--color-muted)]">
-            <div>
-              <dt class="font-[var(--font-mono)] text-[13px] text-[var(--color-text)]">{LICENSES_TEXT.labels.package}</dt>
-              <dd class="m-0">{item.packageName}</dd>
-            </div>
-            <div>
-              <dt class="font-[var(--font-mono)] text-[13px] text-[var(--color-text)]">{LICENSES_TEXT.labels.role}</dt>
-              <dd class="m-0">{item.role}</dd>
-            </div>
-            <div>
-              <dt class="font-[var(--font-mono)] text-[13px] text-[var(--color-text)]">{LICENSES_TEXT.labels.license}</dt>
-              <dd class="m-0">{item.license}</dd>
-            </div>
-            <div>
-              <dt class="font-[var(--font-mono)] text-[13px] text-[var(--color-text)]">{LICENSES_TEXT.labels.source}</dt>
-              <dd class="m-0">
-                <a class="inline-flex rounded-[2px] px-1.5 py-0.5 underline decoration-[var(--color-subtle)] transition-colors duration-200 hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] focus-visible:bg-[var(--color-hover)] focus-visible:text-[var(--color-text)]" href={item.href}>{item.name}</a>
-              </dd>
-            </div>
-          </dl>
-        </article>
+        <>
+          <dt class="font-normal text-[var(--color-text)]">{item.name}</dt>
+          <dd class="m-0 text-[var(--color-muted)]">{item.role}</dd>
+        </>
       ))}
-    </div>
+    </dl>
   </section>
 </Layout>

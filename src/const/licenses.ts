@@ -4,20 +4,18 @@ export const LICENSES_TEXT = {
 		description:
 			'License information is taken from installed Fontsource package metadata.',
 		backLabel: 'Back',
-		eyebrow: 'Licenses',
 	},
 	stack: {
 		title: 'Stack',
 		description:
 			'The small set of tools and packages used to build and ship this site.',
 		backLabel: 'Back',
-		eyebrow: 'Stack',
 	},
 	labels: {
+		font: 'Font',
 		package: 'Package',
 		license: 'License',
 		source: 'Source',
-		role: 'Role',
 	},
 } as const
 
@@ -41,51 +39,26 @@ export const FONT_LICENSES = [
 export const STACK_ITEMS = [
 	{
 		name: 'Astro',
-		packageName: 'astro',
-		license: 'MIT',
 		role: 'Static site framework',
-		href: 'https://astro.build',
 	},
 	{
 		name: 'TypeScript',
-		packageName: 'typescript',
-		license: 'Apache-2.0',
-		role: 'Typed JavaScript tooling',
-		href: 'https://www.typescriptlang.org/',
+		role: 'Language and tooling',
 	},
 	{
 		name: 'Tailwind CSS',
-		packageName: 'tailwindcss',
-		license: 'MIT',
-		role: 'Utility-first styling',
-		href: 'https://tailwindcss.com',
+		role: 'Styling',
 	},
 	{
 		name: 'Bun',
-		packageName: 'bun',
-		license: 'MIT',
-		role: 'Package manager and local scripts',
-		href: 'https://bun.sh',
+		role: 'Package and runtime tooling',
 	},
 	{
 		name: 'Vercel',
-		packageName: '@vercel/analytics, @vercel/speed-insights',
-		license: 'MIT, Apache-2.0',
-		role: 'Analytics and performance instrumentation',
-		href: 'https://vercel.com',
+		role: 'Deployment',
 	},
 	{
-		name: 'Arimo',
-		packageName: '@fontsource/arimo',
-		license: 'Apache-2.0',
-		role: 'Primary typeface',
-		href: 'https://fontsource.org/fonts/arimo',
-	},
-	{
-		name: 'Space Mono',
-		packageName: '@fontsource/space-mono',
-		license: 'OFL-1.1',
-		role: 'Index labels and metadata',
-		href: 'https://fontsource.org/fonts/space-mono',
+		name: 'Fontsource',
+		role: 'Local font packages',
 	},
 ] as const
