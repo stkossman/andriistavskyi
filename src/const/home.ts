@@ -6,16 +6,16 @@ export const HOME = {
 		label: 'Currently',
 		name: SITE.lowercaseName,
 		descriptionStart:
-			'Andrii Stavskyi is a frontend-focused full-stack developer working with React, TypeScript, Astro, and .NET. Currently at ',
+			'Frontend-focused full-stack developer working with React, TypeScript, Astro, and .NET. Currently at ',
 		companyLabel: 'SoftServe',
 		descriptionEnd:
-			', he focuses on clean interfaces, reliable product flows, and maintainable web systems. His work spans admin tooling, localization-heavy interfaces, API integration, project reviews, and personal products built with a practical full-stack mindset.',
+			'. I build practical interfaces, reliable flows, and maintainable web systems.',
 		backgroundAction: 'Background',
 	},
 	background: {
 		label: 'Background',
 		statement: ['Clear', 'Practical', 'Reliable', 'Well made'],
-		body: 'Andrii is a Computer Science student and frontend-focused full-stack developer building practical interfaces, maintainable systems, and reliable product flows. His work has grown from personal web projects into React, TypeScript, Astro, and .NET project work, with recent SoftServe context across admin workflows, API integration, reviews, and production-oriented collaboration.',
+		body: 'I like building things that do their job without asking for attention. Clear interfaces, predictable flows, and maintainable code matter more to me than decoration. The goal is simple: make the product easier to use, easier to reason about, and harder to break.',
 	},
 	work: {
 		label: 'Work',
