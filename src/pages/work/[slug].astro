@@ -18,13 +18,13 @@ interface Props {
 const { project } = Astro.props
 
 const inlineLinkClass =
-	'inline-flex w-fit rounded-[2px] px-1.5 py-0.5 underline decoration-[var(--color-subtle)] transition-colors duration-200 hover:bg-neutral-100 hover:text-neutral-950 focus-visible:bg-neutral-100 focus-visible:text-neutral-950'
+	'inline-flex w-fit rounded-[2px] px-1.5 py-0.5 underline decoration-[var(--color-subtle)] transition-colors duration-200 hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] focus-visible:bg-[var(--color-hover)] focus-visible:text-[var(--color-text)]'
 ---
 
 <Layout title={`${project.title} - ${SITE.name}`} description={project.description}>
   <article class="mx-auto grid min-h-dvh w-full max-w-[112rem] gap-10 px-6 py-8 text-[15px] leading-7 lg:h-dvh lg:grid-cols-[minmax(20rem,34rem)_minmax(0,1fr)] lg:overflow-hidden lg:px-10 lg:py-9">
     <div class="flex flex-col gap-10 lg:h-full lg:overflow-hidden">
-      <a class="motion-index-enter w-fit rounded-[2px] px-1.5 py-0.5 font-[var(--font-mono)] text-xl leading-none no-underline text-[var(--color-muted)] transition-colors duration-200 hover:bg-neutral-100 hover:text-neutral-950 focus-visible:bg-neutral-100 focus-visible:text-neutral-950" href="/" aria-label="Back home">
+      <a class="motion-index-enter w-fit rounded-[2px] px-1.5 py-0.5 font-[var(--font-mono)] text-xl leading-none no-underline text-[var(--color-muted)] transition-colors duration-200 hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] focus-visible:bg-[var(--color-hover)] focus-visible:text-[var(--color-text)]" href="/" aria-label="Back home">
         ×
       </a>
 
@@ -68,7 +68,7 @@ const inlineLinkClass =
       <Image
         src={project.image}
         alt={project.imageAlt}
-        class="motion-panel-enter w-full border border-[var(--color-border)] bg-[#f3f3f1] object-cover"
+        class="motion-panel-enter w-full border border-[var(--color-border)] bg-[var(--color-hover)] object-cover"
         widths={[640, 960, 1280]}
         sizes="(min-width: 1024px) 58vw, 100vw"
       />

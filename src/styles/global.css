@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #fdfdfb;
+  --color-bg: #fff1df;
   --color-text: #111111;
-  --color-muted: #666666;
-  --color-subtle: #a3a3a3;
-  --color-border: #deded9;
+  --color-muted: #6f675f;
+  --color-subtle: #d8c7b5;
+  --color-border: var(--color-subtle);
+  --color-hover: #f4dfc7;
   --font-body: "Arimo", Arial, sans-serif;
   --font-mono: "Space Mono", "SFMono-Regular", Consolas, monospace;
   --font-jp: "Yu Mincho", "Hiragino Mincho ProN", serif;

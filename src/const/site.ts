@@ -7,5 +7,6 @@ export const SITE = {
 	url: 'https://www.andriistavskyi.me/',
 	ogImage: '/og-image.jpg',
 	resumeHref: '/resume.pdf',
+	repositoryHref: 'https://github.com/stkossman/www',
 	softServeHref: 'https://www.softserveinc.com/',
 } as const

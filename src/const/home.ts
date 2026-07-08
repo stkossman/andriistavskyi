@@ -3,6 +3,7 @@ import { SITE } from '@/const/site'
 
 export const HOME = {
 	hero: {
+		label: 'Currently',
 		name: SITE.lowercaseName,
 		descriptionStart:
 			'Andrii Stavskyi is a frontend-focused full-stack developer working with React, TypeScript, Astro, and .NET. Currently at ',
@@ -18,10 +19,9 @@ export const HOME = {
 	},
 	work: {
 		label: 'Work',
-		accent: '作品',
 	},
 	licenses: {
-		label: 'Licenses',
+		label: 'References',
 		description:
 			'Small reference page for the font packages used by this site.',
 		links: [

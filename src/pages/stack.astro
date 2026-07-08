@@ -6,7 +6,7 @@ import Layout from '@/layouts/Layout.astro'
 
 <Layout title={`${LICENSES_TEXT.stack.title} - ${SITE.name}`} description="Technology stack for andrii stavskyi.">
   <section class="mx-auto min-h-dvh w-full max-w-4xl px-6 py-8 text-[15px] leading-7 lg:px-10 lg:py-9" aria-labelledby="stack-title">
-    <a class="inline-flex rounded-[2px] px-1.5 py-0.5 font-[var(--font-mono)] text-[13px] underline decoration-[var(--color-subtle)] transition-colors duration-200 hover:bg-neutral-100 hover:text-neutral-950 focus-visible:bg-neutral-100 focus-visible:text-neutral-950" href="/">
+    <a class="inline-flex rounded-[2px] px-1.5 py-0.5 font-[var(--font-mono)] text-[13px] underline decoration-[var(--color-subtle)] transition-colors duration-200 hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] focus-visible:bg-[var(--color-hover)] focus-visible:text-[var(--color-text)]" href="/">
       {LICENSES_TEXT.stack.backLabel}
     </a>
 
@@ -42,7 +42,7 @@ import Layout from '@/layouts/Layout.astro'
             <div>
               <dt class="font-[var(--font-mono)] text-[13px] text-[var(--color-text)]">{LICENSES_TEXT.labels.source}</dt>
               <dd class="m-0">
-                <a class="inline-flex rounded-[2px] px-1.5 py-0.5 underline decoration-[var(--color-subtle)] transition-colors duration-200 hover:bg-neutral-100 hover:text-neutral-950 focus-visible:bg-neutral-100 focus-visible:text-neutral-950" href={item.href}>{item.name}</a>
+                <a class="inline-flex rounded-[2px] px-1.5 py-0.5 underline decoration-[var(--color-subtle)] transition-colors duration-200 hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] focus-visible:bg-[var(--color-hover)] focus-visible:text-[var(--color-text)]" href={item.href}>{item.name}</a>
               </dd>
             </div>
           </dl>

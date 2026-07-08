@@ -68,8 +68,8 @@ const setActiveProject = (slug: string | null) => {
 		const isActive = link.dataset.workLink === slug
 		const marker = link.querySelector<HTMLElement>('[data-work-marker]')
 
-		link.classList.toggle('!text-neutral-950', isActive)
-		link.classList.toggle('bg-neutral-100', isActive)
+		link.classList.toggle('!text-[var(--color-text)]', isActive)
+		link.classList.toggle('bg-[var(--color-hover)]', isActive)
 		link.setAttribute('aria-pressed', isActive ? 'true' : 'false')
 
 		if (marker) {
@@ -80,8 +80,8 @@ const setActiveProject = (slug: string | null) => {
 }
 
 const setBackgroundActive = (isActive: boolean) => {
-	backgroundTrigger?.classList.toggle('!text-neutral-950', isActive)
-	backgroundTrigger?.classList.toggle('bg-neutral-100', isActive)
+	backgroundTrigger?.classList.toggle('!text-[var(--color-text)]', isActive)
+	backgroundTrigger?.classList.toggle('bg-[var(--color-hover)]', isActive)
 	backgroundTrigger?.setAttribute('aria-pressed', isActive ? 'true' : 'false')
 }
 
