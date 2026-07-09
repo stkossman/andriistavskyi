@@ -6,7 +6,7 @@ import Layout from '@/layouts/Layout.astro'
 
 <Layout title={`${LICENSES_TEXT.fonts.title} - ${SITE.name}`} description="Font package license information for andrii stavskyi.">
   <section class="mx-auto min-h-dvh w-full max-w-4xl px-6 py-8 text-[14px] leading-6 lg:px-10 lg:py-9" aria-labelledby="font-licenses-title">
-    <a class="inline-flex rounded-[2px] px-1.5 py-0.5 font-[var(--font-mono)] text-[13px] underline decoration-[var(--color-subtle)] transition-colors duration-200 hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] focus-visible:bg-[var(--color-hover)] focus-visible:text-[var(--color-text)]" href="/">
+    <a class="inline-flex rounded-[2px] px-1.5 py-0.5 font-mono text-[13px] underline decoration-[var(--color-subtle)] transition-colors duration-200 hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] focus-visible:bg-[var(--color-hover)] focus-visible:text-[var(--color-text)]" href="/">
       {LICENSES_TEXT.fonts.backLabel}
     </a>
 
@@ -21,7 +21,7 @@ import Layout from '@/layouts/Layout.astro'
 
     <div class="motion-index-enter mt-8 overflow-x-auto" style="--motion-delay: 120ms">
       <table class="w-full min-w-[42rem] border-collapse text-left text-[13px] leading-6">
-        <thead class="border-b border-[var(--color-border)] font-[var(--font-mono)] text-[12px] font-normal text-[var(--color-muted)]">
+        <thead class="border-b border-[var(--color-border)] font-mono text-[12px] font-normal text-[var(--color-muted)]">
           <tr>
             <th class="py-2 pr-5 font-normal">{LICENSES_TEXT.labels.font}</th>
             <th class="py-2 pr-5 font-normal">{LICENSES_TEXT.labels.package}</th>
@@ -33,7 +33,7 @@ import Layout from '@/layouts/Layout.astro'
           {FONT_LICENSES.map((font) => (
             <tr class="border-b border-[var(--color-border)] last:border-b-0">
               <th class="py-2.5 pr-5 font-normal text-[var(--color-text)]">{font.name}</th>
-              <td class="py-2.5 pr-5 font-[var(--font-mono)] text-[12px] text-[var(--color-muted)]">{font.packageName}</td>
+              <td class="py-2.5 pr-5 font-mono text-[12px] text-[var(--color-muted)]">{font.packageName}</td>
               <td class="py-2.5 pr-5 text-[var(--color-muted)]">{font.license}</td>
               <td class="py-2.5">
                 <a class="inline-flex rounded-[2px] px-1.5 py-0.5 text-[var(--color-muted)] underline decoration-[var(--color-subtle)] transition-colors duration-200 hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] focus-visible:bg-[var(--color-hover)] focus-visible:text-[var(--color-text)]" href={font.href}>{font.source}</a>

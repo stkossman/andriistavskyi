@@ -5,11 +5,11 @@ import { interactiveItemClass } from './classes'
 ---
 
 <section class="motion-index-enter grid gap-3" style="--motion-delay: 130ms" aria-labelledby="work-title">
-  <h2 id="work-title" class="m-0 font-[var(--font-mono)] text-[13px] font-normal leading-5 text-[var(--color-muted)]">
+  <h2 id="work-title" class="m-0 font-mono text-[13px] font-normal leading-5 text-[var(--color-muted)]">
     {HOME.work.label}
   </h2>
 
-  <nav class="group/list grid gap-1 pl-6 font-[var(--font-mono)] text-[15px] leading-6" aria-label="Project list">
+  <nav class="group/list grid gap-1 pl-6 font-mono text-[14px] leading-6" aria-label="Project list">
     {PROJECTS.map((project) => (
       <button
         class:list={[interactiveItemClass, 'grid grid-cols-[0.75rem_minmax(0,1fr)]']}
