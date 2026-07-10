@@ -1,4 +1,5 @@
 ---
+number: 2
 title: Tools I Keep Using
 date: 2026-07-08
 summary: The tools I return to are usually the ones that make ordinary work easier to keep moving.
@@ -11,6 +12,12 @@ For this site, [Astro](https://astro.build) is a good example. It keeps the defa
 TypeScript is another tool I reach for because it makes small systems easier to revisit. A portfolio has fewer moving parts than an application, but it still has routes, content, project data, and UI state. Keeping those boundaries explicit makes a later change less speculative. I can see what a project entry contains, what a route expects, and where a label comes from before changing it.
 
 Tailwind works well for this kind of interface because the decisions stay close to the markup. The visual system here is deliberately narrow: a warm background, a few text colors, subtle borders, and compact spacing. Utility classes make it easier to keep those choices consistent without inventing a large component layer for a small site.
+
+The pattern I value is small and repeatable:
+
+- static output for content that does not need a live client;
+- explicit types around data and routes;
+- a short feedback loop for formatting, linting, and builds.
 
 Bun is mostly a practical choice in this project. It keeps package installation and local scripts in one familiar loop. The important part is not the runtime label; it is that the workflow stays quick enough that `format`, `lint`, and `build` are ordinary checks rather than something to postpone.
 

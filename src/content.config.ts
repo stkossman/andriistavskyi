@@ -8,13 +8,10 @@ const entries = defineCollection({
 		base: './src/content/entries',
 	}),
 	schema: z.object({
+		number: z.number().int().positive(),
 		title: z.string().trim().min(1),
 		date: z.coerce.date(),
 		summary: z.string().trim().min(1).max(220),
-		draft: z
-			.boolean()
-			.optional()
-			.transform(value => value ?? false),
 	}),
 })
 

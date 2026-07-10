@@ -1,12 +1,12 @@
 ---
 import { HOME } from '@/const/home'
-import { getPublishedEntries } from '@/lib/entries'
+import { getEntries } from '@/lib/entries'
 import IndexIntro from './IndexIntro.astro'
 import IndexLinkGroup from './IndexLinkGroup.astro'
 import IndexWorkList from './IndexWorkList.astro'
 import RightPanel from './RightPanel.astro'
 
-const entries = await getPublishedEntries()
+const entries = await getEntries()
 const entryLinks = entries.map(entry => ({
 	label: entry.data.title,
 	href: `/entries/${entry.id}`,

@@ -22,7 +22,6 @@ export const HOME = {
 	},
 	entries: {
 		label: 'Entries',
-		description: 'A few short entries on building software and products.',
 		backLabel: 'Back',
 	},
 	licenses: {

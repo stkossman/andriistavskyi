@@ -1,4 +1,5 @@
 ---
+number: 3
 title: Why This Site Is Minimal
 date: 2026-07-11
 summary: A small portfolio should make it easy to find the work, not compete with it.
