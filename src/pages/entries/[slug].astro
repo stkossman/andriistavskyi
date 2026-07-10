@@ -1,0 +1,25 @@
+---
+import { render } from 'astro:content'
+import EntryLayout from '@/layouts/EntryLayout.astro'
+import { type Entry, getEntries } from '@/lib/entries'
+
+export async function getStaticPaths() {
+	const entries = await getEntries()
+
+	return entries.map(entry => ({
+		params: { slug: entry.id },
+		props: { entry },
+	}))
+}
+
+interface Props {
+	entry: Entry
+}
+
+const { entry } = Astro.props
+const { Content } = await render(entry)
+---
+
+<EntryLayout entry={entry}>
+  <Content />
+</EntryLayout>

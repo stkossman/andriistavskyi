@@ -1,9 +1,16 @@
 ---
 import { HOME } from '@/const/home'
+import { getEntries } from '@/lib/entries'
 import IndexIntro from './IndexIntro.astro'
 import IndexLinkGroup from './IndexLinkGroup.astro'
 import IndexWorkList from './IndexWorkList.astro'
 import RightPanel from './RightPanel.astro'
+
+const entries = await getEntries()
+const entryLinks = entries.map(entry => ({
+	label: entry.data.title,
+	href: `/entries/${entry.id}`,
+}))
 ---
 
 <div class="mx-auto grid min-h-dvh w-full max-w-[112rem] gap-10 px-6 py-8 text-[15px] leading-7 lg:h-dvh lg:grid-cols-[minmax(20rem,34rem)_minmax(0,1fr)] lg:overflow-hidden lg:px-10 lg:py-9">
@@ -11,18 +18,25 @@ import RightPanel from './RightPanel.astro'
     <IndexIntro />
     <IndexWorkList />
     <IndexLinkGroup
+      id="entries-title"
+      label={HOME.entries.label}
+      links={entryLinks}
+      ariaLabel="Entries list"
+      delay="220ms"
+    />
+    <IndexLinkGroup
       id="licenses-title"
       label={HOME.licenses.label}
       links={HOME.licenses.links}
       ariaLabel="License links"
-      delay="220ms"
+      delay="310ms"
     />
     <IndexLinkGroup
       id="contact-title"
       label={HOME.contact.label}
       links={HOME.contact.links}
       ariaLabel="Contact links"
-      delay="310ms"
+      delay="400ms"
     />
   </div>
 
