@@ -1,0 +1,43 @@
+---
+import { HOME } from '@/const/home'
+import { SITE } from '@/const/site'
+import Layout from '@/layouts/Layout.astro'
+import { formatEntryDate, getPublishedEntries } from '@/lib/entries'
+
+const entries = await getPublishedEntries()
+---
+
+<Layout title={`${HOME.entries.label} - ${SITE.name}`} description={HOME.entries.description}>
+  <section class="mx-auto min-h-dvh w-full max-w-3xl px-6 py-8 text-[15px] leading-7 lg:px-10 lg:py-9" aria-labelledby="entries-title">
+    <a class="inline-flex rounded-[2px] px-1.5 py-0.5 font-mono text-[13px] underline decoration-[var(--color-subtle)] transition-colors duration-200 hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] focus-visible:bg-[var(--color-hover)] focus-visible:text-[var(--color-text)]" href="/">
+      {HOME.entries.backLabel}
+    </a>
+
+    <header class="motion-index-enter mt-10 grid gap-2">
+      <h1 id="entries-title" class="m-0 font-mono text-[13px] font-normal leading-5 text-[var(--color-muted)]">
+        {HOME.entries.label}
+      </h1>
+      <p class="m-0 max-w-xl text-[15px] leading-7 text-[var(--color-muted)]">
+        {HOME.entries.description}
+      </p>
+    </header>
+
+    <ul class="motion-index-enter mt-8 m-0 grid list-none border-t border-[var(--color-border)] p-0" style="--motion-delay: 120ms">
+      {entries.map((entry) => (
+        <li class="border-b border-[var(--color-border)] py-4">
+          <a class="group block rounded-[2px] px-1.5 py-0.5 no-underline transition-colors duration-200 hover:bg-[var(--color-hover)] focus-visible:bg-[var(--color-hover)]" href={`/entries/${entry.id}`}>
+            <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+              <h2 class="m-0 text-base font-medium text-[var(--color-text)]">{entry.data.title}</h2>
+              <time class="font-mono text-[12px] text-[var(--color-muted)]" datetime={entry.data.date.toISOString()}>
+                {formatEntryDate(entry.data.date)}
+              </time>
+            </div>
+            <p class="m-0 mt-1 max-w-2xl text-[14px] leading-6 text-[var(--color-muted)] group-hover:text-[var(--color-text)]">
+              {entry.data.summary}
+            </p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Layout>

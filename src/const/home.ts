@@ -20,6 +20,11 @@ export const HOME = {
 	work: {
 		label: 'Work',
 	},
+	entries: {
+		label: 'Entries',
+		description: 'A few short entries on building software and products.',
+		backLabel: 'Back',
+	},
 	licenses: {
 		label: 'References',
 		description:
