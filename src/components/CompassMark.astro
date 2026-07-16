@@ -1,0 +1,25 @@
+---
+import compassUrl from '@/assets/icons/compass.svg?url'
+import { HOME } from '@/const/home'
+---
+
+<div
+  class="pointer-events-none grid justify-items-center gap-3 text-center font-mono uppercase"
+  aria-hidden="true"
+>
+  <img
+    src={compassUrl}
+    alt=""
+    class="w-16 opacity-35 sm:w-20 lg:w-24"
+    loading="eager"
+    decoding="async"
+  />
+  <div class="grid gap-1 leading-none">
+    <p class="m-0 text-[10px] tracking-[0.08em] text-[var(--color-muted)]">
+      {HOME.origin.label}
+    </p>
+    <p class="m-0 text-[11px] tracking-[0.06em] text-[var(--color-text)] opacity-70">
+      {HOME.origin.coordinates}
+    </p>
+  </div>
+</div>

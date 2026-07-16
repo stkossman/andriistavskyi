@@ -98,7 +98,6 @@ const clearPanel = () => {
 			}
 
 			placeholder?.classList.remove('hidden')
-			animatePanel(placeholder)
 		},
 		prefersReducedMotion ? 0 : 180,
 	)

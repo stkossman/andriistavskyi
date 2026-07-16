@@ -14,8 +14,12 @@ export const HOME = {
 	},
 	background: {
 		label: 'Background',
-		statement: ['Clear', 'Practical', 'Reliable', 'Well made'],
-		body: 'I like building things that do their job without asking for attention. Clear interfaces, predictable flows, and maintainable code matter more to me than decoration. The goal is simple: make the product easier to use, easier to reason about, and harder to break.',
+		statement: ['Clear', 'Practical', 'Curious', 'Well made'],
+		body: 'I like building things that do their job without asking for attention. Curiosity and small experiments help uncover better ways to make clear interfaces, predictable flows, and maintainable code. The goal is simple: make the product easier to use, easier to reason about, and harder to break.',
+	},
+	origin: {
+		label: 'Point of origin',
+		coordinates: '50°35′N 27°38′E',
 	},
 	work: {
 		label: 'Work',
