@@ -1,0 +1,19 @@
+@layer utilities {
+  @keyframes beacon-presence {
+    0%,
+    100% {
+      opacity: 0.48;
+      transform: scale(0.9);
+    }
+
+    45% {
+      opacity: 0.82;
+      transform: scale(1.08);
+    }
+
+    70% {
+      opacity: 0.62;
+      transform: scale(1);
+    }
+  }
+}
