@@ -32,10 +32,7 @@ export const HOME = {
 		label: 'References',
 		description:
 			'Small reference page for the font packages used by this site.',
-		links: [
-			{ label: 'Fonts Licenses', href: '/fonts-licenses' },
-			{ label: 'Stack', href: '/stack' },
-		],
+		links: [{ label: 'Stack', href: '/stack' }],
 	},
 	contact: {
 		label: 'Contact',

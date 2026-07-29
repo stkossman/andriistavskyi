@@ -1,15 +1,23 @@
 @import "tailwindcss";
-@import "@fontsource/ibm-plex-sans/400.css";
-@import "@fontsource/ibm-plex-sans/400-italic.css";
-@import "@fontsource/ibm-plex-sans/500.css";
-@import "@fontsource/ibm-plex-sans/600.css";
-@import "@fontsource-variable/geist-mono/wght.css";
 @import "./colors/tokens.css";
 @import "./typography/fonts.css";
 @import "./typography/content.css";
 @import "./animations/transitions.css";
-@import "./animations/beacon.css";
-@import "./components/right-panel.css";
+
+@theme {
+  --font-sans: Arial, sans-serif;
+  --font-body: Arial, sans-serif;
+  --font-mono: Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  animation: none !important;
+  transition: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
 
 @layer base {
   html {
@@ -19,12 +27,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    html {
-      scroll-behavior: smooth;
-    }
   }
 
   body {
