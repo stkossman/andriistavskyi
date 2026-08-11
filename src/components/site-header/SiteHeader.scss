@@ -6,7 +6,7 @@
 
 .site-header__masthead {
 	padding: 0 0 $space-2;
-	border-bottom: 1px solid $color-text;
+	border-bottom: 1px solid $color-primary;
 }
 
 .site-header__nav-row {
@@ -44,6 +44,7 @@
 	a[aria-current="page"] {
 		color: $color-text;
 		font-weight: 700;
+		text-decoration-color: $color-primary;
 	}
 }
 

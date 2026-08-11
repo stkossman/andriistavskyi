@@ -23,6 +23,10 @@
 	}
 }
 
+.metadata-table__meta-value {
+	color: $color-meta;
+}
+
 @media (max-width: $breakpoint-small) {
 	.metadata-table th {
 		width: 7rem;

@@ -44,7 +44,7 @@ import Layout from '@/layouts/Layout.astro'
 						<h3>{item.company}</h3>
 						<div class="experience-item__meta">
 							<p>{item.role}</p>
-							<p>{item.period}</p>
+							<p class="experience-item__period">{item.period}</p>
 						</div>
 						<p>{item.description}</p>
 						{item.note && <p class="muted">{item.note}</p>}
@@ -74,7 +74,9 @@ import Layout from '@/layouts/Layout.astro'
 				{EDUCATION.map(item => (
 					<li class="plain-item">
 						<h3>{item.institution}</h3>
-						<p class="muted">{item.program} · {item.period}</p>
+						<p class="muted">
+							{item.program} · <span class="meta-value">{item.period}</span>
+						</p>
 					</li>
 				))}
 			</ol>

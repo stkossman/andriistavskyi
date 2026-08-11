@@ -9,6 +9,10 @@ interface Props {
 }
 
 const { items } = Astro.props
+
+function isMetaValue(label: string) {
+	return label === 'Year' || label === 'Period'
+}
 ---
 
 <table class="metadata-table">
@@ -16,7 +20,9 @@ const { items } = Astro.props
 		{items.map(item => (
 			<tr>
 				<th scope="row">{item.label}</th>
-				<td>{item.value}</td>
+				<td class={isMetaValue(item.label) ? 'metadata-table__meta-value' : undefined}>
+					{item.value}
+				</td>
 			</tr>
 		))}
 	</tbody>

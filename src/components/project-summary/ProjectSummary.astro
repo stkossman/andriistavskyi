@@ -17,7 +17,7 @@ const displayContext = project.context
 	<header class="project-summary__header">
 		<h3><a href={`/work/${project.slug}/`}>{project.title}</a></h3>
 		<div class="project-summary__stamp">
-			<span>{project.year}</span>
+			<span class="project-summary__year">{project.year}</span>
 			<span>{displayContext}</span>
 		</div>
 		{showRole && <p class="project-summary__role">Role: {project.role}</p>}

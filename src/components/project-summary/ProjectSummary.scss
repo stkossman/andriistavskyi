@@ -30,6 +30,10 @@
 	font-size: $metadata-size;
 }
 
+.project-summary__year {
+	color: $color-meta;
+}
+
 .project-summary__role {
 	margin-top: $space-1;
 }
