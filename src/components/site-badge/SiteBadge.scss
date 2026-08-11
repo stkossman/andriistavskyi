@@ -1,0 +1,30 @@
+@use "../../styles/abstracts" as *;
+
+.site-badge {
+	display: inline-grid;
+	grid-template-columns: 24px 1fr;
+	width: 88px;
+	height: 31px;
+	overflow: hidden;
+	border: 1px solid $color-text;
+	background: $color-bg;
+	color: $color-text;
+	font-family: $font-body;
+	font-size: 8px;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.site-badge__mark,
+.site-badge__label {
+	display: grid;
+	place-items: center;
+	min-width: 0;
+	padding: 2px;
+	text-align: center;
+}
+
+.site-badge__mark {
+	background: $color-text;
+	color: $color-bg;
+}

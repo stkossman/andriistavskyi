@@ -1,0 +1,25 @@
+@use "../styles/abstracts" as *;
+
+.details-list {
+	display: grid;
+	grid-template-columns: max-content minmax(0, 1fr);
+	gap: $space-1 $space-6;
+	max-width: 42rem;
+	margin: 0;
+
+	dt {
+		font-weight: 700;
+	}
+
+	dd {
+		margin: 0;
+		color: $color-secondary;
+	}
+}
+
+@media (max-width: $breakpoint-small) {
+	.details-list {
+		grid-template-columns: 1fr;
+		gap: 0.1rem;
+	}
+}

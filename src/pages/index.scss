@@ -1,0 +1,12 @@
+@use "../styles/abstracts" as *;
+
+.intro {
+	display: grid;
+	gap: 0.6rem;
+	max-width: 66ch;
+}
+
+.intro__role,
+.intro__meta {
+	color: $color-secondary;
+}

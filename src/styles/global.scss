@@ -1,0 +1,71 @@
+@use "base/reset";
+@use "base/document";
+@use "base/typography";
+@use "base/links";
+@use "abstracts" as *;
+
+.site-shell {
+	@include page-container;
+	padding: 1.25rem 0 2rem;
+}
+
+.skip-link {
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	z-index: 10;
+	padding: 0.35rem 0.5rem;
+	border: 1px solid $color-border;
+	background: $color-bg;
+	transform: translateY(-150%);
+
+	&:focus {
+		transform: translateY(0);
+	}
+}
+
+.page-stack {
+	display: grid;
+	gap: $space-8;
+}
+
+.section {
+	display: grid;
+	gap: 0.8rem;
+
+	> header {
+		display: grid;
+		gap: $space-2;
+	}
+
+	> header p {
+		max-width: $reading-width;
+	}
+}
+
+.section-note,
+.muted {
+	color: $color-secondary;
+}
+
+.prose {
+	display: grid;
+	gap: $space-5;
+	max-width: $reading-width;
+}
+
+.plain-list,
+.project-list {
+	display: grid;
+	gap: $space-6;
+	@include unstyled-list;
+}
+
+.plain-item {
+	display: grid;
+	gap: $space-1;
+
+	p {
+		max-width: $reading-width;
+	}
+}

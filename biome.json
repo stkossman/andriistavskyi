@@ -34,9 +34,6 @@
 		},
 		"linter": {
 			"enabled": false
-		},
-		"parser": {
-			"tailwindDirectives": true
 		}
 	},
 	"assist": {

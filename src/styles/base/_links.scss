@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+a {
+	color: $color-link;
+	text-decoration: underline;
+	text-underline-offset: 0.16em;
+}
+
+a:visited {
+	color: $color-visited;
+}
+
+a:hover {
+	background: $color-hover;
+}

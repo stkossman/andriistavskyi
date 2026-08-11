@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+html {
+	background: $color-bg;
+	color: $color-text;
+	font-family: $font-body;
+	font-size: $body-size;
+	line-height: 1.55;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	min-height: 100vh;
+	background: $color-bg;
+	color: $color-text;
+}
+
+main {
+	padding: 1.5rem 0 2rem;
+}
+
+hr {
+	width: 100%;
+	margin: 0;
+	border: 0;
+	border-top: 1px solid $color-rule;
+}
+
+::selection {
+	background: $color-text;
+	color: $color-bg;
+}
+
+:focus-visible {
+	@include focus-ring;
+}

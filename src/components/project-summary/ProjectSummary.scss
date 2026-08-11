@@ -1,0 +1,58 @@
+@use "../../styles/abstracts" as *;
+
+.project-summary {
+	display: grid;
+	gap: $space-3;
+	padding: 0 0 $space-6;
+	border-bottom: 1px solid $color-rule;
+}
+
+.project-summary__header {
+	display: grid;
+	gap: 0.15rem;
+
+	p {
+		color: $color-secondary;
+		font-size: $small-size;
+	}
+}
+
+.project-summary__body {
+	display: grid;
+	gap: 0.45rem;
+	max-width: $reading-width;
+}
+
+.project-summary__meta {
+	display: grid;
+	gap: $space-1;
+	color: $color-secondary;
+	font-size: $small-size;
+
+	div {
+		display: grid;
+		grid-template-columns: 4rem minmax(0, 1fr);
+		gap: $space-4;
+	}
+
+	dt {
+		color: $color-text;
+		font-weight: 700;
+	}
+
+	dd {
+		margin: 0;
+	}
+}
+
+.project-summary__links {
+	color: $color-secondary;
+	font-size: $small-size;
+}
+
+@media (max-width: $breakpoint-small) {
+	.project-summary__meta div {
+		grid-template-columns: 1fr;
+		gap: 0.1rem;
+	}
+}

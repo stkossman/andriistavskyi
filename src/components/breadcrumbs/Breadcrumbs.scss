@@ -1,0 +1,19 @@
+@use "../../styles/abstracts" as *;
+
+.breadcrumbs {
+	color: $color-secondary;
+	font-size: $metadata-size;
+
+	ol {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $space-1;
+		@include unstyled-list;
+	}
+
+	li + li::before {
+		content: ">";
+		margin-right: $space-1;
+		color: $color-muted;
+	}
+}

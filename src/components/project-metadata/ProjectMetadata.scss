@@ -1,0 +1,28 @@
+@use "../../styles/abstracts" as *;
+
+.metadata-table {
+	width: 100%;
+	max-width: 760px;
+	border-collapse: collapse;
+	font-size: $small-size;
+
+	th,
+	td {
+		padding: 0.4rem 0.5rem;
+		border: 1px solid $color-border;
+		vertical-align: top;
+		text-align: left;
+	}
+
+	th {
+		width: 9.5rem;
+		background: $color-utility;
+		font-weight: 700;
+	}
+}
+
+@media (max-width: $breakpoint-small) {
+	.metadata-table th {
+		width: 7rem;
+	}
+}
