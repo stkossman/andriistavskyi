@@ -1,0 +1,40 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import ProjectSummary from '@/components/ProjectSummary.astro'
+import { PROJECTS } from '@/const/projects'
+import { SITE } from '@/const/site'
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout
+	title={`Work - ${SITE.name}`}
+	description="Selected projects and systems by andrii stavskyi."
+>
+	<div class="page-stack">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Work' }]} />
+
+		<section class="section" aria-labelledby="work-title">
+			<header>
+				<h1 id="work-title">Work</h1>
+				<p class="section-note">Selected projects and systems I have worked on.</p>
+			</header>
+			<div class="prose">
+				<p>
+					Some are personal projects built from scratch. Others were developed as
+					part of a team, with existing constraints, shared ownership, and real
+					project requirements.
+				</p>
+			</div>
+		</section>
+
+		<hr />
+
+		<section class="section" aria-label="Project directory">
+			<div class="project-list">
+				{PROJECTS.map(project => (
+					<ProjectSummary project={project} showRole />
+				))}
+			</div>
+		</section>
+	</div>
+</Layout>

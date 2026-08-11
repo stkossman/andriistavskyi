@@ -4,6 +4,8 @@ import '../styles/global.css'
 import Analytics from '@vercel/analytics/astro'
 import SpeedInsights from '@vercel/speed-insights/astro'
 import Seo from '@/components/common/Seo.astro'
+import SiteFooter from '@/components/SiteFooter.astro'
+import SiteHeader from '@/components/SiteHeader.astro'
 
 interface Props {
 	title: string
@@ -20,9 +22,14 @@ const { title, description, image } = Astro.props
     <Seo title={title} description={description} image={image} />
   </head>
   <body>
-    <main>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="site-shell">
+      <SiteHeader />
+    <main id="main-content">
       <slot />
     </main>
+      <SiteFooter />
+    </div>
     <Analytics />
     <SpeedInsights />
   </body>

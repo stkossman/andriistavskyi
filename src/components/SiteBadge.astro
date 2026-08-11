@@ -1,0 +1,12 @@
+---
+interface Props {
+	label: string
+}
+
+const { label } = Astro.props
+---
+
+<span class="site-badge" aria-label={label}>
+	<span class="site-badge__mark" aria-hidden="true">88</span>
+	<span class="site-badge__label">{label}</span>
+</span>

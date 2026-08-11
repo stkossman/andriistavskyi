@@ -1,5 +1,7 @@
 ---
 import { Image } from 'astro:assets'
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import ProjectMetadata from '@/components/ProjectMetadata.astro'
 import { PROJECTS, type Project } from '@/const/projects'
 import { SITE } from '@/const/site'
 import Layout from '@/layouts/Layout.astro'
@@ -16,62 +18,105 @@ interface Props {
 }
 
 const { project } = Astro.props
-
-const inlineLinkClass =
-	'inline-flex w-fit rounded-[2px] px-1.5 py-0.5 underline decoration-[var(--color-subtle)] transition-colors duration-200 hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] focus-visible:bg-[var(--color-hover)] focus-visible:text-[var(--color-text)]'
+const description = project.homepageSummary[0]
 ---
 
-<Layout title={`${project.title} - ${SITE.name}`} description={project.description}>
-  <article class="mx-auto grid min-h-dvh w-full max-w-[112rem] gap-10 px-6 py-8 text-[15px] leading-7 lg:h-dvh lg:grid-cols-[minmax(20rem,34rem)_minmax(0,1fr)] lg:overflow-hidden lg:px-10 lg:py-9">
-    <div class="flex flex-col gap-10 lg:h-full lg:overflow-hidden">
-      <a class="motion-index-enter w-fit rounded-[2px] px-1.5 py-0.5 font-mono text-xl leading-none no-underline text-[var(--color-muted)] transition-colors duration-200 hover:bg-[var(--color-hover)] hover:text-[var(--color-text)] focus-visible:bg-[var(--color-hover)] focus-visible:text-[var(--color-text)]" href="/" aria-label="Back home">
-        ×
-      </a>
+<Layout title={`${project.title} - ${SITE.name}`} description={description}>
+	<article class="project-page">
+		<Breadcrumbs
+			items={[
+				{ label: 'Home', href: '/' },
+				{ label: 'Work', href: '/work/' },
+				{ label: project.title },
+			]}
+		/>
 
-      <header class="motion-index-enter grid gap-5" style="--motion-delay: 90ms">
-        <p class="m-0 font-mono text-[13px] leading-5 text-[var(--color-muted)]">
-          {project.context}
-        </p>
-        <h1 class="m-0 max-w-[28rem] text-2xl font-normal leading-tight tracking-normal">
-          {project.title}
-        </h1>
-        <p class="m-0 max-w-[31rem] text-[15px] leading-7 text-[var(--color-muted)]">
-          {project.description}
-        </p>
-      </header>
+		<header class="project-page__header">
+			<h1>{project.title}</h1>
+			<p class="section-note">{project.context}</p>
+			<p>{description}</p>
+		</header>
 
-      <dl class="motion-index-enter grid gap-4 text-[15px] leading-7 text-[var(--color-muted)]" style="--motion-delay: 180ms">
-        <div>
-          <dt class="font-mono text-[13px] text-[var(--color-text)]">Role</dt>
-          <dd class="m-0">{project.role}</dd>
-        </div>
-        <div>
-          <dt class="font-mono text-[13px] text-[var(--color-text)]">Stack</dt>
-          <dd class="m-0">{project.stack.join(', ')}</dd>
-        </div>
-        <div>
-          <dt class="font-mono text-[13px] text-[var(--color-text)]">Focus</dt>
-          <dd class="m-0">{project.focus}</dd>
-        </div>
-        <div>
-          <dt class="font-mono text-[13px] text-[var(--color-text)]">Links</dt>
-          <dd class="m-0 flex flex-wrap gap-x-3">
-            {project.links.map((link) => (
-              <a class={inlineLinkClass} href={link.href}>{link.label}</a>
-            ))}
-          </dd>
-        </div>
-      </dl>
-    </div>
+		<ProjectMetadata items={project.metadata} />
 
-    <div class="min-h-0 lg:h-full lg:overflow-y-auto">
-      <Image
-        src={project.image}
-        alt={project.imageAlt}
-        class="motion-panel-enter w-full border border-[var(--color-border)] bg-[var(--color-hover)] object-cover"
-        widths={[640, 960, 1280]}
-        sizes="(min-width: 1024px) 58vw, 100vw"
-      />
-    </div>
-  </article>
+		<figure class="project-page__media">
+			<Image
+				src={project.image}
+				alt={project.imageAlt}
+				widths={[640, 900, 1200]}
+				sizes="(min-width: 920px) 900px, calc(100vw - 32px)"
+			/>
+			<figcaption>{project.imageAlt}</figcaption>
+		</figure>
+
+		<hr />
+
+		<section class="section" aria-labelledby="overview-title">
+			<header>
+				<h2 id="overview-title">Overview</h2>
+			</header>
+			<div class="prose">
+				{project.overview.map(paragraph => <p>{paragraph}</p>)}
+			</div>
+		</section>
+
+		{project.roleDescription && (
+			<>
+				<hr />
+				<section class="section" aria-labelledby="role-title">
+					<header>
+						<h2 id="role-title">My role</h2>
+					</header>
+					<div class="prose">
+						{project.roleDescription.map(paragraph => <p>{paragraph}</p>)}
+					</div>
+				</section>
+			</>
+		)}
+
+		{project.technicalWork?.map(section => (
+			<>
+				<hr />
+				<section class="section" aria-labelledby={`${section.title.toLowerCase().replaceAll(' ', '-')}-title`}>
+					<header>
+						<h2 id={`${section.title.toLowerCase().replaceAll(' ', '-')}-title`}>
+							{section.title}
+						</h2>
+					</header>
+					<div class="prose">
+						{section.body.map(paragraph => <p>{paragraph}</p>)}
+					</div>
+				</section>
+			</>
+		))}
+
+		{project.caseStudySections?.map(section => (
+			<>
+				<hr />
+				<section class="section" aria-labelledby={`${section.title.toLowerCase().replaceAll(' ', '-')}-title`}>
+					<header>
+						<h2 id={`${section.title.toLowerCase().replaceAll(' ', '-')}-title`}>
+							{section.title}
+						</h2>
+					</header>
+					<div class="prose">
+						{section.body.map(paragraph => <p>{paragraph}</p>)}
+					</div>
+				</section>
+			</>
+		))}
+
+		<hr />
+
+		<section class="section" aria-labelledby="links-title">
+			<header>
+				<h2 id="links-title">Links</h2>
+			</header>
+			<ul class="link-list">
+				{project.links.map(link => (
+					<li><a href={link.href}>{link.label}</a></li>
+				))}
+			</ul>
+		</section>
+	</article>
 </Layout>

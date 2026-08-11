@@ -1,9 +1,0 @@
-@layer utilities {
-  .motion-index-enter,
-  .motion-panel-enter {
-    opacity: 1;
-    animation: none !important;
-    filter: none !important;
-    transform: none !important;
-  }
-}

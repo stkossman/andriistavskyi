@@ -1,0 +1,22 @@
+---
+import { CONTACT_LINKS } from '@/const/contact'
+import { SITE } from '@/const/site'
+import SiteBadge from './SiteBadge.astro'
+---
+
+<footer class="site-footer">
+	<hr />
+	<nav class="site-footer__links" aria-label="Footer">
+		{CONTACT_LINKS.map(link => <a href={link.href}>{link.label}</a>)}
+		<a href="/sitemap/">Site map</a>
+	</nav>
+
+	<div class="site-footer__badges" aria-label="Site badges">
+		<SiteBadge label="MADE WITH ASTRO" />
+		<SiteBadge label="BUILT IN UKRAINE" />
+	</div>
+
+	<p>Last updated: August 2026</p>
+	<p>Made in Ukraine.</p>
+	<p>&copy; 2026 {SITE.lowercaseName}</p>
+</footer>

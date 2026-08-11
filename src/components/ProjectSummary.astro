@@ -1,0 +1,41 @@
+---
+import type { Project } from '@/const/projects'
+
+interface Props {
+	project: Project
+	showRole?: boolean
+}
+
+const { project, showRole = false } = Astro.props
+---
+
+<article class="project-summary">
+	<header class="project-summary__header">
+		<h3><a href={`/work/${project.slug}/`}>{project.title}</a></h3>
+		<p>{project.year} · {project.context}</p>
+		{showRole && <p>Role: {project.role}</p>}
+	</header>
+
+	<div class="project-summary__body">
+		{project.homepageSummary.map(paragraph => <p>{paragraph}</p>)}
+	</div>
+
+	<dl class="project-summary__meta">
+		<div>
+			<dt>Stack</dt>
+			<dd>{project.stack.join(', ')}</dd>
+		</div>
+	</dl>
+
+	<p class="project-summary__links">
+		<a href={`/work/${project.slug}/`}>Project details</a>
+		{project.links.map(link => (
+			<>
+				{' '}
+				<span aria-hidden="true">|</span>
+				{' '}
+				<a href={link.href}>{link.label}</a>
+			</>
+		))}
+	</p>
+</article>

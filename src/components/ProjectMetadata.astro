@@ -1,0 +1,21 @@
+---
+interface Props {
+	items: {
+		label: string
+		value: string
+	}[]
+}
+
+const { items } = Astro.props
+---
+
+<table class="metadata-table">
+	<tbody>
+		{items.map(item => (
+			<tr>
+				<th scope="row">{item.label}</th>
+				<td>{item.value}</td>
+			</tr>
+		))}
+	</tbody>
+</table>

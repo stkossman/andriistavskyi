@@ -1,0 +1,41 @@
+---
+import { CONTACT_LINKS } from '@/const/contact'
+import { SITE } from '@/const/site'
+
+const currentPath = Astro.url.pathname
+
+const primaryLinks = [
+	{ label: 'Home', href: '/' },
+	{ label: 'Work', href: '/work/' },
+	{ label: 'About', href: '/about/' },
+] as const
+
+function isCurrent(href: string) {
+	if (href === '/') {
+		return currentPath === '/'
+	}
+
+	return currentPath.startsWith(href)
+}
+---
+
+<header class="site-header">
+	<div class="site-header__inner">
+		<a class="site-header__name" href="/">{SITE.lowercaseName}</a>
+
+		<nav class="site-header__nav" aria-label="Primary">
+			{primaryLinks.map(link => (
+				<a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
+					{link.label}
+				</a>
+			))}
+		</nav>
+
+		<nav class="site-header__nav site-header__nav--external" aria-label="External">
+			{CONTACT_LINKS.map(link => (
+				<a href={link.href}>{link.label}</a>
+			))}
+		</nav>
+	</div>
+	<hr />
+</header>

@@ -1,9 +1,9 @@
 export const SITE = {
-	name: 'Andrii Stavskyi',
+	name: 'andrii stavskyi',
 	lowercaseName: 'andrii stavskyi',
-	title: 'Andrii Stavskyi',
+	title: 'andrii stavskyi',
 	description:
-		'Andrii Stavskyi is a frontend-focused full-stack developer working with React, TypeScript, Astro, and .NET.',
+		'andrii stavskyi is a Full-Stack Software Engineer from Ukraine building maintainable web applications and practical interfaces.',
 	url: 'https://www.andriistavskyi.me/',
 	ogImage: '/og-image.jpg',
 	repositoryHref: 'https://github.com/stkossman/www',

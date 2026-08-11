@@ -1,0 +1,170 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import { SITE } from '@/const/site'
+import Layout from '@/layouts/Layout.astro'
+
+const details = [
+	['Location', 'Ukraine'],
+	['Work', 'Software engineering'],
+	['Interests', 'Writing, books, design, games, training'],
+	['Languages', 'Ukrainian, English'],
+] as const
+---
+
+<Layout
+	title={`About - ${SITE.name}`}
+	description="About andrii stavskyi, a Full-Stack Software Engineer from Ukraine."
+>
+	<div class="page-stack">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
+
+		<section class="section" aria-labelledby="about-title">
+			<header>
+				<h1 id="about-title">About</h1>
+			</header>
+			<div class="prose">
+				<p>
+					I'm a Full-Stack Software Engineer from Ukraine working primarily with
+					.NET and modern web technologies.
+				</p>
+				<p>
+					I prefer software that is predictable, restrained, and easy to reason
+					about. The same preference carries into interface design: clear
+					structure, little decoration, and interactions that do not ask for
+					attention unless they need it.
+				</p>
+			</div>
+		</section>
+
+		<hr />
+
+		<section class="section" aria-labelledby="work-title">
+			<header><h2 id="work-title">Work</h2></header>
+			<div class="prose">
+				<p>
+					I care more about software remaining understandable six months later
+					than about making it look clever today.
+				</p>
+				<p>
+					Most of my attention goes to structure, naming, predictable behavior,
+					and keeping responsibilities clear. I like systems where a change has
+					an obvious place to belong and where the code explains its own shape
+					without relying on unnecessary abstraction.
+				</p>
+				<p>
+					I work across backend and frontend development, but I tend to think
+					about both in the same way: reduce ambiguity, keep boundaries clear,
+					and avoid complexity that has not earned its place.
+				</p>
+			</div>
+		</section>
+
+		<hr />
+
+		<section class="section" aria-labelledby="side-projects-title">
+			<header><h2 id="side-projects-title">Side projects</h2></header>
+			<div class="prose">
+				<p>
+					I usually start personal projects for one of two reasons: there is a
+					small problem I want solved properly, or there is an idea I want to
+					understand by building it.
+				</p>
+				<p>
+					I prefer small applications with a clear purpose over large projects
+					built only to demonstrate a stack. Soliloquy is one example of that
+					approach: local-first, narrow in scope, and designed around a specific
+					way of writing rather than a long feature list.
+				</p>
+			</div>
+		</section>
+
+		<hr />
+
+		<section class="section" aria-labelledby="writing-title">
+			<header><h2 id="writing-title">Writing and books</h2></header>
+			<div class="prose">
+				<p>I spend a lot of time reading and writing outside software.</p>
+				<p>
+					I am particularly drawn to stories built around discipline, consequence,
+					identity, endurance, and the cost of becoming stronger. Berserk,
+					Vagabond, and Vinland Saga are recurring references for me because they
+					treat growth as something difficult, uneven, and rarely clean.
+				</p>
+				<p>
+					I am also interested in dark fantasy more broadly, especially worlds
+					that feel old, hostile, and only partially explained.
+				</p>
+			</div>
+		</section>
+
+		<hr />
+
+		<section class="section" aria-labelledby="games-title">
+			<header><h2 id="games-title">Games</h2></header>
+			<div class="prose">
+				<p>
+					The Dark Souls series has had a lasting influence on the way I think
+					about games and, to some extent, design in general.
+				</p>
+				<p>
+					I like systems that do not over-explain themselves, worlds that reward
+					attention, and mechanics that become clear through use rather than
+					instruction. Restraint is part of what makes those games work: they
+					leave enough unsaid for the player to participate in understanding
+					them.
+				</p>
+			</div>
+		</section>
+
+		<hr />
+
+		<section class="section" aria-labelledby="design-title">
+			<header><h2 id="design-title">Design</h2></header>
+			<div class="prose">
+				<p>
+					I prefer interfaces that explain themselves through structure rather
+					than animation or decoration.
+				</p>
+				<p>
+					Good design, to me, is often subtractive. Fewer competing elements,
+					fewer states that need explanation, fewer interactions that exist only
+					because they can.
+				</p>
+				<p>
+					I am especially interested in older web design, where limited tools
+					often forced stronger hierarchy and more direct communication. I do not
+					think old interfaces were better by default, but I think some of their
+					restraint is worth keeping.
+				</p>
+			</div>
+		</section>
+
+		<hr />
+
+		<section class="section" aria-labelledby="training-title">
+			<header><h2 id="training-title">Training</h2></header>
+			<div class="prose">
+				<p>I train regularly and value the routine more than the novelty.</p>
+				<p>
+					Progress there is usually repetitive and unremarkable: show up, do the
+					work, recover, repeat. I like that. It is a useful counterweight to work
+					that is often abstract and difficult to measure day to day.
+				</p>
+			</div>
+		</section>
+
+		<hr />
+
+		<section class="section" aria-labelledby="details-title">
+			<header><h2 id="details-title">Details</h2></header>
+			<dl class="details-list">
+				{details.map(([label, value]) => (
+					<>
+						<dt>{label}</dt>
+						<dd>{value}</dd>
+					</>
+				))}
+			</dl>
+		</section>
+	</div>
+</Layout>
