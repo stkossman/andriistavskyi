@@ -6,7 +6,7 @@
 
 .site-shell {
 	@include page-container;
-	padding: 1.25rem 0 2rem;
+	padding: 0.9rem 0 1.5rem;
 }
 
 .skip-link {
@@ -31,15 +31,20 @@
 
 .section {
 	display: grid;
-	gap: 0.8rem;
+	gap: $space-4;
 
 	> header {
 		display: grid;
-		gap: $space-2;
+		gap: 0.2rem;
+		padding: 0.28rem 0.45rem;
+		border-top: 1px solid $color-border;
+		border-bottom: 1px solid $color-border;
+		background: $color-utility;
 	}
 
 	> header p {
 		max-width: $reading-width;
+		font-size: $small-size;
 	}
 }
 
@@ -50,20 +55,20 @@
 
 .prose {
 	display: grid;
-	gap: $space-5;
+	gap: $space-4;
 	max-width: $reading-width;
 }
 
 .plain-list,
 .project-list {
 	display: grid;
-	gap: $space-6;
+	gap: $space-4;
 	@include unstyled-list;
 }
 
 .plain-item {
 	display: grid;
-	gap: $space-1;
+	gap: 0.18rem;
 
 	p {
 		max-width: $reading-width;

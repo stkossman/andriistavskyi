@@ -1,25 +1,34 @@
 @use "../styles/abstracts" as *;
 
-.details-list {
-	display: grid;
-	grid-template-columns: max-content minmax(0, 1fr);
-	gap: $space-1 $space-6;
+.details-table {
+	width: 100%;
 	max-width: 42rem;
-	margin: 0;
+	border: 1px solid $color-text;
+	border-collapse: collapse;
+	font-size: $metadata-size;
 
-	dt {
+	th,
+	td {
+		padding: 0.32rem 0.45rem;
+		border: 1px solid $color-border;
+		text-align: left;
+		vertical-align: top;
+	}
+
+	th {
+		width: 8rem;
+		border-right-color: $color-text;
+		background: $color-utility-strong;
 		font-weight: 700;
 	}
 
-	dd {
-		margin: 0;
+	td {
 		color: $color-secondary;
 	}
 }
 
 @media (max-width: $breakpoint-small) {
-	.details-list {
-		grid-template-columns: 1fr;
-		gap: 0.1rem;
+	.details-table th {
+		width: 6.5rem;
 	}
 }

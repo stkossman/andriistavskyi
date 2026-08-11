@@ -2,7 +2,7 @@
 
 .project-page {
 	display: grid;
-	gap: $space-7;
+	gap: $space-6;
 }
 
 .project-page__header {
@@ -13,10 +13,11 @@
 
 .project-page__media {
 	display: grid;
-	gap: 0.4rem;
+	gap: $space-2;
+	max-width: 880px;
 
 	img {
-		border: 1px solid $color-border;
+		border: 1px solid $color-text;
 		background: $color-utility;
 	}
 

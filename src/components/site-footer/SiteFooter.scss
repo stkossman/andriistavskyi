@@ -2,12 +2,13 @@
 
 .site-footer {
 	display: grid;
-	gap: $space-3;
+	gap: $space-2;
 	color: $color-secondary;
 	font-size: $metadata-size;
 
 	hr {
-		margin-bottom: $space-2;
+		border-top-color: $color-text;
+		margin-bottom: $space-1;
 	}
 }
 
@@ -21,5 +22,5 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.375rem;
-	margin-top: $space-1;
+	margin-top: 0.1rem;
 }

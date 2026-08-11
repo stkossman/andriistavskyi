@@ -12,15 +12,26 @@ import Layout from '@/layouts/Layout.astro'
 	<div class="page-stack">
 		<section class="intro" aria-labelledby="intro-title">
 			<h1 id="intro-title">andrii stavskyi</h1>
-			<p class="intro__role">Full-Stack Software Engineer</p>
+			<dl class="intro__meta-table" aria-label="Identity details">
+				<div>
+					<dt>Role</dt>
+					<dd>Full-Stack Software Engineer</dd>
+				</div>
+			</dl>
 			<p>
 				I build web applications and software systems with an emphasis on clear
 				behavior, maintainable code, and practical interfaces.
 			</p>
-			<p class="intro__meta">
-				Currently at <a href={SITE.softServeHref}>SoftServe</a>.<br />
-				Based in Ukraine.
-			</p>
+			<dl class="intro__meta-table" aria-label="Current status">
+				<div>
+					<dt>Currently at</dt>
+					<dd><a href={SITE.softServeHref}>SoftServe</a></dd>
+				</div>
+				<div>
+					<dt>Based in</dt>
+					<dd>Ukraine</dd>
+				</div>
+			</dl>
 		</section>
 
 		<hr />
@@ -29,11 +40,14 @@ import Layout from '@/layouts/Layout.astro'
 			<header>
 				<h2 id="experience-title">Experience</h2>
 			</header>
-			<ol class="plain-list">
+			<ol class="experience-list">
 				{EXPERIENCE.map(item => (
-					<li class="plain-item">
+					<li class="experience-item">
 						<h3>{item.company}</h3>
-						<p class="muted">{item.role} · {item.period}</p>
+						<div class="experience-item__meta">
+							<p>{item.role}</p>
+							<p>{item.period}</p>
+						</div>
 						<p>{item.description}</p>
 						{item.note && <p class="muted">{item.note}</p>}
 					</li>

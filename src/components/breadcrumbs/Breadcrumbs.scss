@@ -3,6 +3,8 @@
 .breadcrumbs {
 	color: $color-secondary;
 	font-size: $metadata-size;
+	padding: $space-1 0;
+	border-bottom: 1px solid $color-rule;
 
 	ol {
 		display: flex;

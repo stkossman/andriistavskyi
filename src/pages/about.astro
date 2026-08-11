@@ -158,14 +158,16 @@ const details = [
 
 		<section class="section" aria-labelledby="details-title">
 			<header><h2 id="details-title">Details</h2></header>
-			<dl class="details-list">
-				{details.map(([label, value]) => (
-					<>
-						<dt>{label}</dt>
-						<dd>{value}</dd>
-					</>
-				))}
-			</dl>
+			<table class="details-table">
+				<tbody>
+					{details.map(([label, value]) => (
+						<tr>
+							<th scope="row">{label}</th>
+							<td>{value}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
 		</section>
 	</div>
 </Layout>

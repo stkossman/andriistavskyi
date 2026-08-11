@@ -2,18 +2,21 @@
 
 .site-header {
 	font-size: $small-size;
-
-	hr {
-		margin: 0;
-	}
 }
 
-.site-header__inner {
+.site-header__masthead {
+	padding: 0 0 $space-2;
+	border-bottom: 1px solid $color-text;
+}
+
+.site-header__nav-row {
 	display: grid;
-	grid-template-columns: minmax(10rem, 1fr) auto auto;
+	grid-template-columns: minmax(10rem, 1fr) auto;
 	gap: $space-4 1.5rem;
 	align-items: baseline;
-	padding-bottom: $space-3;
+	padding: 0.32rem 0.45rem;
+	border-bottom: 1px solid $color-border;
+	background: $color-utility;
 }
 
 .site-header__name {
@@ -29,7 +32,14 @@
 .site-header__nav {
 	display: flex;
 	flex-wrap: wrap;
-	gap: $space-2 $space-5;
+	gap: 0 $space-2;
+
+	a + a::before {
+		content: "|";
+		margin-right: $space-2;
+		color: $color-muted;
+		font-weight: 400;
+	}
 
 	a[aria-current="page"] {
 		color: $color-text;
@@ -38,11 +48,12 @@
 }
 
 @media (max-width: $breakpoint-small) {
-	.site-header__inner {
+	.site-header__nav-row {
 		grid-template-columns: 1fr;
+		gap: $space-2;
 	}
 
 	.site-header__nav--external {
-		margin-top: 0.1rem;
+		margin-top: 0;
 	}
 }

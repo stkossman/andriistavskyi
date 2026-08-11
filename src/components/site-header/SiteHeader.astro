@@ -21,9 +21,10 @@ function isCurrent(href: string) {
 ---
 
 <header class="site-header">
-	<div class="site-header__inner">
+	<div class="site-header__masthead">
 		<a class="site-header__name" href="/">{SITE.lowercaseName}</a>
-
+	</div>
+	<div class="site-header__nav-row">
 		<nav class="site-header__nav" aria-label="Primary">
 			{primaryLinks.map(link => (
 				<a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
@@ -38,5 +39,4 @@ function isCurrent(href: string) {
 			))}
 		</nav>
 	</div>
-	<hr />
 </header>
