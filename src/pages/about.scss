@@ -1,5 +1,9 @@
 @use "../styles/abstracts" as *;
 
+.about-page {
+	gap: $space-7;
+}
+
 .details-table {
 	width: 100%;
 	max-width: 42rem;
@@ -25,6 +29,10 @@
 	td {
 		color: $color-secondary;
 	}
+}
+
+.about-page .section {
+	gap: $space-3;
 }
 
 @media (max-width: $breakpoint-small) {

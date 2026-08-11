@@ -48,6 +48,28 @@
 	}
 }
 
+.page-title-section {
+	gap: $space-3;
+
+	> header {
+		padding: 0.42rem 0.55rem;
+		border-top-color: $color-text;
+		border-bottom-color: $color-border;
+		background: $color-utility-strong;
+	}
+
+	h1 {
+		font-size: clamp(1.8rem, 1.68rem + 0.5vw, 2.1rem);
+	}
+}
+
+.page-title-block {
+	padding: 0.45rem 0.55rem;
+	border-top: 1px solid $color-text;
+	border-bottom: 1px solid $color-border;
+	background: $color-utility-soft;
+}
+
 .section-note,
 .muted {
 	color: $color-secondary;

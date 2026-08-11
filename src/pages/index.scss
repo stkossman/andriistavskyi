@@ -9,7 +9,7 @@
 
 .intro__meta-table {
 	display: grid;
-	grid-template-columns: repeat(2, max-content);
+	grid-template-columns: max-content minmax(0, 1fr);
 	gap: 0.18rem $space-6;
 	max-width: 32rem;
 	margin: 0;
@@ -61,7 +61,10 @@
 }
 
 @media (max-width: $breakpoint-small) {
-	.intro__meta-table,
+	.intro__meta-table {
+		grid-template-columns: max-content minmax(0, 1fr);
+	}
+
 	.experience-item__meta {
 		grid-template-columns: 1fr;
 	}

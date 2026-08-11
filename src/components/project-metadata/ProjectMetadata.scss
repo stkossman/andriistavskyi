@@ -2,7 +2,7 @@
 
 .metadata-table {
 	width: 100%;
-	max-width: 760px;
+	max-width: 680px;
 	border-collapse: collapse;
 	border: 1px solid $color-text;
 	font-size: $metadata-size;
@@ -16,7 +16,7 @@
 	}
 
 	th {
-		width: 9.5rem;
+		width: 8.5rem;
 		border-right-color: $color-text;
 		background: $color-utility-strong;
 		font-weight: 700;
