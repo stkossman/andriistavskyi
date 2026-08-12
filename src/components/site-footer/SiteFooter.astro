@@ -3,13 +3,23 @@ import './SiteFooter.scss'
 import SiteBadge from '@/components/site-badge/SiteBadge.astro'
 import { CONTACT_LINKS } from '@/const/contact'
 import { SITE } from '@/const/site'
+
+const internalLinks = [
+	{ label: 'Home', href: '/' },
+	{ label: 'Work', href: '/work/' },
+	{ label: 'About', href: '/about/' },
+	{ label: 'Site Map', href: '/sitemap/' },
+] as const
 ---
 
 <footer class="site-footer">
 	<hr />
-	<nav class="site-footer__links" aria-label="Footer">
+	<nav class="site-footer__links site-footer__links--internal" aria-label="Footer internal">
+		{internalLinks.map(link => <a href={link.href}>{link.label}</a>)}
+	</nav>
+
+	<nav class="site-footer__links site-footer__links--external" aria-label="Footer external">
 		{CONTACT_LINKS.map(link => <a href={link.href}>{link.label}</a>)}
-		<a href="/sitemap/">Site map</a>
 	</nav>
 
 	<div class="site-footer__badges" aria-label="Site badges">

@@ -31,8 +31,8 @@ import Layout from '@/layouts/Layout.astro'
 
 		<section class="section" aria-label="Project directory">
 			<div class="project-list">
-				{PROJECTS.map(project => (
-					<ProjectSummary project={project} showRole />
+				{PROJECTS.map((project, index) => (
+					<ProjectSummary project={project} showRole index={index} />
 				))}
 			</div>
 		</section>

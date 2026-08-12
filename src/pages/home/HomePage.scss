@@ -10,12 +10,9 @@
 .intro__meta-table {
 	display: grid;
 	grid-template-columns: max-content minmax(0, 1fr);
-	gap: 0.18rem $space-6;
+	gap: 0.14rem $space-6;
 	max-width: 32rem;
 	margin: 0;
-	padding: $space-2 $space-3;
-	border: 1px solid $color-border;
-	background: $color-utility-soft;
 	font-size: $small-size;
 
 	div {
@@ -23,7 +20,11 @@
 	}
 
 	dt {
+		color: $color-primary;
+		font-family: $font-code;
+		font-size: $metadata-size;
 		font-weight: 700;
+		text-transform: uppercase;
 	}
 
 	dd {

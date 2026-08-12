@@ -27,7 +27,15 @@
 	display: grid;
 	gap: 0.1rem;
 	color: $color-secondary;
+	font-family: $font-code;
 	font-size: $metadata-size;
+}
+
+.project-summary__number {
+	color: $color-primary;
+	font-family: $font-code;
+	font-size: $metadata-size;
+	font-weight: 700;
 }
 
 .project-summary__year {

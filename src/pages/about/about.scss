@@ -23,7 +23,10 @@
 		width: 8rem;
 		border-right-color: $color-text;
 		background: $color-utility-strong;
+		font-family: $font-code;
+		font-size: $metadata-size;
 		font-weight: 700;
+		text-transform: uppercase;
 	}
 
 	td {

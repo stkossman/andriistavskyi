@@ -60,7 +60,7 @@ import Layout from '@/layouts/Layout.astro'
 				<h2 id="work-title">Selected Work</h2>
 			</header>
 			<div class="project-list">
-				{PROJECTS.map(project => <ProjectSummary project={project} />)}
+				{PROJECTS.map((project, index) => <ProjectSummary project={project} index={index} />)}
 			</div>
 		</section>
 

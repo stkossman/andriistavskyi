@@ -5,17 +5,23 @@ import type { Project } from '@/const/projects'
 interface Props {
 	project: Project
 	showRole?: boolean
+	index?: number
 }
 
-const { project, showRole = false } = Astro.props
+const { project, showRole = false, index } = Astro.props
 const displayContext = project.context
 	.replace(` · ${project.year}`, '')
 	.replace(` / ${project.year}`, '')
+const projectNumber =
+	typeof index === 'number' ? String(index + 1).padStart(2, '0') : undefined
 ---
 
 <article class="project-summary">
 	<header class="project-summary__header">
-		<h3><a href={`/work/${project.slug}/`}>{project.title}</a></h3>
+		<h3>
+			{projectNumber && <span class="project-summary__number">{projectNumber} / </span>}
+			<a href={`/work/${project.slug}/`}>{project.title}</a>
+		</h3>
 		<div class="project-summary__stamp">
 			<span class="project-summary__year">{project.year}</span>
 			<span>{displayContext}</span>
