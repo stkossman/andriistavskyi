@@ -41,7 +41,6 @@
 	}
 
 	> header p {
-		max-width: $reading-width;
 		font-size: $small-size;
 	}
 
@@ -83,7 +82,6 @@
 .prose {
 	display: grid;
 	gap: $space-4;
-	max-width: $reading-width;
 }
 
 .plain-list,
@@ -96,8 +94,4 @@
 .plain-item {
 	display: grid;
 	gap: 0.18rem;
-
-	p {
-		max-width: $reading-width;
-	}
 }
