@@ -1,36 +1,37 @@
 ---
 import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs.astro'
 import { CONTACT_LINKS } from '@/const/contact'
+import { SITEMAP_PAGE } from '@/const/pages/sitemap'
 import { PROJECTS } from '@/const/projects'
 import { SITE } from '@/const/site'
 import Layout from '@/layouts/Layout.astro'
 ---
 
-<Layout title={`Site map - ${SITE.name}`} description="Human-facing site map for andrii stavskyi.">
+<Layout title={`${SITEMAP_PAGE.title} - ${SITE.name}`} description={SITEMAP_PAGE.description}>
 	<div class="page-stack">
-		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Site map' }]} />
+		<Breadcrumbs items={SITEMAP_PAGE.breadcrumbs} />
 
 		<section class="section page-title-section" aria-labelledby="sitemap-title">
 			<header>
-				<h1 id="sitemap-title">Site map</h1>
+				<h1 id="sitemap-title">{SITEMAP_PAGE.title}</h1>
 			</header>
 		</section>
 
 		<hr />
 
 		<section class="section" aria-labelledby="main-title">
-			<header><h2 id="main-title">Main</h2></header>
+			<header><h2 id="main-title">{SITEMAP_PAGE.sections.main.title}</h2></header>
 			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/work/">Work</a></li>
-				<li><a href="/about/">About</a></li>
+				{SITEMAP_PAGE.sections.main.links.map(link => (
+					<li><a href={link.href}>{link.label}</a></li>
+				))}
 			</ul>
 		</section>
 
 		<hr />
 
 		<section class="section" aria-labelledby="work-links-title">
-			<header><h2 id="work-links-title">Work</h2></header>
+			<header><h2 id="work-links-title">{SITEMAP_PAGE.sections.work.title}</h2></header>
 			<ul>
 				{PROJECTS.map(project => (
 					<li><a href={`/work/${project.slug}/`}>{project.title}</a></li>
@@ -41,17 +42,18 @@ import Layout from '@/layouts/Layout.astro'
 		<hr />
 
 		<section class="section" aria-labelledby="site-title">
-			<header><h2 id="site-title">Site</h2></header>
+			<header><h2 id="site-title">{SITEMAP_PAGE.sections.site.title}</h2></header>
 			<ul>
-				<li><a href="/attribution/">Attribution</a></li>
-				<li><a href="/sitemap/">Site Map</a></li>
+				{SITEMAP_PAGE.sections.site.links.map(link => (
+					<li><a href={link.href}>{link.label}</a></li>
+				))}
 			</ul>
 		</section>
 
 		<hr />
 
 		<section class="section" aria-labelledby="external-title">
-			<header><h2 id="external-title">External</h2></header>
+			<header><h2 id="external-title">{SITEMAP_PAGE.sections.external.title}</h2></header>
 			<ul>
 				{CONTACT_LINKS.map(link => (
 					<li><a href={link.href}>{link.label}</a></li>

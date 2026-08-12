@@ -1,6 +1,6 @@
 ---
 import './ProjectSummary.scss'
-import type { Project } from '@/const/projects'
+import { PROJECT_SUMMARY_LABELS, type Project } from '@/const/projects'
 
 interface Props {
 	project: Project
@@ -35,13 +35,13 @@ const projectNumber =
 
 	<dl class="project-summary__meta">
 		<div>
-			<dt>Stack</dt>
+			<dt>{PROJECT_SUMMARY_LABELS.stack}</dt>
 			<dd>{project.stack.join(', ')}</dd>
 		</div>
 	</dl>
 
 	<p class="project-summary__links">
-		<a href={`/work/${project.slug}/`}>Project details</a>
+		<a href={`/work/${project.slug}/`}>{PROJECT_SUMMARY_LABELS.detailsLink}</a>
 		{project.links.map(link => (
 			<>
 				{' '}

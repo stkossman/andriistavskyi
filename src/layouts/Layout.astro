@@ -6,6 +6,7 @@ import SpeedInsights from '@vercel/speed-insights/astro'
 import Seo from '@/components/common/Seo.astro'
 import SiteFooter from '@/components/site-footer/SiteFooter.astro'
 import SiteHeader from '@/components/site-header/SiteHeader.astro'
+import { SITE_UI } from '@/const/site'
 
 interface Props {
 	title: string
@@ -22,7 +23,7 @@ const { title, description, image } = Astro.props
     <Seo title={title} description={description} image={image} />
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main-content">{SITE_UI.skipLink}</a>
     <div class="site-shell">
       <SiteHeader />
       <main id="main-content">

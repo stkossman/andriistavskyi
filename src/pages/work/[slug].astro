@@ -3,7 +3,8 @@ import './project-detail.scss'
 import { Image } from 'astro:assets'
 import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs.astro'
 import ProjectMetadata from '@/components/project-metadata/ProjectMetadata.astro'
-import { PROJECTS, type Project } from '@/const/projects'
+import { WORK_PAGE } from '@/const/pages/work'
+import { PROJECT_DETAIL_LABELS, PROJECTS, type Project } from '@/const/projects'
 import { SITE } from '@/const/site'
 import Layout from '@/layouts/Layout.astro'
 
@@ -30,8 +31,7 @@ function getSectionId(title: string, id?: string) {
 	<article class="project-page">
 		<Breadcrumbs
 			items={[
-				{ label: 'Home', href: '/' },
-				{ label: 'Work', href: '/work/' },
+				...WORK_PAGE.breadcrumbs,
 				{ label: project.title },
 			]}
 		/>
@@ -59,7 +59,7 @@ function getSectionId(title: string, id?: string) {
 				<hr />
 				<nav class="section on-this-page" aria-labelledby="on-this-page-title">
 					<header>
-						<h2 id="on-this-page-title">On this page</h2>
+						<h2 id="on-this-page-title">{PROJECT_DETAIL_LABELS.onThisPage}</h2>
 					</header>
 					<ul>
 						{project.onThisPage.map(item => (
@@ -117,7 +117,7 @@ function getSectionId(title: string, id?: string) {
 
 		<section id="links" class="section" aria-labelledby="links-title">
 			<header>
-				<h2 id="links-title">Links</h2>
+				<h2 id="links-title">{PROJECT_DETAIL_LABELS.links}</h2>
 			</header>
 			<ul class="project-page__links">
 				{project.links.map(link => (

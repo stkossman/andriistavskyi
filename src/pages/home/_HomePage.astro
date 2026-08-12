@@ -1,40 +1,42 @@
 ---
 import './HomePage.scss'
 import ProjectSummary from '@/components/project-summary/ProjectSummary.astro'
+import { HOME_PAGE } from '@/const/pages/home'
 import { PROJECTS } from '@/const/projects'
 import { SITE } from '@/const/site'
 import Layout from '@/layouts/Layout.astro'
+
+function resolveHref(href?: string) {
+	return href === 'softServeHref' ? SITE.softServeHref : href
+}
 ---
 
 <Layout title={SITE.title} description={SITE.description}>
 	<div class="page-stack">
 		<section class="intro" aria-labelledby="intro-title">
-			<h1 id="intro-title">andrii stavskyi</h1>
-			<dl class="intro__meta-table" aria-label="Identity details">
-				<div>
-					<dt>Role</dt>
-					<dd>Full-Stack Software Engineer</dd>
-				</div>
-				<div>
-					<dt>Currently</dt>
-					<dd><a href={SITE.softServeHref}>SoftServe</a></dd>
-				</div>
-				<div>
-					<dt>Location</dt>
-					<dd>Ukraine</dd>
-				</div>
+			<h1 id="intro-title">{HOME_PAGE.title}</h1>
+			<dl class="intro__meta-table" aria-label={HOME_PAGE.identityLabel}>
+				{HOME_PAGE.identity.map(item => (
+					<div>
+						<dt>{item.label}</dt>
+						<dd>
+							{'href' in item ? (
+								<a href={resolveHref(item.href)}>{item.value}</a>
+							) : (
+								item.value
+							)}
+						</dd>
+					</div>
+				))}
 			</dl>
-			<p>
-				I build web applications and software systems with an emphasis on clear
-				behavior, maintainable code, and practical interfaces.
-			</p>
+			<p>{HOME_PAGE.intro}</p>
 		</section>
 
 		<hr />
 
 		<section class="section" aria-labelledby="work-title">
 			<header>
-				<h2 id="work-title">Selected Work</h2>
+				<h2 id="work-title">{HOME_PAGE.selectedWorkTitle}</h2>
 			</header>
 			<div class="project-list">
 				{PROJECTS.map((project, index) => <ProjectSummary project={project} index={index} />)}
@@ -45,19 +47,13 @@ import Layout from '@/layouts/Layout.astro'
 
 		<section class="section" aria-labelledby="about-preview-title">
 			<header>
-				<h2 id="about-preview-title">About</h2>
+				<h2 id="about-preview-title">{HOME_PAGE.aboutPreview.title}</h2>
 			</header>
 			<div class="prose">
+				{HOME_PAGE.aboutPreview.paragraphs.map(paragraph => <p>{paragraph}</p>)}
 				<p>
-					I'm a Full-Stack Software Engineer working primarily with .NET and
-					modern web technologies. I care about maintainable systems, clear
-					boundaries, and interfaces that stay predictable as products grow.
+					<a href={HOME_PAGE.aboutPreview.link.href}>{HOME_PAGE.aboutPreview.link.label}</a>
 				</p>
-				<p>
-					Outside software, I spend time reading, writing, playing guitar, and
-					training calisthenics.
-				</p>
-				<p><a href="/about/">About</a></p>
 			</div>
 		</section>
 	</div>

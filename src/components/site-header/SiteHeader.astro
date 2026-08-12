@@ -1,15 +1,9 @@
 ---
 import './SiteHeader.scss'
 import { CONTACT_LINKS } from '@/const/contact'
-import { SITE } from '@/const/site'
+import { PRIMARY_NAV_LINKS, SITE, SITE_UI } from '@/const/site'
 
 const currentPath = Astro.url.pathname
-
-const primaryLinks = [
-	{ label: 'Home', href: '/' },
-	{ label: 'Work', href: '/work/' },
-	{ label: 'About', href: '/about/' },
-] as const
 
 function isCurrent(href: string) {
 	if (href === '/') {
@@ -26,15 +20,15 @@ function isCurrent(href: string) {
 		<div class="site-header__gradient" aria-hidden="true"></div>
 	</div>
 	<div class="site-header__nav-row">
-		<nav class="site-header__nav" aria-label="Primary">
-			{primaryLinks.map(link => (
+		<nav class="site-header__nav" aria-label={SITE_UI.primaryNavLabel}>
+			{PRIMARY_NAV_LINKS.map(link => (
 				<a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
 					{link.label}
 				</a>
 			))}
 		</nav>
 
-		<nav class="site-header__nav site-header__nav--external" aria-label="External">
+		<nav class="site-header__nav site-header__nav--external" aria-label={SITE_UI.externalNavLabel}>
 			{CONTACT_LINKS.map(link => (
 				<a href={link.href}>{link.label}</a>
 			))}

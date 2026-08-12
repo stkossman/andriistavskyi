@@ -2,32 +2,23 @@
 import './SiteFooter.scss'
 import SiteBadge from '@/components/site-badge/SiteBadge.astro'
 import { CONTACT_LINKS } from '@/const/contact'
-import { SITE } from '@/const/site'
-
-const internalLinks = [
-	{ label: 'Home', href: '/' },
-	{ label: 'Work', href: '/work/' },
-	{ label: 'About', href: '/about/' },
-	{ label: 'Site Map', href: '/sitemap/' },
-	{ label: 'Attribution', href: '/attribution/' },
-] as const
+import { FOOTER_BADGES, FOOTER_NAV_LINKS, SITE, SITE_UI } from '@/const/site'
 ---
 
 <footer class="site-footer">
 	<hr />
-	<nav class="site-footer__links site-footer__links--internal" aria-label="Footer internal">
-		{internalLinks.map(link => <a href={link.href}>{link.label}</a>)}
+	<nav class="site-footer__links site-footer__links--internal" aria-label={SITE_UI.footerInternalNavLabel}>
+		{FOOTER_NAV_LINKS.map(link => <a href={link.href}>{link.label}</a>)}
 	</nav>
 
-	<nav class="site-footer__links site-footer__links--external" aria-label="Footer external">
+	<nav class="site-footer__links site-footer__links--external" aria-label={SITE_UI.footerExternalNavLabel}>
 		{CONTACT_LINKS.map(link => <a href={link.href}>{link.label}</a>)}
 	</nav>
 
-	<div class="site-footer__badges" aria-label="Site badges">
-		<SiteBadge label="MADE WITH ASTRO" />
-		<SiteBadge label="BUILT IN UKRAINE" />
+	<div class="site-footer__badges" aria-label={SITE_UI.siteBadgesLabel}>
+		{FOOTER_BADGES.map(label => <SiteBadge label={label} />)}
 	</div>
 
-	<p>Last updated: <span class="site-footer__date">August 2026</span></p>
-	<p>&copy; 2026 {SITE.lowercaseName}</p>
+	<p>{SITE_UI.lastUpdatedLabel} <span class="site-footer__date">{SITE.lastUpdated}</span></p>
+	<p>&copy; {SITE.copyrightYear} {SITE.lowercaseName}</p>
 </footer>

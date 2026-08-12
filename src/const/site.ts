@@ -8,4 +8,32 @@ export const SITE = {
 	ogImage: '/og-image.jpg',
 	repositoryHref: 'https://github.com/stkossman/www',
 	softServeHref: 'https://www.softserveinc.com/',
+	role: 'Full-Stack Software Engineer',
+	location: 'Ukraine',
+	lastUpdated: 'August 2026',
+	copyrightYear: '2026',
+} as const
+
+export const PRIMARY_NAV_LINKS = [
+	{ label: 'Home', href: '/' },
+	{ label: 'Work', href: '/work/' },
+	{ label: 'About', href: '/about/' },
+] as const
+
+export const FOOTER_NAV_LINKS = [
+	...PRIMARY_NAV_LINKS,
+	{ label: 'Site Map', href: '/sitemap/' },
+	{ label: 'Attribution', href: '/attribution/' },
+] as const
+
+export const FOOTER_BADGES = ['MADE WITH ASTRO', 'BUILT IN UKRAINE'] as const
+
+export const SITE_UI = {
+	skipLink: 'Skip to content',
+	primaryNavLabel: 'Primary',
+	externalNavLabel: 'External',
+	footerInternalNavLabel: 'Footer internal',
+	footerExternalNavLabel: 'Footer external',
+	siteBadgesLabel: 'Site badges',
+	lastUpdatedLabel: 'Last updated:',
 } as const

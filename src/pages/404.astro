@@ -1,14 +1,15 @@
 ---
+import { NOT_FOUND_PAGE } from '@/const/pages/not-found'
 import { SITE } from '@/const/site'
 import Layout from '@/layouts/Layout.astro'
 ---
 
-<Layout title={`Page not found - ${SITE.name}`} description="Page not found.">
+<Layout title={`${NOT_FOUND_PAGE.title} - ${SITE.name}`} description={NOT_FOUND_PAGE.description}>
 	<section class="section" aria-labelledby="not-found-title">
 		<header>
-			<p class="muted">404</p>
-			<h1 id="not-found-title">Page not found</h1>
+			<p class="muted">{NOT_FOUND_PAGE.status}</p>
+			<h1 id="not-found-title">{NOT_FOUND_PAGE.title}</h1>
 		</header>
-		<p><a href="/">Home</a></p>
+		<p><a href={NOT_FOUND_PAGE.homeLink.href}>{NOT_FOUND_PAGE.homeLink.label}</a></p>
 	</section>
 </Layout>

@@ -1,33 +1,30 @@
 ---
 import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs.astro'
 import ProjectSummary from '@/components/project-summary/ProjectSummary.astro'
+import { WORK_PAGE } from '@/const/pages/work'
 import { PROJECTS } from '@/const/projects'
 import { SITE } from '@/const/site'
 import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout
-	title={`Work - ${SITE.name}`}
-	description="Selected projects and systems by andrii stavskyi."
+	title={`${WORK_PAGE.title} - ${SITE.name}`}
+	description={WORK_PAGE.description}
 >
 	<div class="page-stack">
-		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Work' }]} />
+		<Breadcrumbs items={WORK_PAGE.breadcrumbs} />
 
 		<section class="section page-title-section" aria-labelledby="work-title">
 			<header>
-				<h1 id="work-title">Work</h1>
-				<p class="section-note">Selected projects and systems I have worked on.</p>
+				<h1 id="work-title">{WORK_PAGE.title}</h1>
+				<p class="section-note">{WORK_PAGE.note}</p>
 			</header>
 			<div class="prose">
-				<p>
-					Some are personal projects built from scratch. Others were developed as
-					part of a team, with existing constraints, shared ownership, and real
-					project requirements.
-				</p>
+				{WORK_PAGE.paragraphs.map(paragraph => <p>{paragraph}</p>)}
 			</div>
 		</section>
 
-		<section class="section" aria-label="Project directory">
+		<section class="section" aria-label={WORK_PAGE.projectDirectoryLabel}>
 			<div class="project-list">
 				{PROJECTS.map((project, index) => (
 					<ProjectSummary project={project} showRole index={index} />
