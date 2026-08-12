@@ -99,7 +99,7 @@ export const PROJECTS = [
 		],
 		roleDescription: [
 			'I worked as a Full-Stack Developer Intern in a team of roughly 15-20 people.',
-			'I took ownership of the Home and Company Profile administrative modules and delivered features across the full stack, from backend endpoints and application logic to React forms and frontend integration.',
+			'I took ownership of the Main and Company Profile administrative modules and delivered features across the full stack, from backend endpoints and application logic to React forms and frontend integration.',
 			'The work required fitting new functionality into an existing architecture, coordinating changes through pull requests, and resolving conflicts that appeared as multiple parts of the system evolved in parallel.',
 		],
 		technicalWork: [
