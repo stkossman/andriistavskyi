@@ -25,8 +25,8 @@ const projectNumber =
 		<div class="project-summary__stamp">
 			<span class="project-summary__year">{project.year}</span>
 			<span>{displayContext}</span>
+			{showRole && <span>{project.role}</span>}
 		</div>
-		{showRole && <p class="project-summary__role">Role: {project.role}</p>}
 	</header>
 
 	<div class="project-summary__body">

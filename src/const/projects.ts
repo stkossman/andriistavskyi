@@ -54,7 +54,7 @@ export const PROJECTS = [
 		slug: 'soliloquy',
 		title: 'Soliloquy',
 		year: '2026',
-		context: 'Personal project · Active · 2026',
+		context: 'Personal project · 2026',
 		role: 'Creator / Full-Stack Developer',
 		homepageSummary: [
 			'A private, local-first writing application built around a messenger-like interface where the user is the only contact.',
@@ -73,8 +73,6 @@ export const PROJECTS = [
 			{ label: 'Context', value: 'Personal project' },
 			{ label: 'Status', value: 'Active' },
 			{ label: 'Stack', value: 'Astro, React, TypeScript, Dexie.js' },
-			{ label: 'Live site', value: 'https://soliloquy-notes.vercel.app/' },
-			{ label: 'Repository', value: 'https://github.com/stkossman/soliloquy' },
 		],
 		onThisPage: [
 			{ label: 'Overview', href: '#overview' },
@@ -176,12 +174,9 @@ export const PROJECTS = [
 						items: [
 							'local IndexedDB persistence',
 							'Markdown rendering',
-							'editing and message actions',
-							'chat JSON / Markdown export',
-							'workspace backup and restore',
-							'chat personalization',
-							'bulk actions',
-							'drag-and-drop organization',
+							'editing, context actions, and bulk actions',
+							'chat JSON / Markdown export and workspace backup / restore',
+							'chat personalization, ordering, zoom controls, and single-chat transfer',
 						],
 					},
 					{
