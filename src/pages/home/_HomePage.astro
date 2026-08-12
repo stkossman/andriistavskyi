@@ -1,8 +1,6 @@
 ---
 import './HomePage.scss'
 import ProjectSummary from '@/components/project-summary/ProjectSummary.astro'
-import { EDUCATION } from '@/const/education'
-import { EXPERIENCE } from '@/const/experience'
 import { PROJECTS } from '@/const/projects'
 import { SITE } from '@/const/site'
 import Layout from '@/layouts/Layout.astro'
@@ -34,27 +32,6 @@ import Layout from '@/layouts/Layout.astro'
 
 		<hr />
 
-		<section class="section" aria-labelledby="experience-title">
-			<header>
-				<h2 id="experience-title">Experience</h2>
-			</header>
-			<ol class="experience-list">
-				{EXPERIENCE.map(item => (
-					<li class="experience-item">
-						<h3>{item.company}</h3>
-						<div class="experience-item__meta">
-							<p>{item.role}</p>
-							<p class="experience-item__period">{item.period}</p>
-						</div>
-						<p>{item.description}</p>
-						{item.note && <p class="muted">{item.note}</p>}
-					</li>
-				))}
-			</ol>
-		</section>
-
-		<hr />
-
 		<section class="section" aria-labelledby="work-title">
 			<header>
 				<h2 id="work-title">Selected Work</h2>
@@ -66,37 +43,19 @@ import Layout from '@/layouts/Layout.astro'
 
 		<hr />
 
-		<section class="section" aria-labelledby="education-title">
-			<header>
-				<h2 id="education-title">Education</h2>
-			</header>
-			<ol class="plain-list">
-				{EDUCATION.map(item => (
-					<li class="plain-item">
-						<h3>{item.institution}</h3>
-						<p class="muted">
-							{item.program} · <span class="meta-value">{item.period}</span>
-						</p>
-					</li>
-				))}
-			</ol>
-		</section>
-
-		<hr />
-
 		<section class="section" aria-labelledby="about-preview-title">
 			<header>
 				<h2 id="about-preview-title">About</h2>
 			</header>
 			<div class="prose">
 				<p>
-					Software engineering is the main part of my work, but not the only
-					thing I spend time on.
+					I'm a Full-Stack Software Engineer working primarily with .NET and
+					modern web technologies. I care about maintainable systems, clear
+					boundaries, and interfaces that stay predictable as products grow.
 				</p>
 				<p>
-					Outside it, I write, build side projects, read, train, and spend a lot
-					of time thinking about why some systems and interfaces feel more
-					deliberate than others.
+					Outside software, I spend time reading, writing, playing guitar, and
+					training calisthenics.
 				</p>
 				<p><a href="/about/">About</a></p>
 			</div>

@@ -1,0 +1,72 @@
+---
+import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs.astro'
+import { SITE } from '@/const/site'
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout
+	title={`Attribution - ${SITE.name}`}
+	description="Visual and implementation attribution for this version of andrii stavskyi's portfolio."
+>
+	<div class="page-stack">
+		<Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Attribution' }]} />
+
+		<section class="section page-title-section" aria-labelledby="attribution-title">
+			<header>
+				<h1 id="attribution-title">Attribution</h1>
+			</header>
+		</section>
+
+		<hr />
+
+		<section class="section" aria-labelledby="about-version-title">
+			<header><h2 id="about-version-title">About this version</h2></header>
+			<div class="prose">
+				<p>
+					This version of the portfolio is an experiment in applying early-web
+					design language to a modern personal website.
+				</p>
+				<p>
+					The goal was not to reproduce an old browser or build a nostalgia
+					piece, but to keep some of the directness of early professional
+					websites: visible structure, ordinary hyperlinks, restrained
+					typography, simple navigation, and very little interface decoration.
+				</p>
+			</div>
+		</section>
+
+		<hr />
+
+		<section class="section" aria-labelledby="visual-references-title">
+			<header><h2 id="visual-references-title">Visual references</h2></header>
+			<div class="prose">
+				<p>
+					The main visual references include AuctionWeb / early eBay, early
+					Apple, and early Google.
+				</p>
+				<p>
+					I was particularly interested in the way these websites separated
+					navigation from content, used typography and rules instead of layered
+					interface components, and treated links as part of the visual language
+					rather than hiding them behind buttons.
+				</p>
+			</div>
+		</section>
+
+		<hr />
+
+		<section class="section" aria-labelledby="implementation-title">
+			<header><h2 id="implementation-title">Implementation</h2></header>
+			<div class="prose">
+				<p>
+					The implementation itself is modern: Astro, TypeScript, SCSS, semantic
+					HTML, responsive layouts, and static generation.
+				</p>
+				<p>
+					JavaScript is intentionally kept to a minimum, and the historical
+					references influence presentation rather than implementation practices.
+				</p>
+			</div>
+		</section>
+	</div>
+</Layout>

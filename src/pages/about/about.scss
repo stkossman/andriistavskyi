@@ -34,6 +34,49 @@
 	}
 }
 
+.meta-value,
+.experience-item__period {
+	color: $color-meta;
+}
+
+.experience-list {
+	display: grid;
+	gap: $space-5;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.experience-item {
+	display: grid;
+	gap: $space-2;
+	padding-bottom: $space-4;
+	border-bottom: 1px solid $color-rule;
+
+	&:last-child {
+		padding-bottom: 0;
+		border-bottom: 0;
+	}
+
+	ul {
+		margin: 0;
+		padding-left: 1.2rem;
+		max-width: $reading-width;
+	}
+}
+
+.experience-item__heading {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) max-content;
+	gap: $space-4;
+	align-items: baseline;
+}
+
+.experience-item__role {
+	color: $color-secondary;
+	font-size: $small-size;
+}
+
 .about-page .section {
 	gap: $space-3;
 }
@@ -41,5 +84,10 @@
 @media (max-width: $breakpoint-small) {
 	.details-table th {
 		width: 6.5rem;
+	}
+
+	.experience-item__heading {
+		grid-template-columns: 1fr;
+		gap: 0.1rem;
 	}
 }

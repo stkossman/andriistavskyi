@@ -34,3 +34,48 @@
 	gap: $space-2 $space-5;
 	@include unstyled-list;
 }
+
+.on-this-page {
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $space-1 $space-3;
+		@include unstyled-list;
+	}
+
+	a::before {
+		content: "[";
+		color: $color-muted;
+	}
+
+	a::after {
+		content: "]";
+		color: $color-muted;
+	}
+}
+
+.case-list-group,
+.case-subsection {
+	display: grid;
+	gap: $space-2;
+}
+
+.case-subsection h3,
+.case-list-group h3 {
+	font-family: $font-code;
+	font-size: $metadata-size;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.project-flow {
+	max-width: 100%;
+	overflow-x: auto;
+	padding: $space-2 0;
+	border-top: 1px solid $color-rule;
+	border-bottom: 1px solid $color-rule;
+	color: $color-secondary;
+	font-family: $font-code;
+	font-size: $metadata-size;
+	white-space: pre-wrap;
+}

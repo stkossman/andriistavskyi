@@ -20,6 +20,10 @@ interface Props {
 
 const { project } = Astro.props
 const description = project.homepageSummary[0]
+
+function getSectionId(title: string, id?: string) {
+	return id ?? title.toLowerCase().replaceAll(' ', '-')
+}
 ---
 
 <Layout title={`${project.title} - ${SITE.name}`} description={description}>
@@ -50,58 +54,60 @@ const description = project.homepageSummary[0]
 			<figcaption>{project.imageAlt}</figcaption>
 		</figure>
 
-		<hr />
-
-		<section class="section" aria-labelledby="overview-title">
-			<header>
-				<h2 id="overview-title">Overview</h2>
-			</header>
-			<div class="prose">
-				{project.overview.map(paragraph => <p>{paragraph}</p>)}
-			</div>
-		</section>
-
-		{project.roleDescription && (
+		{project.onThisPage && (
 			<>
 				<hr />
-				<section class="section" aria-labelledby="role-title">
+				<nav class="section on-this-page" aria-labelledby="on-this-page-title">
 					<header>
-						<h2 id="role-title">My role</h2>
+						<h2 id="on-this-page-title">On this page</h2>
 					</header>
-					<div class="prose">
-						{project.roleDescription.map(paragraph => <p>{paragraph}</p>)}
-					</div>
-				</section>
+					<ul>
+						{project.onThisPage.map(item => (
+							<li><a href={item.href}>{item.label}</a></li>
+						))}
+					</ul>
+				</nav>
 			</>
 		)}
 
-		{project.technicalWork?.map(section => (
+		{project.caseStudySections.map(section => (
 			<>
 				<hr />
-				<section class="section" aria-labelledby={`${section.title.toLowerCase().replaceAll(' ', '-')}-title`}>
+				<section
+					id={getSectionId(section.title, section.id)}
+					class="section"
+					aria-labelledby={`${getSectionId(section.title, section.id)}-title`}
+				>
 					<header>
-						<h2 id={`${section.title.toLowerCase().replaceAll(' ', '-')}-title`}>
+						<h2 id={`${getSectionId(section.title, section.id)}-title`}>
 							{section.title}
 						</h2>
 					</header>
 					<div class="prose">
-						{section.body.map(paragraph => <p>{paragraph}</p>)}
-					</div>
-				</section>
-			</>
-		))}
-
-		{project.caseStudySections?.map(section => (
-			<>
-				<hr />
-				<section class="section" aria-labelledby={`${section.title.toLowerCase().replaceAll(' ', '-')}-title`}>
-					<header>
-						<h2 id={`${section.title.toLowerCase().replaceAll(' ', '-')}-title`}>
-							{section.title}
-						</h2>
-					</header>
-					<div class="prose">
-						{section.body.map(paragraph => <p>{paragraph}</p>)}
+						{section.body?.map(paragraph => <p>{paragraph}</p>)}
+						{section.list && (
+							<>
+								{section.list.title && <h3>{section.list.title}</h3>}
+								<ul>
+									{section.list.items.map(item => <li>{item}</li>)}
+								</ul>
+							</>
+						)}
+						{section.lists?.map(list => (
+							<div class="case-list-group">
+								{list.title && <h3>{list.title}</h3>}
+								<ul>
+									{list.items.map(item => <li>{item}</li>)}
+								</ul>
+							</div>
+						))}
+						{section.subsections?.map(subsection => (
+							<section class="case-subsection" aria-label={subsection.title}>
+								<h3>{subsection.title}</h3>
+								{subsection.body.map(paragraph => <p>{paragraph}</p>)}
+							</section>
+						))}
+						{section.flow && <pre class="project-flow">{section.flow}</pre>}
 					</div>
 				</section>
 			</>
@@ -109,7 +115,7 @@ const description = project.homepageSummary[0]
 
 		<hr />
 
-		<section class="section" aria-labelledby="links-title">
+		<section id="links" class="section" aria-labelledby="links-title">
 			<header>
 				<h2 id="links-title">Links</h2>
 			</header>

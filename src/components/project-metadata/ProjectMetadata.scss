@@ -9,6 +9,7 @@
 
 	th,
 	td {
+		overflow-wrap: anywhere;
 		padding: 0.32rem 0.45rem;
 		border: 1px solid $color-border;
 		vertical-align: top;

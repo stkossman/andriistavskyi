@@ -1,13 +1,16 @@
 ---
 import './about.scss'
 import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs.astro'
+import { EDUCATION } from '@/const/education'
+import { EXPERIENCE } from '@/const/experience'
 import { SITE } from '@/const/site'
 import Layout from '@/layouts/Layout.astro'
 
 const details = [
 	['Location', 'Ukraine'],
 	['Work', 'Software engineering'],
-	['Interests', 'Writing, books, design, games, training'],
+	['Focus', '.NET / web systems'],
+	['Interests', 'Reading, writing, guitar, calisthenics'],
 	['Languages', 'Ukrainian, English'],
 ] as const
 ---
@@ -23,41 +26,68 @@ const details = [
 			<header>
 				<h1 id="about-title">About</h1>
 			</header>
+		</section>
+
+		<section class="section" aria-labelledby="intro-title">
+			<header><h2 id="intro-title">Intro</h2></header>
 			<div class="prose">
 				<p>
 					I'm a Full-Stack Software Engineer from Ukraine working primarily with
 					.NET and modern web technologies.
 				</p>
 				<p>
-					I prefer software that is predictable, restrained, and easy to reason
-					about. The same preference carries into interface design: clear
-					structure, little decoration, and interactions that do not ask for
-					attention unless they need it.
+					I prefer software that is predictable, maintainable, and easy to
+					reason about. Most of my attention goes to clear boundaries, practical
+					interfaces, and code that can be changed without first being decoded.
+				</p>
+				<p>
+					I work across backend and frontend development and tend to treat them
+					as parts of the same system rather than separate disciplines.
 				</p>
 			</div>
 		</section>
 
 		<hr />
 
-		<section class="section" aria-labelledby="work-title">
-			<header><h2 id="work-title">Work</h2></header>
-			<div class="prose">
-				<p>
-					I care more about software remaining understandable six months later
-					than about making it look clever today.
-				</p>
-				<p>
-					Most of my attention goes to structure, naming, predictable behavior,
-					and keeping responsibilities clear. I like systems where a change has
-					an obvious place to belong and where the code explains its own shape
-					without relying on unnecessary abstraction.
-				</p>
-				<p>
-					I work across backend and frontend development, but I tend to think
-					about both in the same way: reduce ambiguity, keep boundaries clear,
-					and avoid complexity that has not earned its place.
-				</p>
-			</div>
+		<section class="section" aria-labelledby="experience-title">
+			<header><h2 id="experience-title">Experience</h2></header>
+			<ol class="experience-list">
+				{EXPERIENCE.map(item => (
+					<li class="experience-item">
+						<div class="experience-item__heading">
+							<h3>{item.company}</h3>
+							<p class="experience-item__period">{item.period}</p>
+						</div>
+						<p class="experience-item__role">{item.role}</p>
+						<div class="prose">
+							<p>{item.description}</p>
+							{item.details?.map(paragraph => <p>{paragraph}</p>)}
+						</div>
+						{item.keyWork && (
+							<ul>
+								{item.keyWork.map(work => <li>{work}</li>)}
+							</ul>
+						)}
+						{item.note && <p class="muted">{item.note}</p>}
+					</li>
+				))}
+			</ol>
+		</section>
+
+		<hr />
+
+		<section class="section" aria-labelledby="education-title">
+			<header><h2 id="education-title">Education</h2></header>
+			<ol class="plain-list">
+				{EDUCATION.map(item => (
+					<li class="plain-item">
+						<h3>{item.institution}</h3>
+						<p class="muted">
+							{item.program} · <span class="meta-value">{item.period}</span>
+						</p>
+					</li>
+				))}
+			</ol>
 		</section>
 
 		<hr />
@@ -66,90 +96,32 @@ const details = [
 			<header><h2 id="side-projects-title">Side projects</h2></header>
 			<div class="prose">
 				<p>
-					I usually start personal projects for one of two reasons: there is a
-					small problem I want solved properly, or there is an idea I want to
-					understand by building it.
+					I usually start personal projects because there is either a small
+					problem I want solved properly or an idea I want to understand by
+					building it.
 				</p>
 				<p>
-					I prefer small applications with a clear purpose over large projects
-					built only to demonstrate a stack. Soliloquy is one example of that
-					approach: local-first, narrow in scope, and designed around a specific
-					way of writing rather than a long feature list.
+					I prefer focused applications with a clear purpose over projects
+					created only to demonstrate a technology stack. Soliloquy is the
+					clearest example of that approach.
 				</p>
+				<p><a href="/work/">View selected work</a></p>
 			</div>
 		</section>
 
 		<hr />
 
-		<section class="section" aria-labelledby="writing-title">
-			<header><h2 id="writing-title">Writing and books</h2></header>
-			<div class="prose">
-				<p>I spend a lot of time reading and writing outside software.</p>
-				<p>
-					I am particularly drawn to stories built around discipline, consequence,
-					identity, endurance, and the cost of becoming stronger. Berserk,
-					Vagabond, and Vinland Saga are recurring references for me because they
-					treat growth as something difficult, uneven, and rarely clean.
-				</p>
-				<p>
-					I am also interested in dark fantasy more broadly, especially worlds
-					that feel old, hostile, and only partially explained.
-				</p>
-			</div>
-		</section>
-
-		<hr />
-
-		<section class="section" aria-labelledby="games-title">
-			<header><h2 id="games-title">Games</h2></header>
+		<section class="section" aria-labelledby="outside-software-title">
+			<header><h2 id="outside-software-title">Outside software</h2></header>
 			<div class="prose">
 				<p>
-					The Dark Souls series has had a lasting influence on the way I think
-					about games and, to some extent, design in general.
+					Outside software, I spend time reading and writing, playing guitar,
+					and training calisthenics.
 				</p>
 				<p>
-					I like systems that do not over-explain themselves, worlds that reward
-					attention, and mechanics that become clear through use rather than
-					instruction. Restraint is part of what makes those games work: they
-					leave enough unsaid for the player to participate in understanding
-					them.
-				</p>
-			</div>
-		</section>
-
-		<hr />
-
-		<section class="section" aria-labelledby="design-title">
-			<header><h2 id="design-title">Design</h2></header>
-			<div class="prose">
-				<p>
-					I prefer interfaces that explain themselves through structure rather
-					than animation or decoration.
-				</p>
-				<p>
-					Good design, to me, is often subtractive. Fewer competing elements,
-					fewer states that need explanation, fewer interactions that exist only
-					because they can.
-				</p>
-				<p>
-					I am especially interested in older web design, where limited tools
-					often forced stronger hierarchy and more direct communication. I do not
-					think old interfaces were better by default, but I think some of their
-					restraint is worth keeping.
-				</p>
-			</div>
-		</section>
-
-		<hr />
-
-		<section class="section" aria-labelledby="training-title">
-			<header><h2 id="training-title">Training</h2></header>
-			<div class="prose">
-				<p>I train regularly and value the routine more than the novelty.</p>
-				<p>
-					Progress there is usually repetitive and unremarkable: show up, do the
-					work, recover, repeat. I like that. It is a useful counterweight to work
-					that is often abstract and difficult to measure day to day.
+					Most of these are deliberately offline activities - a useful
+					counterweight to work that is otherwise spent almost entirely in front
+					of a screen.
 				</p>
 			</div>
 		</section>
