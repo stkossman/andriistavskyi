@@ -1,0 +1,39 @@
+---
+import './people.scss'
+import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs.astro'
+import PersonEntry from '@/components/person-entry/PersonEntry.astro'
+import { PEOPLE_PAGE } from '@/const/pages/people'
+import { PEOPLE } from '@/const/people'
+import { SITE } from '@/const/site'
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout
+	title={`${PEOPLE_PAGE.title} - ${SITE.name}`}
+	description={PEOPLE_PAGE.description}
+>
+	<div class="page-stack people-page">
+		<Breadcrumbs items={PEOPLE_PAGE.breadcrumbs} />
+
+		<section class="section page-title-section" aria-labelledby="people-title">
+			<header>
+				<h1 id="people-title">{PEOPLE_PAGE.title}</h1>
+			</header>
+			<div class="prose">
+				{PEOPLE_PAGE.intro.map(paragraph => <p>{paragraph}</p>)}
+			</div>
+		</section>
+
+		<section class="section" aria-label={PEOPLE_PAGE.labels.directory}>
+			{PEOPLE.length > 0 ? (
+				<div class="plain-list">
+					{PEOPLE.map((person, index) => (
+						<PersonEntry person={person} index={index} />
+					))}
+				</div>
+			) : (
+				<p>{PEOPLE_PAGE.labels.emptyState}</p>
+			)}
+		</section>
+	</div>
+</Layout>

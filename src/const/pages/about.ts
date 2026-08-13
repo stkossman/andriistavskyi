@@ -47,7 +47,7 @@ export const ABOUT_PAGE = {
 				'Some of the most useful things I have learned came from people I worked with, studied with, or met along the way.',
 				'I keep a small list of people whose work and professional judgment I trust.',
 			],
-			link: { label: 'People I recommend', href: '/people' },
+			link: { label: 'People I recommend', href: '/people/' },
 		},
 		details: {
 			title: 'Details',

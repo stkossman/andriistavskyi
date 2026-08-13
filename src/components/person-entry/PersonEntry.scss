@@ -1,0 +1,69 @@
+@use "@/styles/abstracts" as *;
+
+.person-entry {
+	display: grid;
+	grid-template-columns: minmax(9rem, 11.5rem) minmax(0, 1fr);
+	gap: $space-3 $space-6;
+	padding: $space-4 0;
+}
+
+.person-entry + .person-entry {
+	border-top: 1px solid $color-rule;
+}
+
+.person-entry__header {
+	display: grid;
+	align-content: start;
+	gap: 0.2rem;
+
+	h3 {
+		font-family: $font-heading;
+		font-size: 1.08rem;
+		font-weight: 400;
+		overflow-wrap: anywhere;
+	}
+}
+
+.person-entry__number,
+.person-entry__section h4 {
+	color: $color-primary;
+	font-family: $font-code;
+	font-size: $metadata-size;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.person-entry__role {
+	color: $color-secondary;
+	font-size: $small-size;
+	overflow-wrap: anywhere;
+}
+
+.person-entry__body,
+.person-entry__section {
+	grid-column: 2;
+	max-width: $reading-width;
+}
+
+.person-entry__section {
+	display: grid;
+	gap: $space-2;
+
+	p,
+	a {
+		overflow-wrap: anywhere;
+	}
+}
+
+@media (max-width: $breakpoint-small) {
+	.person-entry {
+		grid-template-columns: 1fr;
+		gap: $space-2;
+		padding: $space-3 0;
+	}
+
+	.person-entry__body,
+	.person-entry__section {
+		grid-column: auto;
+	}
+}
