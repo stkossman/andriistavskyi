@@ -1,0 +1,18 @@
+---
+import './AboutNav.scss'
+import { ABOUT_NAV_LINKS, ABOUT_PAGE } from '@/const/pages/about'
+
+const currentPath = Astro.url.pathname
+
+function isCurrent(href: string) {
+	return currentPath === href
+}
+---
+
+<nav class="about-nav" aria-label={ABOUT_PAGE.navLabel}>
+	{ABOUT_NAV_LINKS.map(link => (
+		<a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
+			{link.label}
+		</a>
+	))}
+</nav>

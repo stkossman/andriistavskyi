@@ -1,0 +1,72 @@
+---
+import '../about/about.scss'
+import AboutNav from '@/components/about-nav/AboutNav.astro'
+import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs.astro'
+import { EDUCATION } from '@/const/education'
+import { EXPERIENCE } from '@/const/experience'
+import { ABOUT_CAREER_PAGE } from '@/const/pages/about-career'
+import { SITE } from '@/const/site'
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout
+	title={`${ABOUT_CAREER_PAGE.title} - ${SITE.name}`}
+	description={ABOUT_CAREER_PAGE.description}
+>
+	<div class="page-stack about-page">
+		<Breadcrumbs items={ABOUT_CAREER_PAGE.breadcrumbs} />
+		<AboutNav />
+
+		<section class="section page-title-section" aria-labelledby="career-title">
+			<header>
+				<h1 id="career-title">{ABOUT_CAREER_PAGE.title}</h1>
+			</header>
+		</section>
+
+		<section class="section" aria-labelledby="career-intro-title">
+			<header><h2 id="career-intro-title">{ABOUT_CAREER_PAGE.title}</h2></header>
+			<div class="prose">
+				<p>{ABOUT_CAREER_PAGE.intro}</p>
+			</div>
+		</section>
+
+		<section class="section" aria-labelledby="experience-title">
+			<header><h2 id="experience-title">{ABOUT_CAREER_PAGE.sections.experience.title}</h2></header>
+			<ol class="experience-list">
+				{EXPERIENCE.map(item => (
+					<li class="experience-item">
+						<div class="experience-item__heading">
+							<h3>{item.company}</h3>
+							<p class="experience-item__period">{item.period}</p>
+						</div>
+						<p class="experience-item__role">{item.role}</p>
+						<div class="prose">
+							<p>{item.description}</p>
+							{item.details?.map(paragraph => <p>{paragraph}</p>)}
+						</div>
+						{item.keyWork && (
+							<ul>
+								{item.keyWork.map(work => <li>{work}</li>)}
+							</ul>
+						)}
+						{item.note && <p class="muted">{item.note}</p>}
+					</li>
+				))}
+			</ol>
+		</section>
+
+		<section class="section" aria-labelledby="education-title">
+			<header><h2 id="education-title">{ABOUT_CAREER_PAGE.sections.education.title}</h2></header>
+			<ol class="plain-list">
+				{EDUCATION.map(item => (
+					<li class="plain-item">
+						<h3>{item.institution}</h3>
+						<p class="muted">
+							{item.program} · <span class="meta-value">{item.period}</span>
+						</p>
+					</li>
+				))}
+			</ol>
+		</section>
+	</div>
+</Layout>

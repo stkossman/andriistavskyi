@@ -1,8 +1,7 @@
 ---
 import './about.scss'
+import AboutNav from '@/components/about-nav/AboutNav.astro'
 import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs.astro'
-import { EDUCATION } from '@/const/education'
-import { EXPERIENCE } from '@/const/experience'
 import { ABOUT_PAGE } from '@/const/pages/about'
 import { SITE } from '@/const/site'
 import Layout from '@/layouts/Layout.astro'
@@ -28,61 +27,25 @@ import Layout from '@/layouts/Layout.astro'
 			</div>
 		</section>
 
-		<section class="section" aria-labelledby="experience-title">
-			<header><h2 id="experience-title">{ABOUT_PAGE.sections.experience.title}</h2></header>
-			<ol class="experience-list">
-				{EXPERIENCE.map(item => (
-					<li class="experience-item">
-						<div class="experience-item__heading">
-							<h3>{item.company}</h3>
-							<p class="experience-item__period">{item.period}</p>
-						</div>
-						<p class="experience-item__role">{item.role}</p>
-						<div class="prose">
-							<p>{item.description}</p>
-							{item.details?.map(paragraph => <p>{paragraph}</p>)}
-						</div>
-						{item.keyWork && (
-							<ul>
-								{item.keyWork.map(work => <li>{work}</li>)}
-							</ul>
-						)}
-						{item.note && <p class="muted">{item.note}</p>}
-					</li>
-				))}
-			</ol>
-		</section>
-
-		<section class="section" aria-labelledby="education-title">
-			<header><h2 id="education-title">{ABOUT_PAGE.sections.education.title}</h2></header>
-			<ol class="plain-list">
-				{EDUCATION.map(item => (
-					<li class="plain-item">
-						<h3>{item.institution}</h3>
-						<p class="muted">
-							{item.program} · <span class="meta-value">{item.period}</span>
-						</p>
-					</li>
-				))}
-			</ol>
-		</section>
-
-		<section class="section" aria-labelledby="side-projects-title">
-			<header><h2 id="side-projects-title">{ABOUT_PAGE.sections.sideProjects.title}</h2></header>
-			<div class="prose">
-				{ABOUT_PAGE.sections.sideProjects.paragraphs.map(paragraph => <p>{paragraph}</p>)}
-				<p>
-					<a href={ABOUT_PAGE.sections.sideProjects.link.href}>
-						{ABOUT_PAGE.sections.sideProjects.link.label}
-					</a>
-				</p>
-			</div>
+		<section class="section" aria-labelledby="more-about-me-title">
+			<header><h2 id="more-about-me-title">{ABOUT_PAGE.sections.moreAboutMe.title}</h2></header>
+			<AboutNav />
 		</section>
 
 		<section class="section" aria-labelledby="outside-software-title">
 			<header><h2 id="outside-software-title">{ABOUT_PAGE.sections.outsideSoftware.title}</h2></header>
 			<div class="prose">
 				{ABOUT_PAGE.sections.outsideSoftware.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+			</div>
+		</section>
+
+		<section class="section" aria-labelledby="people-title">
+			<header><h2 id="people-title">{ABOUT_PAGE.sections.people.title}</h2></header>
+			<div class="prose">
+				{ABOUT_PAGE.sections.people.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+				<p>
+					<a href={ABOUT_PAGE.sections.people.link.href}>{ABOUT_PAGE.sections.people.link.label}</a>
+				</p>
 			</div>
 		</section>
 

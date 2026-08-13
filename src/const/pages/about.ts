@@ -1,8 +1,28 @@
+const ABOUT_OVERVIEW_ROUTE = '/about/' as const
+const ABOUT_CAREER_ROUTE = '/about/career/' as const
+const ABOUT_UPDATES_ROUTE = '/about/updates/' as const
+const ABOUT_SITE_ROUTE = '/about/site/' as const
+
+export const ABOUT_ROUTES = {
+	overview: ABOUT_OVERVIEW_ROUTE,
+	career: ABOUT_CAREER_ROUTE,
+	updates: ABOUT_UPDATES_ROUTE,
+	site: ABOUT_SITE_ROUTE,
+} as const
+
+export const ABOUT_NAV_LINKS = [
+	{ label: 'Overview', href: ABOUT_OVERVIEW_ROUTE },
+	{ label: 'Career', href: ABOUT_CAREER_ROUTE },
+	{ label: 'Recent Updates', href: ABOUT_UPDATES_ROUTE },
+	{ label: 'About This Site', href: ABOUT_SITE_ROUTE },
+] as const
+
 export const ABOUT_PAGE = {
 	title: 'About',
 	description:
 		'About andrii stavskyi, a Full-Stack Software Engineer from Ukraine.',
 	breadcrumbs: [{ label: 'Home', href: '/' }, { label: 'About' }],
+	navLabel: 'About sections',
 	sections: {
 		intro: {
 			title: 'Intro',
@@ -12,22 +32,22 @@ export const ABOUT_PAGE = {
 				'I work across backend and frontend development and tend to treat them as parts of the same system rather than separate disciplines.',
 			],
 		},
-		experience: { title: 'Experience' },
-		education: { title: 'Education' },
-		sideProjects: {
-			title: 'Side projects',
-			paragraphs: [
-				'I usually start personal projects because there is either a small problem I want solved properly or an idea I want to understand by building it.',
-				'I prefer focused applications with a clear purpose over projects created only to demonstrate a technology stack. Soliloquy is the clearest example of that approach.',
-			],
-			link: { label: 'View selected work', href: '/work/' },
+		moreAboutMe: {
+			title: 'More About Me',
 		},
 		outsideSoftware: {
 			title: 'Outside software',
 			paragraphs: [
 				'Outside software, I spend time reading and writing, playing guitar, and training calisthenics.',
-				'Most of these are deliberately offline activities - a useful counterweight to work that is otherwise spent almost entirely in front of a screen.',
 			],
+		},
+		people: {
+			title: 'People',
+			paragraphs: [
+				'Some of the most useful things I have learned came from people I worked with, studied with, or met along the way.',
+				'I keep a small list of people whose work and professional judgment I trust.',
+			],
+			link: { label: 'People I recommend', href: '/people' },
 		},
 		details: {
 			title: 'Details',

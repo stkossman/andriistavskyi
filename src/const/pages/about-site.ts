@@ -1,8 +1,14 @@
-export const ATTRIBUTION_PAGE = {
-	title: 'Attribution',
+import { ABOUT_ROUTES } from '@/const/pages/about'
+
+export const ABOUT_SITE_PAGE = {
+	title: 'About This Site',
 	description:
 		"Visual and implementation attribution for this version of andrii stavskyi's portfolio.",
-	breadcrumbs: [{ label: 'Home', href: '/' }, { label: 'Attribution' }],
+	breadcrumbs: [
+		{ label: 'Home', href: '/' },
+		{ label: 'About', href: ABOUT_ROUTES.overview },
+		{ label: 'About This Site' },
+	],
 	sections: [
 		{
 			title: 'About this version',

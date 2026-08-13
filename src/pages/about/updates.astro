@@ -1,0 +1,36 @@
+---
+import '../about/about.scss'
+import AboutNav from '@/components/about-nav/AboutNav.astro'
+import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs.astro'
+import { ABOUT_UPDATES_PAGE } from '@/const/pages/about-updates'
+import { SITE } from '@/const/site'
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout
+	title={`${ABOUT_UPDATES_PAGE.title} - ${SITE.name}`}
+	description={ABOUT_UPDATES_PAGE.description}
+>
+	<div class="page-stack about-page">
+		<Breadcrumbs items={ABOUT_UPDATES_PAGE.breadcrumbs} />
+		<AboutNav />
+
+		<section class="section page-title-section" aria-labelledby="updates-title">
+			<header>
+				<h1 id="updates-title">{ABOUT_UPDATES_PAGE.title}</h1>
+			</header>
+		</section>
+
+		<section class="section" aria-labelledby="recent-updates-title">
+			<header><h2 id="recent-updates-title">{ABOUT_UPDATES_PAGE.sections.updates.title}</h2></header>
+			<ol class="plain-list">
+				{ABOUT_UPDATES_PAGE.sections.updates.items.map(item => (
+					<li class="plain-item">
+						<h3>{item.period}</h3>
+						<p>{item.description}</p>
+					</li>
+				))}
+			</ol>
+		</section>
+	</div>
+</Layout>

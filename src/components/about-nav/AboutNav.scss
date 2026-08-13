@@ -1,0 +1,33 @@
+@use "@/styles/abstracts" as *;
+
+.about-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 $space-2;
+	padding-top: $space-1;
+	border-bottom: 1px solid $color-border;
+	padding-bottom: $space-2;
+	font-size: $small-size;
+
+	a::before {
+		content: "[";
+		color: $color-muted;
+		font-weight: 400;
+	}
+
+	a::after {
+		content: "]";
+		color: $color-muted;
+		font-weight: 400;
+	}
+
+	a[aria-current="page"] {
+		color: $color-text;
+		font-weight: 700;
+		text-decoration-color: $color-primary;
+
+		&:visited {
+			color: $color-text;
+		}
+	}
+}

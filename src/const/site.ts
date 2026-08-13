@@ -23,7 +23,7 @@ export const PRIMARY_NAV_LINKS = [
 export const FOOTER_NAV_LINKS = [
 	...PRIMARY_NAV_LINKS,
 	{ label: 'Site Map', href: '/sitemap/' },
-	{ label: 'Attribution', href: '/attribution/' },
+	{ label: 'About This Site', href: '/about/site/' },
 ] as const
 
 export const FOOTER_BADGES = ['MADE WITH ASTRO', 'BUILT IN UKRAINE'] as const

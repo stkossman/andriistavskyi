@@ -15,7 +15,7 @@ export const SITEMAP_PAGE = {
 		site: {
 			title: 'Site',
 			links: [
-				{ label: 'Attribution', href: '/attribution/' },
+				{ label: 'About This Site', href: '/about/site/' },
 				{ label: 'Site Map', href: '/sitemap/' },
 			],
 		},
