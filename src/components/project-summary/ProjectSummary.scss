@@ -5,6 +5,9 @@
 	grid-template-columns: minmax(9rem, 11.5rem) minmax(0, 1fr);
 	gap: $space-3 $space-6;
 	padding: $space-4 0;
+}
+
+.project-summary + .project-summary {
 	border-top: 1px solid $color-rule;
 }
 

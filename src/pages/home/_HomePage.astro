@@ -32,8 +32,6 @@ function resolveHref(href?: string) {
 			<p>{HOME_PAGE.intro}</p>
 		</section>
 
-		<hr />
-
 		<section class="section" aria-labelledby="work-title">
 			<header>
 				<h2 id="work-title">{HOME_PAGE.selectedWorkTitle}</h2>
@@ -42,8 +40,6 @@ function resolveHref(href?: string) {
 				{PROJECTS.map((project, index) => <ProjectSummary project={project} index={index} />)}
 			</div>
 		</section>
-
-		<hr />
 
 		<section class="section" aria-labelledby="about-preview-title">
 			<header>

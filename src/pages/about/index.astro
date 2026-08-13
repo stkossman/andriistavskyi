@@ -28,8 +28,6 @@ import Layout from '@/layouts/Layout.astro'
 			</div>
 		</section>
 
-		<hr />
-
 		<section class="section" aria-labelledby="experience-title">
 			<header><h2 id="experience-title">{ABOUT_PAGE.sections.experience.title}</h2></header>
 			<ol class="experience-list">
@@ -55,8 +53,6 @@ import Layout from '@/layouts/Layout.astro'
 			</ol>
 		</section>
 
-		<hr />
-
 		<section class="section" aria-labelledby="education-title">
 			<header><h2 id="education-title">{ABOUT_PAGE.sections.education.title}</h2></header>
 			<ol class="plain-list">
@@ -71,8 +67,6 @@ import Layout from '@/layouts/Layout.astro'
 			</ol>
 		</section>
 
-		<hr />
-
 		<section class="section" aria-labelledby="side-projects-title">
 			<header><h2 id="side-projects-title">{ABOUT_PAGE.sections.sideProjects.title}</h2></header>
 			<div class="prose">
@@ -85,16 +79,12 @@ import Layout from '@/layouts/Layout.astro'
 			</div>
 		</section>
 
-		<hr />
-
 		<section class="section" aria-labelledby="outside-software-title">
 			<header><h2 id="outside-software-title">{ABOUT_PAGE.sections.outsideSoftware.title}</h2></header>
 			<div class="prose">
 				{ABOUT_PAGE.sections.outsideSoftware.paragraphs.map(paragraph => <p>{paragraph}</p>)}
 			</div>
 		</section>
-
-		<hr />
 
 		<section class="section" aria-labelledby="details-title">
 			<header><h2 id="details-title">{ABOUT_PAGE.sections.details.title}</h2></header>

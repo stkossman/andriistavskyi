@@ -50,12 +50,14 @@
 .experience-item {
 	display: grid;
 	gap: $space-2;
-	padding-bottom: $space-4;
-	border-bottom: 1px solid $color-rule;
+	padding-top: $space-4;
 
-	&:last-child {
-		padding-bottom: 0;
-		border-bottom: 0;
+	&:first-child {
+		padding-top: 0;
+	}
+
+	& + & {
+		border-top: 1px solid $color-rule;
 	}
 
 	ul {
