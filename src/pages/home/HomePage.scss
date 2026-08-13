@@ -1,4 +1,5 @@
-@use "@/styles/abstracts" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/variables" as *;
 
 .intro {
 	display: grid;
@@ -9,21 +10,17 @@
 .intro__meta-table {
 	display: grid;
 	grid-template-columns: max-content minmax(0, 1fr);
-	gap: 0.14rem $space-6;
-	max-width: 32rem;
+	gap: 2px $space-6;
+	max-width: 512px;
 	margin: 0;
-	font-size: $small-size;
+	@include body-small;
 
 	div {
 		display: contents;
 	}
 
 	dt {
-		color: $color-primary;
-		font-family: $font-code;
-		font-size: $metadata-size;
-		font-weight: 700;
-		text-transform: uppercase;
+		@include section-label;
 	}
 
 	dd {

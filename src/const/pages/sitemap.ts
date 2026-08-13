@@ -9,16 +9,19 @@ export const SITEMAP_PAGE = {
 				{ label: 'Home', href: '/' },
 				{ label: 'Work', href: '/work/' },
 				{ label: 'About', href: '/about/' },
+				{ label: 'People', href: '/people/' },
+			],
+		},
+		about: {
+			title: 'About',
+			links: [
+				{ label: 'Overview', href: '/about/' },
+				{ label: 'Career', href: '/about/career/' },
+				{ label: 'Recent Updates', href: '/about/updates/' },
+				{ label: 'About This Site', href: '/about/site/' },
 			],
 		},
 		work: { title: 'Work' },
-		site: {
-			title: 'Site',
-			links: [
-				{ label: 'About This Site', href: '/about/site/' },
-				{ label: 'Site Map', href: '/sitemap/' },
-			],
-		},
 		external: { title: 'External' },
 	},
 } as const

@@ -1,8 +1,9 @@
-@use "@/styles/abstracts" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/variables" as *;
 
 .project-summary {
 	display: grid;
-	grid-template-columns: minmax(9rem, 11.5rem) minmax(0, 1fr);
+	grid-template-columns: minmax(144px, 184px) minmax(0, 1fr);
 	gap: $space-3 $space-6;
 	padding: $space-4 0;
 }
@@ -14,33 +15,26 @@
 .project-summary__header {
 	display: grid;
 	align-content: start;
-	gap: 0.2rem;
+	gap: 3px;
 
 	h3 {
-		font-family: $font-heading;
-		font-size: 1.08rem;
-		font-weight: 400;
+		@include serif-heading(17.28px);
 	}
 
 	p {
 		color: $color-secondary;
-		font-size: $small-size;
+		@include body-small;
 	}
 }
 
 .project-summary__stamp {
 	display: grid;
-	gap: 0.1rem;
-	color: $color-secondary;
-	font-family: $font-code;
-	font-size: $metadata-size;
+	gap: 2px;
+	@include metadata-text;
 }
 
 .project-summary__number {
-	color: $color-primary;
-	font-family: $font-code;
-	font-size: $metadata-size;
-	font-weight: 700;
+	@include section-label;
 }
 
 .project-summary__year {
@@ -58,11 +52,11 @@
 	grid-column: 2;
 	gap: $space-1;
 	color: $color-secondary;
-	font-size: $small-size;
+	@include body-small;
 
 	div {
 		display: grid;
-		grid-template-columns: 4rem minmax(0, 1fr);
+		grid-template-columns: 64px minmax(0, 1fr);
 		gap: $space-4;
 	}
 
@@ -79,7 +73,7 @@
 .project-summary__links {
 	grid-column: 2;
 	color: $color-secondary;
-	font-size: $small-size;
+	@include body-small;
 }
 
 @media (max-width: $breakpoint-small) {
@@ -91,7 +85,7 @@
 
 	.project-summary__meta div {
 		grid-template-columns: 1fr;
-		gap: 0.1rem;
+		gap: 2px;
 	}
 
 	.project-summary__meta {

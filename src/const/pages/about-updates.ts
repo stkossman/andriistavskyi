@@ -13,32 +13,55 @@ export const ABOUT_UPDATES_PAGE = {
 			title: 'Recent Updates',
 			items: [
 				{
-					period: 'August 2026',
+					period: 'Aug 2026',
+					description: 'Launched the retro version of this website.',
+				},
+				{
+					period: 'Jul 2026',
+					description: '» Joined SoftServe as a Trainee Software Engineer.',
+				},
+				{
+					period: 'Jul 2026',
 					description:
-						'Rebuilt this portfolio around an early-web visual direction.',
+						'Started developing a tutoring management platform for a private tutor with direct user feedback. Currently in pre-1.0 development.',
 				},
 				{
-					period: 'July 2026',
-					description: 'Joined SoftServe as a Trainee Software Engineer.',
-				},
-				{
-					period: 'July 2026',
-					description: 'Released the first public version of Soliloquy.',
-				},
-				{
-					period: 'June 2026',
+					period: 'Jul 2026',
 					description:
-						'Completed the Full-Stack .NET / React internship at SoftServe and continued contributing to Victory Center as a volunteer.',
+						'Released Soliloquy v0.1.0, the first public version of my local-first writing application.',
 				},
 				{
-					period: 'March 2026',
+					period: 'Jun 2026',
 					description:
-						'Started the SoftServe internship and joined the Victory Center project.',
+						'Completed the SoftServe Full-Stack .NET / React internship and continued contributing to Victory Center as a volunteer.',
 				},
 				{
-					period: '2026',
+					period: 'Mar 2026',
 					description:
-						'Led a three-person team building the Cinema Booking Platform.',
+						'» Started the SoftServe internship and joined the Victory Center project.',
+				},
+				{
+					period: 'Jan 2026',
+					description:
+						'Led a three-person team in building the Cinema Booking Platform.',
+				},
+				{
+					period: 'Nov 2024',
+					description: 'Completed Harvard`s CS50x.',
+				},
+				{
+					period: 'Sep 2023',
+					description:
+						'» Started studying Computer Science at the National University of Ostroh Academy.',
+				},
+				{
+					period: 'May 2023',
+					description: 'Earned the Cambridge B2 English qualification.',
+				},
+				{
+					period: 'Sep 2021',
+					description:
+						'» Started learning programming and web development at technical college.',
 				},
 			],
 		},

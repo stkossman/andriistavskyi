@@ -10,6 +10,7 @@ interface Props {
 
 const { person, index } = Astro.props
 const personNumber = String(index + 1).padStart(2, '0')
+const profileLabel = `${person.name} on ${person.profile.label}`
 ---
 
 <article class="person-entry">
@@ -36,7 +37,9 @@ const personNumber = String(index + 1).padStart(2, '0')
 			<ul class="plain-list">
 				{person.notableWork.map(work => (
 					<li class="plain-item">
-						<a href={work.url}>{work.label}</a>
+						<a href={work.url} aria-label={`${work.label} by ${person.name}`}>
+							{work.label}
+						</a>
 					</li>
 				))}
 			</ul>
@@ -45,6 +48,6 @@ const personNumber = String(index + 1).padStart(2, '0')
 
 	<section class="person-entry__section" aria-labelledby={`person-profile-${index}`}>
 		<h4 id={`person-profile-${index}`}>{PEOPLE_PAGE.labels.profile}</h4>
-		<p><a href={person.profile.url}>{person.profile.label}</a></p>
+		<p><a href={person.profile.url} aria-label={profileLabel}>{person.profile.label}</a></p>
 	</section>
 </article>

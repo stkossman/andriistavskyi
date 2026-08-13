@@ -3,7 +3,7 @@ import { ABOUT_ROUTES } from '@/const/pages/about'
 export const ABOUT_SITE_PAGE = {
 	title: 'About This Site',
 	description:
-		"Visual and implementation attribution for this version of andrii stavskyi's portfolio.",
+		"Notes on the visual direction and implementation of this version of andrii stavskyi's portfolio.",
 	breadcrumbs: [
 		{ label: 'Home', href: '/' },
 		{ label: 'About', href: ABOUT_ROUTES.overview },

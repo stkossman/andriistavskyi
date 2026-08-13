@@ -26,20 +26,20 @@ import Layout from '@/layouts/Layout.astro'
 			</ul>
 		</section>
 
+		<section class="section" aria-labelledby="about-links-title">
+			<header><h2 id="about-links-title">{SITEMAP_PAGE.sections.about.title}</h2></header>
+			<ul>
+				{SITEMAP_PAGE.sections.about.links.map(link => (
+					<li><a href={link.href}>{link.label}</a></li>
+				))}
+			</ul>
+		</section>
+
 		<section class="section" aria-labelledby="work-links-title">
 			<header><h2 id="work-links-title">{SITEMAP_PAGE.sections.work.title}</h2></header>
 			<ul>
 				{PROJECTS.map(project => (
 					<li><a href={`/work/${project.slug}/`}>{project.title}</a></li>
-				))}
-			</ul>
-		</section>
-
-		<section class="section" aria-labelledby="site-title">
-			<header><h2 id="site-title">{SITEMAP_PAGE.sections.site.title}</h2></header>
-			<ul>
-				{SITEMAP_PAGE.sections.site.links.map(link => (
-					<li><a href={link.href}>{link.label}</a></li>
 				))}
 			</ul>
 		</section>

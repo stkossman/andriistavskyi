@@ -2,19 +2,20 @@
 @use "base/document";
 @use "base/typography";
 @use "base/links";
-@use "abstracts" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/variables" as *;
 
 .site-shell {
 	@include page-container;
-	padding: 0.9rem 0 1.5rem;
+	padding: 14px 0 24px;
 }
 
 .skip-link {
 	position: absolute;
-	top: 0.5rem;
-	left: 0.5rem;
+	top: 8px;
+	left: 8px;
 	z-index: 10;
-	padding: 0.35rem 0.5rem;
+	padding: 6px 8px;
 	border: 1px solid $color-border;
 	background: $color-bg;
 	transform: translateY(-150%);
@@ -35,22 +36,17 @@
 
 	> header {
 		display: grid;
-		gap: 0.2rem;
-		padding-bottom: 0.22rem;
+		gap: 3px;
+		padding-bottom: 4px;
 		border-bottom: 1px solid $color-border;
 	}
 
 	> header p {
-		font-size: $small-size;
+		@include body-small;
 	}
 
 	> header h2 {
-		color: $color-primary;
-		font-family: $font-code;
-		font-size: $metadata-size;
-		font-weight: 700;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
+		@include section-label;
 	}
 }
 
@@ -64,7 +60,7 @@
 	}
 
 	h1 {
-		font-size: clamp(1.8rem, 1.68rem + 0.5vw, 2.1rem);
+		font-size: clamp(28.8px, 26.88px + 0.5vw, 33.6px);
 	}
 }
 
@@ -93,5 +89,5 @@
 
 .plain-item {
 	display: grid;
-	gap: 0.18rem;
+	gap: 3px;
 }

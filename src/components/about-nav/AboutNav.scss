@@ -1,24 +1,17 @@
-@use "@/styles/abstracts" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/variables" as *;
 
 .about-nav {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0 $space-2;
 	padding-top: $space-1;
-	border-bottom: 1px solid $color-border;
 	padding-bottom: $space-2;
-	font-size: $small-size;
+	border-bottom: 1px solid $color-border;
+	@include body-small;
 
-	a::before {
-		content: "[";
-		color: $color-muted;
-		font-weight: 400;
-	}
-
-	a::after {
-		content: "]";
-		color: $color-muted;
-		font-weight: 400;
+	a {
+		@include bracket-link;
 	}
 
 	a[aria-current="page"] {

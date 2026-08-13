@@ -6,10 +6,7 @@ export const SITE = {
 		'andrii stavskyi is a Full-Stack Software Engineer from Ukraine building maintainable web applications and practical interfaces.',
 	url: 'https://www.andriistavskyi.me/',
 	ogImage: '/og-image.jpg',
-	repositoryHref: 'https://github.com/stkossman/www',
 	softServeHref: 'https://www.softserveinc.com/',
-	role: 'Full-Stack Software Engineer',
-	location: 'Ukraine',
 	lastUpdated: 'August 2026',
 	copyrightYear: '2026',
 } as const
@@ -22,6 +19,7 @@ export const PRIMARY_NAV_LINKS = [
 
 export const FOOTER_NAV_LINKS = [
 	...PRIMARY_NAV_LINKS,
+	{ label: 'People', href: '/people/' },
 	{ label: 'Site Map', href: '/sitemap/' },
 	{ label: 'About This Site', href: '/about/site/' },
 ] as const

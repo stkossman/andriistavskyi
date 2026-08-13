@@ -1,8 +1,9 @@
-@use "@/styles/abstracts" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/variables" as *;
 
 .person-entry {
 	display: grid;
-	grid-template-columns: minmax(9rem, 11.5rem) minmax(0, 1fr);
+	grid-template-columns: minmax(144px, 184px) minmax(0, 1fr);
 	gap: $space-3 $space-6;
 	padding: $space-4 0;
 }
@@ -14,28 +15,22 @@
 .person-entry__header {
 	display: grid;
 	align-content: start;
-	gap: 0.2rem;
+	gap: 3px;
 
 	h3 {
-		font-family: $font-heading;
-		font-size: 1.08rem;
-		font-weight: 400;
+		@include serif-heading(17.28px);
 		overflow-wrap: anywhere;
 	}
 }
 
 .person-entry__number,
 .person-entry__section h4 {
-	color: $color-primary;
-	font-family: $font-code;
-	font-size: $metadata-size;
-	font-weight: 700;
-	text-transform: uppercase;
+	@include section-label;
 }
 
 .person-entry__role {
 	color: $color-secondary;
-	font-size: $small-size;
+	@include body-small;
 	overflow-wrap: anywhere;
 }
 

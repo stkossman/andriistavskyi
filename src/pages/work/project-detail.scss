@@ -1,4 +1,5 @@
-@use "@/styles/abstracts" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/variables" as *;
 
 .project-page {
 	display: grid;
@@ -21,9 +22,7 @@
 	}
 
 	figcaption {
-		color: $color-muted;
-		font-family: $font-code;
-		font-size: 0.75rem;
+		@include metadata-text($color-muted);
 	}
 }
 
@@ -42,14 +41,8 @@
 		@include unstyled-list;
 	}
 
-	a::before {
-		content: "[";
-		color: $color-muted;
-	}
-
-	a::after {
-		content: "]";
-		color: $color-muted;
+	a {
+		@include bracket-link;
 	}
 }
 
@@ -61,10 +54,7 @@
 
 .case-subsection h3,
 .case-list-group h3 {
-	font-family: $font-code;
-	font-size: $metadata-size;
-	letter-spacing: 0.04em;
-	text-transform: uppercase;
+	@include section-label($color-text);
 }
 
 .project-flow {
@@ -72,7 +62,6 @@
 	overflow-x: auto;
 	padding: $space-2 0;
 	color: $color-secondary;
-	font-family: $font-code;
-	font-size: $metadata-size;
+	@include metadata-text;
 	white-space: pre-wrap;
 }

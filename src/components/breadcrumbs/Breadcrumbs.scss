@@ -1,9 +1,8 @@
-@use "@/styles/abstracts" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/variables" as *;
 
 .breadcrumbs {
-	color: $color-secondary;
-	font-family: $font-code;
-	font-size: $metadata-size;
+	@include metadata-text;
 	padding: $space-1 0 0;
 
 	ol {

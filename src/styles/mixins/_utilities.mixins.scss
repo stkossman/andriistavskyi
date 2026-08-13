@@ -1,0 +1,31 @@
+@use "@/styles/variables" as v;
+
+@mixin page-container {
+	width: min(#{v.$site-width}, calc(100% - 32px));
+	margin: 0 auto;
+}
+
+@mixin focus-ring {
+	outline: 2px solid v.$color-text;
+	outline-offset: 2px;
+}
+
+@mixin unstyled-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+@mixin bracket-link {
+	&::before {
+		content: "[";
+		color: v.$color-muted;
+		font-weight: 400;
+	}
+
+	&::after {
+		content: "]";
+		color: v.$color-muted;
+		font-weight: 400;
+	}
+}

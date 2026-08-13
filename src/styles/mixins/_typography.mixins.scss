@@ -1,0 +1,35 @@
+@use "@/styles/variables" as v;
+
+@mixin _text(
+	$weight,
+	$size,
+	$line-height,
+	$letter-spacing: normal,
+	$transform: none,
+	$family: v.$font-body
+) {
+	font-family: $family;
+	font-size: $size;
+	font-weight: $weight;
+	line-height: $line-height;
+	letter-spacing: $letter-spacing;
+	text-transform: $transform;
+}
+
+@mixin serif-heading($size, $weight: 400, $line-height: 1.15) {
+	@include _text($weight, $size, $line-height, normal, none, v.$font-heading);
+}
+
+@mixin body-small {
+	@include _text(400, v.$small-size, 1.55);
+}
+
+@mixin metadata-text($color: v.$color-secondary) {
+	@include _text(400, v.$metadata-size, 1.4, normal, none, v.$font-code);
+	color: $color;
+}
+
+@mixin section-label($color: v.$color-primary) {
+	@include _text(700, v.$metadata-size, 1.2, 0.04em, uppercase, v.$font-code);
+	color: $color;
+}
