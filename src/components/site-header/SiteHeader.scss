@@ -24,29 +24,97 @@
 }
 
 .site-header__name {
-	display: grid;
-	align-items: center;
-	padding: 3px 6px;
+	display: inline-flex;
+	align-items: stretch;
+	padding: 0;
 	border-right: 1px solid $color-text;
-	background: $color-bg;
 	color: $color-text;
+	font-size: 11px;
 	font-weight: 700;
+	line-height: 1;
+	letter-spacing: -0.01em;
 	text-decoration: none;
+	white-space: nowrap;
 
 	&:visited {
 		color: $color-text;
 	}
 }
 
+.site-header__name-part {
+	display: inline-flex;
+	align-items: center;
+	padding: 2px 5px 1px;
+}
+
+.site-header__name-part--light {
+	background: $color-bg;
+	color: $color-text;
+}
+
+.site-header__name-part--dark {
+	background: $color-text;
+	color: $color-bg;
+}
+
 .site-header__gradient {
 	background: linear-gradient(
 		90deg,
-		#f5f5f5 0%,
-		#d9d9d9 22%,
-		#9b9b9b 48%,
-		#4c4c4c 72%,
+		#f8f8f8 0%,
+		#f8f8f8 3.85%,
+		#f0f0f0 3.85%,
+		#f0f0f0 7.7%,
+		#e8e8e8 7.7%,
+		#e8e8e8 11.55%,
+		#dfdfdf 11.55%,
+		#dfdfdf 15.4%,
+		#d6d6d6 15.4%,
+		#d6d6d6 19.25%,
+		#cdcdcd 19.25%,
+		#cdcdcd 23.1%,
+		#c3c3c3 23.1%,
+		#c3c3c3 26.95%,
+		#b8b8b8 26.95%,
+		#b8b8b8 30.8%,
+		#acacac 30.8%,
+		#acacac 34.65%,
+		#a0a0a0 34.65%,
+		#a0a0a0 38.5%,
+		#949494 38.5%,
+		#949494 42.35%,
+		#888888 42.35%,
+		#888888 46.2%,
+		#7b7b7b 46.2%,
+		#7b7b7b 50.05%,
+		#6f6f6f 50.05%,
+		#6f6f6f 53.9%,
+		#646464 53.9%,
+		#646464 57.75%,
+		#595959 57.75%,
+		#595959 61.6%,
+		#4e4e4e 61.6%,
+		#4e4e4e 65.45%,
+		#434343 65.45%,
+		#434343 69.3%,
+		#393939 69.3%,
+		#393939 73.15%,
+		#2f2f2f 73.15%,
+		#2f2f2f 77%,
+		#252525 77%,
+		#252525 80.85%,
+		#1c1c1c 80.85%,
+		#1c1c1c 84.7%,
+		#131313 84.7%,
+		#131313 88.55%,
+		#0b0b0b 88.55%,
+		#0b0b0b 92.4%,
+		#050505 92.4%,
+		#050505 96.2%,
+		#000000 96.2%,
 		#000000 100%
 	);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 
 .site-header__nav {

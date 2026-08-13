@@ -12,11 +12,17 @@ function isCurrent(href: string) {
 
 	return currentPath.startsWith(href)
 }
+
+const [siteNameFirst, ...siteNameRest] = SITE.lowercaseName.split(' ')
+const siteNameLast = siteNameRest.join(' ')
 ---
 
 <header class="site-header">
 	<div class="site-header__masthead">
-		<a class="site-header__name" href="/">{SITE.lowercaseName}</a>
+		<a class="site-header__name" href="/">
+			<span class="site-header__name-part site-header__name-part--light">{siteNameFirst}</span>
+			<span class="site-header__name-part site-header__name-part--dark">{siteNameLast}</span>
+		</a>
 		<div class="site-header__gradient" aria-hidden="true"></div>
 	</div>
 	<div class="site-header__nav-row">
